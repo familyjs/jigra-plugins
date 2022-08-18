@@ -1,7 +1,8 @@
 {
   "packages": [
     "app",
-    "haptics"
+    "haptics",
+    "keyboard"
   ],
   "command": {
     "bootstrap": {
