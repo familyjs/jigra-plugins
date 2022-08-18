@@ -2,7 +2,8 @@
   "packages": [
     "app",
     "haptics",
-    "keyboard"
+    "keyboard",
+    "status-bar"
   ],
   "command": {
     "bootstrap": {
