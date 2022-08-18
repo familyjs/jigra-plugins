@@ -6,4 +6,5 @@ This repository contains the official Jigra plugins maintained by the Jigra team
 
 | Package | Source | Version |
 | --- | --- | --- |
+| [`@jigra/app`](https://jigrajs.web.app/docs/v3/apis/app) | [`./app`](./app) | [![npm badge](https://img.shields.io/npm/v/@jigra/app?style=flat-square)](https://www.npmjs.com/package/@jigra/app)
 | [`@jigra/haptics`](https://jigrajs.web.app/docs/v3/apis/haptics) | [`./haptics`](./haptics) | [![npm badge](https://img.shields.io/npm/v/@jigra/haptics?style=flat-square)](https://www.npmjs.com/package/@jigra/haptics)
