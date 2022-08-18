@@ -1,6 +1,6 @@
 {
   "name": "@jigra/status-bar",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "The StatusBar API Provides methods for configuring the style of the Status Bar, along with showing or hiding it.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
