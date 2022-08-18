@@ -1,0 +1,32 @@
+{
+  "name": "jigra-plugins",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "watch": "lerna run --parallel --stream watch",
+    "lint": "npm run scripts:prettier -- --check && lerna run lint",
+    "fmt": "npm run scripts:prettier -- --write && lerna run fmt",
+    "scripts:prettier": "npx prettier \"scripts/**/*.mjs\"",
+    "apply-patches": "node ./scripts/apply-patches.mjs",
+    "toggle-local": "node ./scripts/toggle-local.mjs",
+    "update-all": "node ./scripts/update-all.mjs",
+    "set-jigra-version": "node ./scripts/set-jigra-version.mjs",
+    "postinstall": "lerna bootstrap",
+    "release": "lerna publish",
+    "publish:cocoapod": "lerna run publish:cocoapod --concurrency 1"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.2.6",
+    "@navify/prettier-config": "^1.0.1",
+    "@types/prompts": "^2.0.8",
+    "esm": "^3.2.25",
+    "lerna": "^3.22.1",
+    "prettier": "~2.3.0",
+    "prompts": "^2.3.2"
+  },
+  "prettier": "@navify/prettier-config",
+  "volta": {
+    "node": "14.18.2",
+    "npm": "6.14.15"
+  }
+}
