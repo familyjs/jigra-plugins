@@ -3,6 +3,7 @@
     "action-sheet",
     "app",
     "app-launcher",
+    "browser",
     "haptics",
     "keyboard",
     "status-bar"
