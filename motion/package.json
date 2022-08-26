@@ -1,6 +1,6 @@
 {
   "name": "@jigra/motion",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "The Motion API tracks accelerometer and device orientation (compass heading, etc.)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
