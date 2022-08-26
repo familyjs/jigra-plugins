@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="jigra_default_style" parent="AppTheme.NoActionBar">
+    </style>
+    <style name="jigra_full_screen_style" parent="AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="jigra_immersive_style" parent="jigra_full_screen_style">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>
