@@ -9,7 +9,7 @@ JIG_PLUGIN(PushNotificationsPlugin, "PushNotifications",
            JIG_PLUGIN_METHOD(requestPermissions, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(getDeliveredNotifications, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(removeAllDeliveredNotifications, JIGPluginReturnPromise);
-           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnNone);
+           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(removeDeliveredNotifications, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(createChannel, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(listChannels, JIGPluginReturnPromise);

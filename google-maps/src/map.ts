@@ -543,11 +543,10 @@ export class GoogleMap {
     }
 
     if (callback) {
-      this.onClusterInfoWindowClickListener =
-        await JigraGoogleMaps.addListener(
-          'onClusterInfoWindowClick',
-          this.generateCallback(callback),
-        );
+      this.onClusterInfoWindowClickListener = await JigraGoogleMaps.addListener(
+        'onClusterInfoWindowClick',
+        this.generateCallback(callback),
+      );
     } else {
       this.onClusterInfoWindowClickListener = undefined;
     }
@@ -636,11 +635,10 @@ export class GoogleMap {
     }
 
     if (callback) {
-      this.onMyLocationButtonClickListener =
-        await JigraGoogleMaps.addListener(
-          'onMyLocationButtonClick',
-          this.generateCallback(callback),
-        );
+      this.onMyLocationButtonClickListener = await JigraGoogleMaps.addListener(
+        'onMyLocationButtonClick',
+        this.generateCallback(callback),
+      );
     } else {
       this.onMyLocationButtonClickListener = undefined;
     }

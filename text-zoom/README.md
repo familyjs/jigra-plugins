@@ -2,6 +2,16 @@
 
 The Text Zoom API provides the ability to change Web View text size for visual accessibility.
 
+**Note:** text-zoom plugin won't work on iPads unless `preferredContentMode` configuration is set to `mobile` in your [Jigra configuration file](https://jigrajs.web.app/docs/config).
+
+```json
+{
+  "ios": {
+    "preferredContentMode": "mobile"
+  }
+}
+```
+
 ## Install
 
 ```bash

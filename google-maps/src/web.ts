@@ -1,9 +1,9 @@
-import { WebPlugin } from '@jigra/core';
 import type {
   Cluster,
   onClusterClickHandler,
 } from '@googlemaps/markerclusterer';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { WebPlugin } from '@jigra/core';
 
 import type { LatLngBounds } from './definitions';
 import type {

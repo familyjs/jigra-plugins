@@ -1,6 +1,6 @@
 {
   "name": "@jigra/device",
-  "version": "1.2.0",
+  "version": "4.0.0-0",
   "description": "The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -30,11 +30,11 @@
   "scripts": {
     "test": "uvu -r esm -r ts-node/register src/__tests__",
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -destination generic/platform=iOS && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build && npm test",
-    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
-    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
@@ -46,10 +46,10 @@
     "publish:cocoapod": "pod trunk push ./JigraDevice.podspec --allow-warnings"
   },
   "devDependencies": {
-    "@jigra/android": "^3.7.0-rc.1",
-    "@jigra/core": "^3.7.0-rc.1",
+    "@jigra/android": "4.0.0",
+    "@jigra/core": "4.0.0",
     "@jigra/docgen": "0.0.18",
-    "@jigra/ios": "^3.7.0-rc.1",
+    "@jigra/ios": "4.0.0",
     "@navify/eslint-config": "^0.3.0",
     "@navify/prettier-config": "~1.0.1",
     "@navify/swiftlint": "^1.0.1-beta.0",
@@ -65,7 +65,7 @@
     "uvu": "^0.5.1"
   },
   "peerDependencies": {
-    "@jigra/core": "^3.7.0-rc.1"
+    "@jigra/core": "4.0.0"
   },
   "prettier": "@navify/prettier-config",
   "swiftlint": "@navify/swiftlint-config",

@@ -1,6 +1,6 @@
 {
   "name": "@jigra/google-maps",
-  "version": "1.2.0",
+  "version": "4.0.0-0",
   "description": "Google maps on Jigra",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -39,8 +39,8 @@
     "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin -sdk iphonesimulator && cd ..",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build",
-    "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
-    "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
+    "lint": "npm run eslint && npm run prettier -- --check",
+    "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
     "eslint": "eslint . --ext ts",
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
@@ -56,10 +56,10 @@
     "unittest:android": "cd ./unit-tests/android && ./gradlew testDebugUnitTest"
   },
   "devDependencies": {
-    "@jigra/android": "^3.7.0-rc.1",
-    "@jigra/core": "^3.7.0-rc.1",
+    "@jigra/android": "4.0.0",
+    "@jigra/core": "4.0.0",
     "@jigra/docgen": "^0.0.18",
-    "@jigra/ios": "^3.7.0-rc.1",
+    "@jigra/ios": "4.0.0",
     "@navify/eslint-config": "^0.3.0",
     "@navify/prettier-config": "^1.0.1",
     "@navify/swiftlint": "^1.0.1-beta.0",
@@ -76,7 +76,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@jigra/core": "^3.7.0-rc.1"
+    "@jigra/core": "4.0.0"
   },
   "prettier": "@navify/prettier-config",
   "eslintConfig": {

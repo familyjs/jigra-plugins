@@ -16,8 +16,12 @@ public class DevicePlugin: JIGPlugin {
     }
     @objc func getInfo(_ call: JIGPluginCall) {
         var isSimulator = false
+        var modelName = ""
         #if targetEnvironment(simulator)
         isSimulator = true
+        modelName = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "Simulator"
+        #else
+        modelName = implementation.getModelName()
         #endif
 
         let memUsed = implementation.getMemoryUsage()
@@ -32,7 +36,7 @@ public class DevicePlugin: JIGPlugin {
             "realDiskFree": realDiskFree,
             "realDiskTotal": diskTotal,
             "name": UIDevice.current.name,
-            "model": UIDevice.current.model,
+            "model": modelName,
             "operatingSystem": "ios",
             "osVersion": UIDevice.current.systemVersion,
             "platform": "ios",
@@ -57,6 +61,13 @@ public class DevicePlugin: JIGPlugin {
         let code = implementation.getLanguageCode()
         call.resolve([
             "value": code
+        ])
+    }
+
+    @objc func getLanguageTag(_ call: JIGPluginCall) {
+        let tag = implementation.getLanguageTag()
+        call.resolve([
+            "value": tag
         ])
     }
 

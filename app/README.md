@@ -92,15 +92,13 @@ const checkAppLaunchUrl = async () => {
 ### exitApp()
 
 ```typescript
-exitApp() => never
+exitApp() => Promise<void>
 ```
 
 Force exit the app. This should only be used in conjunction with the `backButton` handler for Android to
 exit the app when navigation is complete.
 
 Navify handles this itself so you shouldn't need to call this if using Navify.
-
-**Returns:** <code>never</code>
 
 **Since:** 1.0.0
 

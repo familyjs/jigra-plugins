@@ -39,6 +39,19 @@ To use certain location features, the SDK requires the following permissions to 
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
+### Variables
+
+This plugin will use the following project variables (defined in your app's `variables.gradle` file):
+
+- `$googleMapsPlayServicesVersion`: version of `com.google.android.gms:play-services-maps` (default: `18.0.2`)
+- `$googleMapsUtilsVersion`: version of `com.google.maps.android:android-maps-utils` (default: `2.3.0`)
+- `$googleMapsKtxVersion`: version of `com.google.maps.android:maps-ktx` (default: `3.4.0`)
+- `$googleMapsUtilsKtxVersion`: version of `com.google.maps.android:maps-utils-ktx` (default: `3.4.0`)
+- `$kotlinxCoroutinesVersion`: version of `org.jetbrains.kotlinx:kotlinx-coroutines-android` and `org.jetbrains.kotlinx:kotlinx-coroutines-core` (default: `1.6.3`)
+- `$androidxCoreKTXVersion`: version of `androidx.core:core-ktx` (default: `1.8.0`)
+- `$kotlin_version`: version of `org.jetbrains.kotlin:kotlin-stdlib-jdk7` (default: `1.7.0`)
+
+
 ## Usage
 
 The Google Maps Jigra plugin ships with a web component that must be used to render the map in your application as it enables us to embed the native view more effectively on iOS. The plugin will automatically register this web component for use in your application.
@@ -129,6 +142,49 @@ await newMap.destroy();
 ```
 
 ## Full Examples
+
+### React
+
+```jsx
+import { GoogleMap } from '@jigra/google-maps';
+import { useRef } from 'react';
+
+const MyMap: React.FC = () => {
+  const mapRef = useRef<HTMLElement>();
+  let newMap: GoogleMap;
+
+  async function createMap() {
+    if (!mapRef.current) return;
+
+    newMap = await GoogleMap.create({
+      id: 'my-cool-map',
+      element: mapRef.current,
+      apiKey: process.env.REACT_APP_YOUR_API_KEY_HERE,
+      config: {
+        center: {
+          lat: 33.6,
+          lng: -117.9
+        },
+        zoom: 8
+      }
+    })
+  }
+
+  return (
+    <div className="component-wrapper">
+      <jigra-google-map ref={mapRef} style={{
+        display: 'inline-block',
+        width: 275,
+        height: 400
+      }}></jigra-google-map>
+
+      <button onClick={createMap}>Create Map</button>
+    </div>
+  )
+}
+
+export default MyMap;
+```
 
 ### Javascript
 

@@ -8,4 +8,5 @@ JIG_PLUGIN(DevicePlugin, "Device",
            JIG_PLUGIN_METHOD(getInfo, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(getBatteryInfo, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(getLanguageCode, JIGPluginReturnPromise);
+           JIG_PLUGIN_METHOD(getLanguageTag, JIGPluginReturnPromise);
 )

@@ -1,6 +1,6 @@
 {
   "name": "@jigra/motion",
-  "version": "1.1.0",
+  "version": "4.0.0-0",
   "description": "The Motion API tracks accelerometer and device orientation (compass heading, etc.)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -39,10 +39,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@jigra/android": "^3.7.0-rc.1",
-    "@jigra/core": "^3.7.0-rc.1",
+    "@jigra/android": "4.0.0",
+    "@jigra/core": "4.0.0",
     "@jigra/docgen": "0.0.18",
-    "@jigra/ios": "^3.7.0-rc.1",
+    "@jigra/ios": "4.0.0",
     "@navify/eslint-config": "^0.3.0",
     "@navify/prettier-config": "~1.0.1",
     "eslint": "^7.11.0",
@@ -53,7 +53,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@jigra/core": "^3.7.0-rc.1"
+    "@jigra/core": "4.0.0"
   },
   "prettier": "@navify/prettier-config",
   "eslintConfig": {

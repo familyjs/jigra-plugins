@@ -9,6 +9,7 @@ JIG_PLUGIN(KeyboardPlugin, "Keyboard",
            JIG_PLUGIN_METHOD(setAccessoryBarVisible, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(setStyle, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(setResizeMode, JIGPluginReturnPromise);
+           JIG_PLUGIN_METHOD(getResizeMode, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(setScroll, JIGPluginReturnPromise);
-           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnNone);
+           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )
