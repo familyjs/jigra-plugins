@@ -13,7 +13,7 @@
     "ios/Plugin/",
     "JigraDialog.podspec"
   ],
-  "author": "Navify",
+  "author": "Navify Team",
   "license": "MIT",
   "repository": {
     "type": "git",
