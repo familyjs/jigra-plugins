@@ -1,10 +1,6 @@
 import { WebPlugin } from '@jigra/core';
 
-import type {
-  ActionSheetPlugin,
-  ShowActionsResult,
-  ShowActionsOptions,
-} from './definitions';
+import type { ActionSheetPlugin, ShowActionsResult, ShowActionsOptions } from './definitions';
 
 export class ActionSheetWeb extends WebPlugin implements ActionSheetPlugin {
   async showActions(options: ShowActionsOptions): Promise<ShowActionsResult> {

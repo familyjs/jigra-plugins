@@ -103,9 +103,7 @@ export interface LocalNotificationsPlugin {
    *
    * @since 4.0.0
    */
-  removeDeliveredNotifications(
-    delivered: DeliveredNotifications,
-  ): Promise<void>;
+  removeDeliveredNotifications(delivered: DeliveredNotifications): Promise<void>;
 
   /**
    * Remove all the notifications from the notifications screen.
@@ -162,7 +160,7 @@ export interface LocalNotificationsPlugin {
    */
   addListener(
     eventName: 'localNotificationReceived',
-    listenerFunc: (notification: LocalNotificationSchema) => void,
+    listenerFunc: (notification: LocalNotificationSchema) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -172,7 +170,7 @@ export interface LocalNotificationsPlugin {
    */
   addListener(
     eventName: 'localNotificationActionPerformed',
-    listenerFunc: (notificationAction: ActionPerformed) => void,
+    listenerFunc: (notificationAction: ActionPerformed) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -816,15 +814,7 @@ export interface ScheduleOn {
   second?: number;
 }
 
-export type ScheduleEvery =
-  | 'year'
-  | 'month'
-  | 'two-weeks'
-  | 'week'
-  | 'day'
-  | 'hour'
-  | 'minute'
-  | 'second';
+export type ScheduleEvery = 'year' | 'month' | 'two-weeks' | 'week' | 'day' | 'hour' | 'minute' | 'second';
 
 export interface ListChannelsResult {
   /**

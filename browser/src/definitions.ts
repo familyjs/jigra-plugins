@@ -25,7 +25,7 @@ export interface BrowserPlugin {
    */
   addListener(
     eventName: 'browserFinished',
-    listenerFunc: () => void,
+    listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -37,7 +37,7 @@ export interface BrowserPlugin {
    */
   addListener(
     eventName: 'browserPageLoaded',
-    listenerFunc: () => void,
+    listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**

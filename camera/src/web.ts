@@ -44,20 +44,15 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
 
   async pickImages(_options: GalleryImageOptions): Promise<GalleryPhotos> {
     // eslint-disable-next-line no-async-promise-executor
-    return new Promise<GalleryPhotos>(async resolve => {
+    return new Promise<GalleryPhotos>(async (resolve) => {
       this.multipleFileInputExperience(resolve);
     });
   }
 
-  private async cameraExperience(
-    options: ImageOptions,
-    resolve: any,
-    reject: any,
-  ) {
+  private async cameraExperience(options: ImageOptions, resolve: any, reject: any) {
     if (customElements.get('pwa-camera-modal')) {
       const cameraModal: any = document.createElement('pwa-camera-modal');
-      cameraModal.facingMode =
-        options.direction === CameraDirection.Front ? 'user' : 'environment';
+      cameraModal.facingMode = options.direction === CameraDirection.Front ? 'user' : 'environment';
       document.body.appendChild(cameraModal);
       try {
         await cameraModal.componentOnReady();
@@ -82,16 +77,14 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
       }
     } else {
       console.error(
-        `Unable to load PWA Element 'pwa-camera-modal'. See the docs: https://jigrajs.web.app/docs/web/pwa-elements.`,
+        `Unable to load PWA Element 'pwa-camera-modal'. See the docs: https://jigrajs.web.app/docs/web/pwa-elements.`
       );
       this.fileInputExperience(options, resolve);
     }
   }
 
   private fileInputExperience(options: ImageOptions, resolve: any) {
-    let input = document.querySelector(
-      '#_jigra-camera-input',
-    ) as HTMLInputElement;
+    let input = document.querySelector('#_jigra-camera-input') as HTMLInputElement;
 
     const cleanup = () => {
       input.parentNode?.removeChild(input);
@@ -113,10 +106,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
           format = 'gif';
         }
 
-        if (
-          options.resultType === 'dataUrl' ||
-          options.resultType === 'base64'
-        ) {
+        if (options.resultType === 'dataUrl' || options.resultType === 'base64') {
           const reader = new FileReader();
 
           reader.addEventListener('load', () => {
@@ -150,10 +140,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
     input.accept = 'image/*';
     (input as any).capture = true;
 
-    if (
-      options.source === CameraSource.Photos ||
-      options.source === CameraSource.Prompt
-    ) {
+    if (options.source === CameraSource.Photos || options.source === CameraSource.Prompt) {
       input.removeAttribute('capture');
     } else if (options.direction === CameraDirection.Front) {
       (input as any).capture = 'user';
@@ -165,9 +152,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
   }
 
   private multipleFileInputExperience(resolve: any) {
-    let input = document.querySelector(
-      '#_jigra-camera-input-multiple',
-    ) as HTMLInputElement;
+    let input = document.querySelector('#_jigra-camera-input-multiple') as HTMLInputElement;
 
     const cleanup = () => {
       input.parentNode?.removeChild(input);
@@ -235,7 +220,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
             });
           }
         };
-        reader.onerror = e => {
+        reader.onerror = (e) => {
           reject(e);
         };
       }
@@ -259,9 +244,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
         photos: 'granted',
       };
     } catch {
-      throw this.unavailable(
-        'Camera permissions are not available in this browser',
-      );
+      throw this.unavailable('Camera permissions are not available in this browser');
     }
   }
 

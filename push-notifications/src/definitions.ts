@@ -61,9 +61,7 @@ export interface PushNotificationsPlugin {
    *
    * @since 1.0.0
    */
-  removeDeliveredNotifications(
-    delivered: DeliveredNotifications,
-  ): Promise<void>;
+  removeDeliveredNotifications(delivered: DeliveredNotifications): Promise<void>;
 
   /**
    * Remove all the notifications from the notifications screen.
@@ -134,7 +132,7 @@ export interface PushNotificationsPlugin {
    */
   addListener(
     eventName: 'registration',
-    listenerFunc: (token: Token) => void,
+    listenerFunc: (token: Token) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -146,7 +144,7 @@ export interface PushNotificationsPlugin {
    */
   addListener(
     eventName: 'registrationError',
-    listenerFunc: (error: RegistrationError) => void,
+    listenerFunc: (error: RegistrationError) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -156,7 +154,7 @@ export interface PushNotificationsPlugin {
    */
   addListener(
     eventName: 'pushNotificationReceived',
-    listenerFunc: (notification: PushNotificationSchema) => void,
+    listenerFunc: (notification: PushNotificationSchema) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -166,7 +164,7 @@ export interface PushNotificationsPlugin {
    */
   addListener(
     eventName: 'pushNotificationActionPerformed',
-    listenerFunc: (notification: ActionPerformed) => void,
+    listenerFunc: (notification: ActionPerformed) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**

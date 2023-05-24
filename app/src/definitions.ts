@@ -183,7 +183,7 @@ export interface AppPlugin {
    */
   addListener(
     eventName: 'appStateChange',
-    listenerFunc: StateChangeListener,
+    listenerFunc: StateChangeListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -195,10 +195,7 @@ export interface AppPlugin {
    *
    * @since 4.1.0
    */
-  addListener(
-    eventName: 'pause',
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: 'pause', listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
    * Listen for when the app or activity are resumed.
@@ -210,10 +207,7 @@ export interface AppPlugin {
    *
    * @since 4.1.0
    */
-  addListener(
-    eventName: 'resume',
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: 'resume', listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
    * Listen for url open events for the app. This handles both custom URL scheme links as well
@@ -223,7 +217,7 @@ export interface AppPlugin {
    */
   addListener(
     eventName: 'appUrlOpen',
-    listenerFunc: URLOpenListener,
+    listenerFunc: URLOpenListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -253,7 +247,7 @@ export interface AppPlugin {
    */
   addListener(
     eventName: 'appRestoredResult',
-    listenerFunc: RestoredListener,
+    listenerFunc: RestoredListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
@@ -265,7 +259,7 @@ export interface AppPlugin {
    */
   addListener(
     eventName: 'backButton',
-    listenerFunc: BackButtonListener,
+    listenerFunc: BackButtonListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**

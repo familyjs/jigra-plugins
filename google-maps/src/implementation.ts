@@ -176,20 +176,15 @@ export interface JigraGoogleMapsPlugin extends Plugin {
   onScroll(args: OnScrollArgs): Promise<void>;
   dispatchMapEvent(args: { id: string; focus: boolean }): Promise<void>;
   getMapBounds(args: { id: string }): Promise<LatLngBounds>;
-  mapBoundsContains(
-    args: MapBoundsContainsArgs,
-  ): Promise<{ contains: boolean }>;
+  mapBoundsContains(args: MapBoundsContainsArgs): Promise<{ contains: boolean }>;
   mapBoundsExtend(args: MapBoundsExtendArgs): Promise<{ bounds: LatLngBounds }>;
 }
 
-const JigraGoogleMaps = registerPlugin<JigraGoogleMapsPlugin>(
-  'JigraGoogleMaps',
-  {
-    web: () => import('./web').then(m => new m.JigraGoogleMapsWeb()),
-  },
-);
+const JigraGoogleMaps = registerPlugin<JigraGoogleMapsPlugin>('JigraGoogleMaps', {
+  web: () => import('./web').then((m) => new m.JigraGoogleMapsWeb()),
+});
 
-JigraGoogleMaps.addListener('isMapInFocus', data => {
+JigraGoogleMaps.addListener('isMapInFocus', (data) => {
   const x = data.x;
   const y = data.y;
 

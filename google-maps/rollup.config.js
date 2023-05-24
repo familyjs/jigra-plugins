@@ -18,9 +18,5 @@ export default {
       inlineDynamicImports: true,
     },
   ],
-  external: [
-    '@jigra/core',
-    '@googlemaps/js-api-loader',
-    '@googlemaps/markerclusterer',
-  ],
+  external: ['@jigra/core', '@googlemaps/js-api-loader', '@googlemaps/markerclusterer'],
 };

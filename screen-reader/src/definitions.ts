@@ -70,7 +70,7 @@ export interface ScreenReaderPlugin {
    */
   addListener(
     eventName: 'stateChange',
-    listener: StateChangeListener,
+    listener: StateChangeListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**

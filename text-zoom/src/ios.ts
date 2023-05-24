@@ -1,11 +1,6 @@
 import { Plugins } from '@jigra/core';
 
-import type {
-  GetPreferredResult,
-  GetResult,
-  SetOptions,
-  TextZoomPlugin,
-} from './definitions';
+import type { GetPreferredResult, GetResult, SetOptions, TextZoomPlugin } from './definitions';
 
 export class TextZoomIOS implements TextZoomPlugin {
   static readonly TEXT_SIZE_REGEX = /(\d+)%/;

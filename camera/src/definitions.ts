@@ -57,9 +57,7 @@ export interface CameraPlugin {
    *
    * @since 1.0.0
    */
-  requestPermissions(
-    permissions?: CameraPluginPermissions,
-  ): Promise<PermissionStatus>;
+  requestPermissions(permissions?: CameraPluginPermissions): Promise<PermissionStatus>;
 }
 
 export interface ImageOptions {

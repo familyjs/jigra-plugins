@@ -25,15 +25,11 @@ import type {
 import { Encoding } from './definitions';
 
 function resolve(path: string): string {
-  const posix = path.split('/').filter(item => item !== '.');
+  const posix = path.split('/').filter((item) => item !== '.');
   const newPosix: string[] = [];
 
-  posix.forEach(item => {
-    if (
-      item === '..' &&
-      newPosix.length > 0 &&
-      newPosix[newPosix.length - 1] !== '..'
-    ) {
+  posix.forEach((item) => {
+    if (item === '..' && newPosix.length > 0 && newPosix[newPosix.length - 1] !== '..') {
       newPosix.pop();
     } else {
       newPosix.push(item);
@@ -48,10 +44,7 @@ function isPathParent(parent: string, children: string): boolean {
   const pathsA = parent.split('/');
   const pathsB = children.split('/');
 
-  return (
-    parent !== children &&
-    pathsA.every((value, index) => value === pathsB[index])
-  );
+  return parent !== children && pathsA.every((value, index) => value === pathsB[index]);
 }
 
 export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
@@ -100,8 +93,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
   }
 
   async dbRequest(cmd: string, args: any[]): Promise<any> {
-    const readFlag =
-      this._writeCmds.indexOf(cmd) !== -1 ? 'readwrite' : 'readonly';
+    const readFlag = this._writeCmds.indexOf(cmd) !== -1 ? 'readwrite' : 'readonly';
     return this.initDb().then((conn: IDBDatabase) => {
       return new Promise<IDBObjectStore>((resolve, reject) => {
         const tx: IDBTransaction = conn.transaction(['FileStorage'], readFlag);
@@ -113,13 +105,8 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     });
   }
 
-  async dbIndexRequest(
-    indexName: string,
-    cmd: string,
-    args: [any],
-  ): Promise<any> {
-    const readFlag =
-      this._writeCmds.indexOf(cmd) !== -1 ? 'readwrite' : 'readonly';
+  async dbIndexRequest(indexName: string, cmd: string, args: [any]): Promise<any> {
+    const readFlag = this._writeCmds.indexOf(cmd) !== -1 ? 'readwrite' : 'readonly';
     return this.initDb().then((conn: IDBDatabase) => {
       return new Promise<IDBObjectStore>((resolve, reject) => {
         const tx: IDBTransaction = conn.transaction(['FileStorage'], readFlag);
@@ -132,12 +119,8 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     });
   }
 
-  private getPath(
-    directory: Directory | undefined,
-    uriPath: string | undefined,
-  ): string {
-    const cleanedUriPath =
-      uriPath !== undefined ? uriPath.replace(/^[/]+|[/]+$/g, '') : '';
+  private getPath(directory: Directory | undefined, uriPath: string | undefined): string {
+    const cleanedUriPath = uriPath !== undefined ? uriPath.replace(/^[/]+|[/]+$/g, '') : '';
     let fsPath = '';
     if (directory !== undefined) fsPath += '/' + directory;
     if (uriPath !== '') fsPath += '/' + cleanedUriPath;
@@ -177,8 +160,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     const doRecursive = options.recursive;
 
     const occupiedEntry = (await this.dbRequest('get', [path])) as EntryObj;
-    if (occupiedEntry && occupiedEntry.type === 'directory')
-      throw Error('The supplied path is a directory.');
+    if (occupiedEntry && occupiedEntry.type === 'directory') throw Error('The supplied path is a directory.');
 
     const parentPath = path.substr(0, path.lastIndexOf('/'));
 
@@ -197,8 +179,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
 
     if (!encoding) {
       data = data.indexOf(',') >= 0 ? data.split(',')[1] : data;
-      if (!this.isBase64String(data))
-        throw Error('The supplied data is not valid base64 content.');
+      if (!this.isBase64String(data)) throw Error('The supplied data is not valid base64 content.');
     }
 
     const now = Date.now();
@@ -232,8 +213,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     let ctime = now;
 
     const occupiedEntry = (await this.dbRequest('get', [path])) as EntryObj;
-    if (occupiedEntry && occupiedEntry.type === 'directory')
-      throw Error('The supplied path is a directory.');
+    if (occupiedEntry && occupiedEntry.type === 'directory') throw Error('The supplied path is a directory.');
 
     const parentEntry = (await this.dbRequest('get', [parentPath])) as EntryObj;
     if (parentEntry === undefined) {
@@ -248,8 +228,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
       }
     }
 
-    if (!encoding && !this.isBase64String(data))
-      throw Error('The supplied data is not valid base64 content.');
+    if (!encoding && !this.isBase64String(data)) throw Error('The supplied data is not valid base64 content.');
 
     if (occupiedEntry !== undefined) {
       if (occupiedEntry.content !== undefined && !encoding) {
@@ -281,9 +260,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
 
     const entry = (await this.dbRequest('get', [path])) as EntryObj;
     if (entry === undefined) throw Error('File does not exist.');
-    const entries = await this.dbIndexRequest('by_folder', 'getAllKeys', [
-      IDBKeyRange.only(path),
-    ]);
+    const entries = await this.dbIndexRequest('by_folder', 'getAllKeys', [IDBKeyRange.only(path)]);
     if (entries.length !== 0) throw Error('Folder is not empty.');
 
     await this.dbRequest('delete', [path]);
@@ -303,10 +280,8 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     const parentEntry = (await this.dbRequest('get', [parentPath])) as EntryObj;
     const occupiedEntry = (await this.dbRequest('get', [path])) as EntryObj;
     if (depth === 1) throw Error('Cannot create Root directory');
-    if (occupiedEntry !== undefined)
-      throw Error('Current directory does already exist.');
-    if (!doRecursive && depth !== 2 && parentEntry === undefined)
-      throw Error('Parent directory must exist');
+    if (occupiedEntry !== undefined) throw Error('Current directory does already exist.');
+    if (!doRecursive && depth !== 2 && parentEntry === undefined) throw Error('Parent directory must exist');
 
     if (doRecursive && depth !== 2 && parentEntry === undefined) {
       const parentArgPath = parentPath.substr(parentPath.indexOf('/', 1));
@@ -340,13 +315,11 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
 
     if (entry === undefined) throw Error('Folder does not exist.');
 
-    if (entry.type !== 'directory')
-      throw Error('Requested path is not a directory');
+    if (entry.type !== 'directory') throw Error('Requested path is not a directory');
 
     const readDirResult = await this.readdir({ path, directory });
 
-    if (readDirResult.files.length !== 0 && !recursive)
-      throw Error('Folder is not empty');
+    if (readDirResult.files.length !== 0 && !recursive) throw Error('Folder is not empty');
 
     for (const entry of readDirResult.files) {
       const entryPath = `${path}/${entry.name}`;
@@ -370,16 +343,11 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
     const path: string = this.getPath(options.directory, options.path);
 
     const entry = (await this.dbRequest('get', [path])) as EntryObj;
-    if (options.path !== '' && entry === undefined)
-      throw Error('Folder does not exist.');
+    if (options.path !== '' && entry === undefined) throw Error('Folder does not exist.');
 
-    const entries: string[] = await this.dbIndexRequest(
-      'by_folder',
-      'getAllKeys',
-      [IDBKeyRange.only(path)],
-    );
+    const entries: string[] = await this.dbIndexRequest('by_folder', 'getAllKeys', [IDBKeyRange.only(path)]);
     const files = await Promise.all(
-      entries.map(async e => {
+      entries.map(async (e) => {
         let subEntry = (await this.dbRequest('get', [e])) as EntryObj;
         if (subEntry === undefined) {
           subEntry = (await this.dbRequest('get', [e + '/'])) as EntryObj;
@@ -392,7 +360,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
           mtime: subEntry.mtime,
           uri: subEntry.path,
         };
-      }),
+      })
     );
     return { files: files };
   }
@@ -470,10 +438,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
    * @param doRename whether to perform a rename or copy operation
    * @return a promise that resolves with the result
    */
-  private async _copy(
-    options: CopyOptions,
-    doRename = false,
-  ): Promise<CopyResult> {
+  private async _copy(options: CopyOptions, doRename = false): Promise<CopyResult> {
     let { toDirectory } = options;
     const { to, from, directory: fromDirectory } = options;
 
@@ -624,7 +589,7 @@ export class FilesystemWeb extends WebPlugin implements FilesystemPlugin {
               directory: fromDirectory,
               toDirectory,
             },
-            doRename,
+            doRename
           );
         }
 

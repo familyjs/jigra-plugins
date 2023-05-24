@@ -7,7 +7,7 @@ import { root } from './lib/repo.mjs';
 import { bootstrap, ls } from './lib/lerna.mjs';
 import { setPackageJsonDependencies } from './lib/version.mjs';
 
-const readMarkerFile = async p => {
+const readMarkerFile = async (p) => {
   try {
     return await readJSON(p);
   } catch (e) {
@@ -26,23 +26,21 @@ execute(async () => {
   const markerFile = await readMarkerFile(markerFilePath);
   const markerFileContents = Object.fromEntries(
     await Promise.all(
-      packages.map(async p => {
+      packages.map(async (p) => {
         const pkg = await readJSON(resolve(p.location, 'package.json'));
 
         return [
           p.name,
           Object.fromEntries(
-            Object.entries(pkg.devDependencies).filter(([k]) =>
-              PROJECTS.some(project => k === `@jigra/${project}`),
-            ),
+            Object.entries(pkg.devDependencies).filter(([k]) => PROJECTS.some((project) => k === `@jigra/${project}`))
           ),
         ];
-      }),
-    ),
+      })
+    )
   );
 
   await Promise.all(
-    packages.map(async p =>
+    packages.map(async (p) =>
       setPackageJsonDependencies(
         resolve(p.location, 'package.json'),
         markerFile
@@ -51,11 +49,11 @@ execute(async () => {
               Object.entries(markerFileContents[p.name]).map(([k]) => [
                 k,
                 `file:../../jigra/${k.replace(/^@jigra\//, '')}`,
-              ]),
+              ])
             ),
-        'devDependencies',
-      ),
-    ),
+        'devDependencies'
+      )
+    )
   );
 
   await bootstrap();
