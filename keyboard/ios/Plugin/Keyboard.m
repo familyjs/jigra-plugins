@@ -27,7 +27,7 @@ typedef enum : NSUInteger {
   ResizeNone,
   ResizeNative,
   ResizeBody,
-  ResizeNavify,
+  ResizeFamily,
 } ResizePolicy;
 
 
@@ -71,9 +71,9 @@ NSString* UITraitsClassString;
   if ([resizeMode isEqualToString:@"none"]) {
     self.keyboardResizes = ResizeNone;
     NSLog(@"KeyboardPlugin: no resize");
-  } else if ([resizeMode isEqualToString:@"navify"]) {
-    self.keyboardResizes = ResizeNavify;
-    NSLog(@"KeyboardPlugin: resize mode - navify");
+  } else if ([resizeMode isEqualToString:@"family"]) {
+    self.keyboardResizes = ResizeFamily;
+    NSLog(@"KeyboardPlugin: resize mode - family");
   } else if ([resizeMode isEqualToString:@"body"]) {
     self.keyboardResizes = ResizeBody;
     NSLog(@"KeyboardPlugin: resize mode - body");
@@ -84,14 +84,14 @@ NSString* UITraitsClassString;
   }
 
   self.hideFormAccessoryBar = YES;
-
+  
   NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-
+  
   [nc addObserver:self selector:@selector(onKeyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-
+  
   [nc removeObserver:self.webView name:UIKeyboardWillHideNotification object:nil];
   [nc removeObserver:self.webView name:UIKeyboardWillShowNotification object:nil];
   [nc removeObserver:self.webView name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -125,8 +125,11 @@ NSString* UITraitsClassString;
     [hideTimer invalidate];
   }
   CGRect rect = [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-  double height = rect.size.height;
-
+  CGRect webViewAbsolute = [self.webView convertRect:self.webView.frame toCoordinateSpace:self.webView.window.screen.coordinateSpace];
+  double height = (webViewAbsolute.size.height + webViewAbsolute.origin.y) - ( UIScreen.mainScreen.bounds.size.height - rect.size.height);
+  if (height < 0) {
+    height = 0;
+  }
   double duration = [[notification.userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue]+0.2;
   [self setKeyboardHeight:height delay:duration];
   [self resetScrollView];
@@ -181,7 +184,7 @@ NSString* UITraitsClassString;
     if (paddingBottom > 0) {
         height = screenHeight - paddingBottom;
     }
-
+    
     [self.bridge evalWithJs: [NSString stringWithFormat:@"(function() { var el = %@; var height = %d; if (el) { el.style.height = height > -1 ? height + 'px' : null; } })()", element, height]];
 }
 
@@ -189,11 +192,11 @@ NSString* UITraitsClassString;
 {
   CGRect f, wf = CGRectZero;
   UIWindow * window = nil;
-
+    
   if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(window)]) {
     window = [[[UIApplication sharedApplication] delegate] window];
   }
-
+  
   if (!window) {
     if (@available(iOS 13.0, *)) {
       UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
@@ -212,9 +215,9 @@ NSString* UITraitsClassString;
       [self resizeElement:@"document.body" withPaddingBottom:_paddingBottom withScreenHeight:(int)f.size.height];
       break;
     }
-    case ResizeNavify:
+    case ResizeFamily:
     {
-      [self resizeElement:@"document.querySelector('nav-app')" withPaddingBottom:_paddingBottom withScreenHeight:(int)f.size.height];
+      [self resizeElement:@"document.querySelector('fml-app')" withPaddingBottom:_paddingBottom withScreenHeight:(int)f.size.height];
       break;
     }
     case ResizeNative:
@@ -312,8 +315,8 @@ static IMP WKOriginalImp;
 - (void)setResizeMode:(JIGPluginCall *)call
 {
   NSString * mode = [call getString:@"mode" defaultValue:@"none"];
-  if ([mode isEqualToString:@"navify"]) {
-    self.keyboardResizes = ResizeNavify;
+  if ([mode isEqualToString:@"family"]) {
+    self.keyboardResizes = ResizeFamily;
   } else if ([mode isEqualToString:@"body"]) {
     self.keyboardResizes = ResizeBody;
   } else if ([mode isEqualToString:@"native"]) {
@@ -327,9 +330,9 @@ static IMP WKOriginalImp;
 - (void)getResizeMode:(JIGPluginCall *)call
 {
     NSString *mode;
-
-    if (self.keyboardResizes == ResizeNavify) {
-        mode = @"navify";
+    
+    if (self.keyboardResizes == ResizeFamily) {
+        mode = @"family";
     } else if(self.keyboardResizes == ResizeBody) {
         mode = @"body";
     } else if (self.keyboardResizes == ResizeNative) {
@@ -337,7 +340,7 @@ static IMP WKOriginalImp;
     } else {
         mode = @"none";
     }
-
+    
     NSDictionary *response = [NSDictionary dictionaryWithObject:mode forKey:@"mode"];
     [call resolve: response];
 }

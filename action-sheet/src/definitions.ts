@@ -65,7 +65,7 @@ export interface ActionSheetButton {
   style?: ActionSheetButtonStyle;
 
   /**
-   * Icon for the option (navicon naming convention)
+   * Icon for the option (famicon naming convention)
    *
    * This option is only supported on Web.
    *

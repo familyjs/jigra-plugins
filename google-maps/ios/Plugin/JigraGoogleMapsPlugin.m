@@ -7,12 +7,19 @@ JIG_PLUGIN(JigraGoogleMapsPlugin, "JigraGoogleMaps",
    JIG_PLUGIN_METHOD(create, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(addMarker, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(addMarkers, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(addPolygons, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(addPolylines, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(addCircles, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(removeMarker, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(removeMarkers, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(removeCircles, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(removePolygons, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(removePolylines, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(enableClustering, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(disableClustering, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(destroy, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(setCamera, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(getMapType, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(setMapType, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(enableIndoorMaps, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(enableTrafficLayer, JIGPluginReturnPromise);
@@ -21,4 +28,6 @@ JIG_PLUGIN(JigraGoogleMapsPlugin, "JigraGoogleMaps",
    JIG_PLUGIN_METHOD(setPadding, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(onScroll, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(getMapBounds, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(mapBoundsContains, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(mapBoundsExtend, JIGPluginReturnPromise);
 )

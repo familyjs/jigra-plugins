@@ -6,4 +6,6 @@ JIG_PLUGIN(JIGCameraPlugin, "Camera",
   JIG_PLUGIN_METHOD(pickImages, JIGPluginReturnPromise);
   JIG_PLUGIN_METHOD(checkPermissions, JIGPluginReturnPromise);
   JIG_PLUGIN_METHOD(requestPermissions, JIGPluginReturnPromise);
+  JIG_PLUGIN_METHOD(pickLimitedLibraryPhotos, JIGPluginReturnPromise);
+  JIG_PLUGIN_METHOD(getLimitedLibraryPhotos, JIGPluginReturnPromise);
 )

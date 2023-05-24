@@ -13,7 +13,7 @@ npx jig sync
 
 This plugin will use the following project variables (defined in your app's `variables.gradle` file):
 
-- `$androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.6.1`)
+- `androidxMaterialVersion`: version of `com.google.android.material:material` (default: `1.8.0`)
 
 ## PWA Notes
 
@@ -104,7 +104,7 @@ to select.
 | ----------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----- |
 | **`title`** | <code>string</code>                                                       | The title of the option                                                               | 1.0.0 |
 | **`style`** | <code><a href="#actionsheetbuttonstyle">ActionSheetButtonStyle</a></code> | The style of the option This option is only supported on iOS.                         | 1.0.0 |
-| **`icon`**  | <code>string</code>                                                       | Icon for the option (navicon naming convention) This option is only supported on Web. | 1.0.0 |
+| **`icon`**  | <code>string</code>                                                       | Icon for the option (famicon naming convention) This option is only supported on Web. | 1.0.0 |
 
 
 ### Enums

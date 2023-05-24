@@ -42,13 +42,13 @@ public class StatusBarPlugin: JIGPlugin {
     }
 
     func setAnimation(_ call: JIGPluginCall) {
-        let animation = call.getString("animation", "SLIDE")
-        if animation == "FADE" {
-            bridge?.statusBarAnimation = .fade
+        let animation = call.getString("animation", "FADE")
+        if animation == "SLIDE" {
+            bridge?.statusBarAnimation = .slide
         } else if animation == "NONE" {
             bridge?.statusBarAnimation = .none
         } else {
-            bridge?.statusBarAnimation = .slide
+            bridge?.statusBarAnimation = .fade
         }
     }
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 module.exports = {
-  ...require('@navify/swiftlint-config'),
+  ...require('@familyjs/swiftlint-config'),
   // eslint-disable-next-line no-template-curly-in-string
   included: ['${PWD}/ios/Plugin'],
   identifier_name: {

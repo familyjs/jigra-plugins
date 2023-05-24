@@ -78,10 +78,10 @@ const config: JigraConfig = {
 export default config;
 ```
 
-## Compatibility with `cordova-plugin-navify-keyboard`
+## Compatibility with `cordova-plugin-family-keyboard`
 
 To maintain compatibility with
-[`cordova-plugin-navify-keyboard`](https://github.com/navify/cordova-plugin-navify-keyboard),
+[`cordova-plugin-family-keyboard`](https://github.com/familyjs/cordova-plugin-family-keyboard),
 the following events also work with `window.addEventListener`:
 
 - `keyboardWillShow`
@@ -376,7 +376,7 @@ Remove all native listeners for this plugin.
 | Members      | Value                 | Description                                                                                                          | Since |
 | ------------ | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
 | **`Body`**   | <code>'body'</code>   | Only the `body` HTML element will be resized. Relative units are not affected, because the viewport does not change. | 1.0.0 |
-| **`Navify`** | <code>'navify'</code> | Only the `nav-app` HTML element will be resized. Use it only for Navify Framework apps.                              | 1.0.0 |
+| **`Family`** | <code>'family'</code> | Only the `fml-app` HTML element will be resized. Use it only for Family Framework apps.                              | 1.0.0 |
 | **`Native`** | <code>'native'</code> | The whole native Web View will be resized when the keyboard shows/hides. This affects the `vh` relative unit.        | 1.0.0 |
 | **`None`**   | <code>'none'</code>   | Neither the app nor the Web View are resized.                                                                        | 1.0.0 |
 

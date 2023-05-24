@@ -478,7 +478,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)\n$(FRAMEWORK_SEARCH_PATHS)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = app.web.jigrajs.plugins.network;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jigrajs.plugins.network;
 				PRODUCT_NAME = Plugin;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -504,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = app.web.jigrajs.plugins.network;
+				PRODUCT_BUNDLE_IDENTIFIER = app.jigrajs.plugins.network;
 				PRODUCT_NAME = Plugin;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;

@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license = package['license']
   s.homepage = 'https://jigrajs.web.app'
   s.author = package['author']
-  s.source = { :git => 'https://github.com/navify/jigra-plugins.git', :tag => package['name'] + '@' + package['version'] }
+  s.source = { :git => 'https://github.com/familyjs/jigra-plugins.git', :tag => package['name'] + '@' + package['version'] }
   s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}', 'browser/ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
   s.ios.deployment_target  = '13.0'
   s.dependency 'Jigra'

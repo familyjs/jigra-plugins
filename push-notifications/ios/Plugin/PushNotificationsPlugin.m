@@ -5,6 +5,7 @@
 // each method the plugin supports using the JIG_PLUGIN_METHOD macro.
 JIG_PLUGIN(PushNotificationsPlugin, "PushNotifications",
            JIG_PLUGIN_METHOD(register, JIGPluginReturnPromise);
+           JIG_PLUGIN_METHOD(unregister, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(checkPermissions, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(requestPermissions, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(getDeliveredNotifications, JIGPluginReturnPromise);

@@ -3,11 +3,15 @@ import { registerPlugin } from '@jigra/core';
 
 import type {
   CameraConfig,
+  Circle,
   GoogleMapConfig,
+  LatLng,
   LatLngBounds,
   MapPadding,
   MapType,
   Marker,
+  Polygon,
+  Polyline,
 } from './definitions';
 
 /**
@@ -54,6 +58,35 @@ export interface RemoveMarkersArgs {
 export interface AddMarkerArgs {
   id: string;
   marker: Marker;
+}
+
+export interface AddPolygonsArgs {
+  id: string;
+  polygons: Polygon[];
+}
+
+export interface RemovePolygonsArgs {
+  id: string;
+  polygonIds: string[];
+}
+
+export interface AddCirclesArgs {
+  id: string;
+  circles: Circle[];
+}
+
+export interface RemoveCirclesArgs {
+  id: string;
+  circleIds: string[];
+}
+export interface AddPolylinesArgs {
+  id: string;
+  polylines: Polyline[];
+}
+
+export interface RemovePolylinesArgs {
+  id: string;
+  polylineIds: string[];
 }
 
 export interface CameraArgs {
@@ -105,16 +138,35 @@ export interface OnScrollArgs {
   };
 }
 
+export interface MapBoundsContainsArgs {
+  bounds: LatLngBounds;
+  point: LatLng;
+}
+
+export type MapBoundsExtendArgs = MapBoundsContainsArgs;
+
+export interface EnableClusteringArgs {
+  id: string;
+  minClusterSize?: number;
+}
+
 export interface JigraGoogleMapsPlugin extends Plugin {
   create(options: CreateMapArgs): Promise<void>;
   addMarker(args: AddMarkerArgs): Promise<{ id: string }>;
   addMarkers(args: AddMarkersArgs): Promise<{ ids: string[] }>;
   removeMarker(args: RemoveMarkerArgs): Promise<void>;
   removeMarkers(args: RemoveMarkersArgs): Promise<void>;
-  enableClustering(args: { id: string }): Promise<void>;
+  addPolygons(args: AddPolygonsArgs): Promise<{ ids: string[] }>;
+  removePolygons(args: RemovePolygonsArgs): Promise<void>;
+  addCircles(args: AddCirclesArgs): Promise<{ ids: string[] }>;
+  removeCircles(args: RemoveCirclesArgs): Promise<void>;
+  addPolylines(args: AddPolylinesArgs): Promise<{ ids: string[] }>;
+  removePolylines(args: RemovePolylinesArgs): Promise<void>;
+  enableClustering(args: EnableClusteringArgs): Promise<void>;
   disableClustering(args: { id: string }): Promise<void>;
   destroy(args: DestroyMapArgs): Promise<void>;
   setCamera(args: CameraArgs): Promise<void>;
+  getMapType(args: { id: string }): Promise<{ type: string }>;
   setMapType(args: MapTypeArgs): Promise<void>;
   enableIndoorMaps(args: IndoorMapArgs): Promise<void>;
   enableTrafficLayer(args: TrafficLayerArgs): Promise<void>;
@@ -124,6 +176,10 @@ export interface JigraGoogleMapsPlugin extends Plugin {
   onScroll(args: OnScrollArgs): Promise<void>;
   dispatchMapEvent(args: { id: string; focus: boolean }): Promise<void>;
   getMapBounds(args: { id: string }): Promise<LatLngBounds>;
+  mapBoundsContains(
+    args: MapBoundsContainsArgs,
+  ): Promise<{ contains: boolean }>;
+  mapBoundsExtend(args: MapBoundsExtendArgs): Promise<{ bounds: LatLngBounds }>;
 }
 
 const JigraGoogleMaps = registerPlugin<JigraGoogleMapsPlugin>(

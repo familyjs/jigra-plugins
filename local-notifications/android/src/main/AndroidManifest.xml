@@ -1,11 +1,10 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.web.jigrajs.plugins.localnotifications">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
-        <receiver android:name="app.web.jigrajs.plugins.localnotifications.TimedNotificationPublisher" />
-        <receiver android:name="app.web.jigrajs.plugins.localnotifications.NotificationDismissReceiver" />
+        <receiver android:name="app.jigrajs.plugins.localnotifications.TimedNotificationPublisher" />
+        <receiver android:name="app.jigrajs.plugins.localnotifications.NotificationDismissReceiver" />
         <receiver
-            android:name="app.web.jigrajs.plugins.localnotifications.LocalNotificationRestoreReceiver"
+            android:name="app.jigrajs.plugins.localnotifications.LocalNotificationRestoreReceiver"
             android:directBootAware="true"
             android:exported="false">
             <intent-filter>
@@ -17,4 +16,5 @@
     </application>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 </manifest>

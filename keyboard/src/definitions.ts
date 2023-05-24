@@ -109,12 +109,12 @@ export enum KeyboardResize {
   Body = 'body',
 
   /**
-   * Only the `nav-app` HTML element will be resized.
-   * Use it only for Navify Framework apps.
+   * Only the `fml-app` HTML element will be resized.
+   * Use it only for Family Framework apps.
    *
    * @since 1.0.0
    */
-  Navify = 'navify',
+  Family = 'family',
 
   /**
    * The whole native Web View will be resized when the keyboard shows/hides.
