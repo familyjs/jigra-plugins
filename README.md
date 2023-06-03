@@ -2,7 +2,7 @@
 
 This repository contains the official Jigra plugins maintained by the Jigra team. You can find more plugins in the [Jigra Community](https://github.com/jigra-community/).
 
-> These plugins are for Jigra 4
+> These plugins are for Jigra 5
 
 ## Plugins
 
