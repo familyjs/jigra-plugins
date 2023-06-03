@@ -183,12 +183,14 @@ class JigraGoogleMap(
                     val googleMapMarker = googleMap?.addMarker(markerOptions.await())
                     it.googleMapMarker = googleMapMarker
 
-                    if (clusterManager != null) {
-                        googleMapMarker?.remove()
-                    }
+                    if (googleMapMarker != null) {
+                        if (clusterManager != null) {
+                            googleMapMarker.remove()
+                        }
 
-                    markers[googleMapMarker!!.id] = it
-                    markerIds.add(googleMapMarker.id)
+                        markers[googleMapMarker.id] = it
+                        markerIds.add(googleMapMarker.id)
+                    }
                 }
 
                 if (clusterManager != null) {
