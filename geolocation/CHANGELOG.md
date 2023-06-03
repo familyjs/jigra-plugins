@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/geolocation@5.0.0...@jigra/geolocation@5.0.1) (2023-06-03)
+
+
+### Bug Fixes
+
+* **android:** add appCompat libraries for maven releases ([86f0f56](https://github.com/familyjs/jigra-plugins/commit/86f0f56fd32527f18ba7a147e83858bf101be8e0))
+* Use Jigra 5 final ([7be5094](https://github.com/familyjs/jigra-plugins/commit/7be509425c5cc9f21b1f9e78794b2c6b76ca7702))
+
+
+
+
+
 # [5.0.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/geolocation@1.4.0...@jigra/geolocation@5.0.0) (2023-05-24)
 
 
