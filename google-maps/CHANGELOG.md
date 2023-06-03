@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.0.1...@jigra/google-maps@5.1.0) (2023-06-03)
+
+
+### Bug Fixes
+
+* **google-maps:** Added null check to addMarkers method ([27a7351](https://github.com/familyjs/jigra-plugins/commit/27a7351651e589199a23ebc664d9cd3d5f29ecd5))
+
+
+### Features
+
+* **google-maps:** Add ability to set language and region on map ([e647ae5](https://github.com/familyjs/jigra-plugins/commit/e647ae5297a9bd157a9444edc856917d683eabed))
+
+
+
+
+
 ## [5.0.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.0.0...@jigra/google-maps@5.0.1) (2023-06-03)
 
 
