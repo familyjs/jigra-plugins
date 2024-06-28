@@ -4,6 +4,7 @@ import android.Manifest;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import app.jigrajs.plugins.filesystem.exceptions.CopyFailedException;
 import app.jigrajs.plugins.filesystem.exceptions.DirectoryExistsException;
 import app.jigrajs.plugins.filesystem.exceptions.DirectoryNotFoundException;
@@ -17,7 +18,10 @@ import com.getjigra.PluginMethod;
 import com.getjigra.annotation.JigraPlugin;
 import com.getjigra.annotation.Permission;
 import com.getjigra.annotation.PermissionCallback;
-import java.io.*;
+import com.getjigra.plugin.util.HttpRequestHandler;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -376,6 +380,31 @@ public class FilesystemPlugin extends Plugin {
         this._copy(call, false);
     }
 
+    @PluginMethod
+    public void downloadFile(PluginCall call) {
+        try {
+            String directory = call.getString("directory", Environment.DIRECTORY_DOWNLOADS);
+
+            if (isPublicDirectory(directory) && !isStoragePermissionGranted()) {
+                requestAllPermissions(call, "permissionCallback");
+            } else {
+                HttpRequestHandler.ProgressEmitter emitter = (bytes, contentLength) -> {
+                    JSObject ret = new JSObject();
+                    ret.put("url", call.getString("url"));
+                    ret.put("bytes", bytes);
+                    ret.put("contentLength", contentLength);
+
+                    notifyListeners("progress", ret);
+                };
+
+                JSObject response = implementation.downloadFile(call, bridge, emitter);
+                call.resolve(response);
+            }
+        } catch (Exception ex) {
+            call.reject("Error downloading file: " + ex.getLocalizedMessage(), ex);
+        }
+    }
+
     private void _copy(PluginCall call, Boolean doRename) {
         String from = call.getString("from");
         String to = call.getString("to");
@@ -447,6 +476,9 @@ public class FilesystemPlugin extends Plugin {
                 break;
             case "stat":
                 stat(call);
+                break;
+            case "downloadFile":
+                downloadFile(call);
                 break;
         }
     }

@@ -31,5 +31,10 @@
     "prettier": "~2.4.0",
     "prompts": "^2.3.2"
   },
-  "prettier": "@familyjs/prettier-config"
+  "prettier": "@familyjs/prettier-config",
+  "swiftlint": {
+    "identifier_name": {
+      "min_length": 1
+    }
+  }
 }
