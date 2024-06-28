@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.1.2...@jigra/google-maps@5.2.0) (2024-06-28)
+
+
+### Bug Fixes
+
+* **google-maps:** Apply `zIndex` for marker in Android and default to 0 ([49ffb09](https://github.com/familyjs/jigra-plugins/commit/49ffb09a00ffc06a2f9be47e83f56335a5a363fc))
+
+
+### Features
+
+* **google-maps:** add `fitBounds` to Map object ([ac05e3a](https://github.com/familyjs/jigra-plugins/commit/ac05e3aa8f07ac544923ee75e37a10e6ed16469c))
+
+
+
+
+
 ## [5.1.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.1.1...@jigra/google-maps@5.1.2) (2024-06-28)
 
 **Note:** Version bump only for package @jigra/google-maps

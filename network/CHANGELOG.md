@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.5](https://github.com/familyjs/jigra-plugins/compare/@jigra/network@5.0.4...@jigra/network@5.0.5) (2024-06-28)
+
+
+### Bug Fixes
+
+* **network:** fire networkStatusChanged if network lost while app is ([1e7e941](https://github.com/familyjs/jigra-plugins/commit/1e7e941f2ec6f99ce940a50011143efb67e1f9ca))
+
+
+
+
+
 ## [5.0.4](https://github.com/familyjs/jigra-plugins/compare/@jigra/network@5.0.3...@jigra/network@5.0.4) (2024-06-28)
 
 **Note:** Version bump only for package @jigra/network
