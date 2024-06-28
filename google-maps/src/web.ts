@@ -22,6 +22,7 @@ import type {
   OnScrollArgs,
   MapBoundsContainsArgs,
   EnableClusteringArgs,
+  FitBoundsArgs,
   MapBoundsExtendArgs,
   AddPolygonsArgs,
   RemovePolygonsArgs,
@@ -232,6 +233,12 @@ export class JigraGoogleMapsWeb extends WebPlugin implements JigraGoogleMapsPlug
         lng: bounds.getNorthEast().lng(),
       },
     });
+  }
+
+  async fitBounds(_args: FitBoundsArgs): Promise<void> {
+    const map = this.maps[_args.id].map;
+    const bounds = this.getLatLngBounds(_args.bounds);
+    map.fitBounds(bounds, _args.padding);
   }
 
   async addMarkers(_args: AddMarkersArgs): Promise<{ ids: string[] }> {

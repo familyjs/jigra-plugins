@@ -748,6 +748,30 @@ public class JigraGoogleMapsPlugin: JIGPlugin, GMSMapViewDelegate {
         }
     }
 
+    @objc func fitBounds(_ call: JIGPluginCall) {
+        do {
+            guard let id = call.getString("id") else {
+                throw GoogleMapErrors.invalidMapId
+            }
+
+            guard let map = self.maps[id] else {
+                throw GoogleMapErrors.mapNotFound
+            }
+
+            guard let boundsObject = call.getObject("bounds") else {
+                throw GoogleMapErrors.invalidArguments("Invalid bounds provided")
+            }
+
+            let bounds = try getGMSCoordinateBounds(boundsObject)
+            let padding = CGFloat(call.getInt("padding", 0))
+
+            map.fitBounds(bounds: bounds, padding: padding)
+            call.resolve()
+        } catch {
+            handleError(call, error: error)
+        }
+    }
+
     @objc func mapBoundsExtend(_ call: JIGPluginCall) {
         do {
             guard let boundsObject = call.getObject("bounds") else {

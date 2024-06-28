@@ -55,6 +55,12 @@ export interface GoogleMapInterface {
   enableAccessibilityElements(enabled: boolean): Promise<void>;
   enableCurrentLocation(enabled: boolean): Promise<void>;
   setPadding(padding: MapPadding): Promise<void>;
+  /**
+   * Sets the map viewport to contain the given bounds.
+   * @param bounds The bounds to fit in the viewport.
+   * @param padding Optional padding to apply in pixels. The bounds will be fit in the part of the map that remains after padding is removed.
+   */
+  fitBounds(bounds: LatLngBounds, padding?: number): Promise<void>;
   setOnBoundsChangedListener(callback?: MapListenerCallback<CameraIdleCallbackData>): Promise<void>;
   setOnCameraIdleListener(callback?: MapListenerCallback<CameraIdleCallbackData>): Promise<void>;
   setOnCameraMoveStartedListener(callback?: MapListenerCallback<CameraMoveStartedCallbackData>): Promise<void>;
@@ -449,15 +455,23 @@ export class GoogleMap {
     );
   }
 
+  async fitBounds(bounds: LatLngBounds, padding?: number): Promise<void> {
+    return JigraGoogleMaps.fitBounds({
+      id: this.id,
+      bounds,
+      padding,
+    });
+  }
+
   initScrolling(): void {
-    const ionContents = document.getElementsByTagName('fml-content');
+    const fmlContents = document.getElementsByTagName('fml-content');
 
     // eslint-disable-next-line @typescript-eslint/prefer-for-of
-    for (let i = 0; i < ionContents.length; i++) {
-      (ionContents[i] as any).scrollEvents = true;
+    for (let i = 0; i < fmlContents.length; i++) {
+      (fmlContents[i] as any).scrollEvents = true;
     }
 
-    window.addEventListener('ionScroll', this.handleScrollEvent);
+    window.addEventListener('fmlScroll', this.handleScrollEvent);
     window.addEventListener('scroll', this.handleScrollEvent);
     window.addEventListener('resize', this.handleScrollEvent);
     if (screen.orientation) {
@@ -472,7 +486,7 @@ export class GoogleMap {
   }
 
   disableScrolling(): void {
-    window.removeEventListener('ionScroll', this.handleScrollEvent);
+    window.removeEventListener('fmlScroll', this.handleScrollEvent);
     window.removeEventListener('scroll', this.handleScrollEvent);
     window.removeEventListener('resize', this.handleScrollEvent);
     if (screen.orientation) {
