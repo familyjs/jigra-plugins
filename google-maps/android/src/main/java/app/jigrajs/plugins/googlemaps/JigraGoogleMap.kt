@@ -303,7 +303,7 @@ class JigraGoogleMap(
                     }
                     val googleMapPolyline = googleMap?.addPolyline(polylineOptions.await())
                     googleMapPolyline?.tag = it.tag
-                    
+
                     it.googleMapsPolyline = googleMapPolyline
 
                     polylines[googleMapPolyline!!.id] = it
@@ -727,7 +727,7 @@ class JigraGoogleMap(
 
         return polygonOptions
     }
-    
+
     private fun buildPolyline(line: JigraGoogleMapPolyline): PolylineOptions {
         val polylineOptions = PolylineOptions()
         polylineOptions.width(line.strokeWidth * this.config.devicePixelRatio)
@@ -759,6 +759,7 @@ class JigraGoogleMap(
         markerOptions.alpha(marker.opacity)
         markerOptions.flat(marker.isFlat)
         markerOptions.draggable(marker.draggable)
+        markerOptions.zIndex(marker.zIndex)
 
         if (!marker.iconUrl.isNullOrEmpty()) {
             if (this.markerIcons.contains(marker.iconUrl)) {
