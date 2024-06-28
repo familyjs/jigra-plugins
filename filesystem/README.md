@@ -20,8 +20,7 @@ Read about [Configuring iOS](https://jigrajs.web.app/docs/ios/configuration) for
 
 ## Android
 
-If using <a href="#directory">`Directory.Documents`</a> or
-`Directory.ExternalStorage`, this API requires the following permissions be added to your `AndroidManifest.xml`:
+If using <a href="#directory">`Directory.Documents`</a> or <a href="#directory">`Directory.ExternalStorage`</a>, in Android 10 and older, this API requires the following permissions be added to your `AndroidManifest.xml`:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -30,8 +29,7 @@ If using <a href="#directory">`Directory.Documents`</a> or
 
 Read about [Setting Permissions](https://jigrajs.web.app/docs/android/configuration#setting-permissions) in the [Android Guide](https://jigrajs.web.app/docs/android) for more information on setting Android permissions.
 
-Note that <a href="#directory">`Directory.Documents`</a> and
-`Directory.ExternalStorage` are only available on Android 9 or older.
+Note that <a href="#directory">`Directory.ExternalStorage`</a> is only available on Android 9 or older and <a href="#directory">`Directory.Documents`</a> only allows to access the files/foders created by your app on Android on Android 11 and newer.
 
 Working with large files may require you to add `android:largeHeap="true"` to the `<application>` tag in `AndroidManifest.xml`.
 
