@@ -127,6 +127,8 @@ jobs:
             */node_modules
           key: dependency-cache-${{ hashFiles('package.json', '*/package.json') }}
       - run: npm install
+      - run: chmod +x ./gradlew
+        working-directory: ${{ matrix.plugin }}
       - run: npm run verify:android
         working-directory: ${{ matrix.plugin }}
   verify-web:
