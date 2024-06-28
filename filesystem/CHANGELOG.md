@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.1.0...@jigra/filesystem@5.1.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* **filesystem:** don't request permissions on 11 or newer ([12dbde3](https://github.com/familyjs/jigra-plugins/commit/12dbde3d2142c8a44d30efe5caf48574164a96f5))
+
+
+
+
+
 # [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.0.5...@jigra/filesystem@5.1.0) (2024-06-28)
 
 
