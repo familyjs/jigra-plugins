@@ -52,6 +52,7 @@ NSTimer *hideTimer;
 NSString* UIClassString;
 NSString* WKClassString;
 NSString* UITraitsClassString;
+double stageManagerOffset;
 
 - (void)load
 {
@@ -84,14 +85,14 @@ NSString* UITraitsClassString;
   }
 
   self.hideFormAccessoryBar = YES;
-  
+
   NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-  
+
   [nc addObserver:self selector:@selector(onKeyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
   [nc addObserver:self selector:@selector(onKeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-  
+
   [nc removeObserver:self.webView name:UIKeyboardWillHideNotification object:nil];
   [nc removeObserver:self.webView name:UIKeyboardWillShowNotification object:nil];
   [nc removeObserver:self.webView name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -125,11 +126,23 @@ NSString* UITraitsClassString;
     [hideTimer invalidate];
   }
   CGRect rect = [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-  CGRect webViewAbsolute = [self.webView convertRect:self.webView.frame toCoordinateSpace:self.webView.window.screen.coordinateSpace];
-  double height = (webViewAbsolute.size.height + webViewAbsolute.origin.y) - ( UIScreen.mainScreen.bounds.size.height - rect.size.height);
-  if (height < 0) {
-    height = 0;
+
+  double height = rect.size.height;
+
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (stageManagerOffset > 0) {
+      height = stageManagerOffset;
+    } else {
+      CGRect webViewAbsolute = [self.webView convertRect:self.webView.frame toCoordinateSpace:self.webView.window.screen.coordinateSpace];
+      height = (webViewAbsolute.size.height + webViewAbsolute.origin.y) - (UIScreen.mainScreen.bounds.size.height - rect.size.height);
+      if (height < 0) {
+        height = 0;
+      }
+
+      stageManagerOffset = height;
+    }
   }
+
   double duration = [[notification.userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue]+0.2;
   [self setKeyboardHeight:height delay:duration];
   [self resetScrollView];
@@ -158,6 +171,8 @@ NSString* UITraitsClassString;
   [self.bridge triggerWindowJSEventWithEventName:@"keyboardDidHide"];
   [self notifyListeners:@"keyboardDidHide" data:nil];
   [self resetScrollView];
+
+  stageManagerOffset = 0;
 }
 
 - (void)setKeyboardHeight:(int)height delay:(NSTimeInterval)delay
@@ -184,7 +199,7 @@ NSString* UITraitsClassString;
     if (paddingBottom > 0) {
         height = screenHeight - paddingBottom;
     }
-    
+
     [self.bridge evalWithJs: [NSString stringWithFormat:@"(function() { var el = %@; var height = %d; if (el) { el.style.height = height > -1 ? height + 'px' : null; } })()", element, height]];
 }
 
@@ -192,11 +207,11 @@ NSString* UITraitsClassString;
 {
   CGRect f, wf = CGRectZero;
   UIWindow * window = nil;
-    
+
   if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(window)]) {
     window = [[[UIApplication sharedApplication] delegate] window];
   }
-  
+
   if (!window) {
     if (@available(iOS 13.0, *)) {
       UIScene *scene = [UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
@@ -330,7 +345,7 @@ static IMP WKOriginalImp;
 - (void)getResizeMode:(JIGPluginCall *)call
 {
     NSString *mode;
-    
+
     if (self.keyboardResizes == ResizeFamily) {
         mode = @"family";
     } else if(self.keyboardResizes == ResizeBody) {
@@ -340,7 +355,7 @@ static IMP WKOriginalImp;
     } else {
         mode = @"none";
     }
-    
+
     NSDictionary *response = [NSDictionary dictionaryWithObject:mode forKey:@"mode"];
     [call resolve: response];
 }
