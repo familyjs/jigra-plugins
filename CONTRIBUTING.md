@@ -25,6 +25,7 @@ Sometimes, it may be necessary to work on Jigra in parellel with the plugin(s). 
 5. Toggle each plugin to use your local copy of Jigra.
 
     ```shell
+    npm install
     npm run toggle-local
     ```
 
