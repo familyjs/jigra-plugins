@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/device@5.0.2...@jigra/device@5.0.3) (2024-06-28)
+
+
+### Bug Fixes
+
+* **device:** webViewVersion not working on Firefox > v108 ([4fb7f6a](https://github.com/familyjs/jigra-plugins/commit/4fb7f6aca8ec45d7beef09c538f55b3861c2198b))
+
+
+
+
+
 ## [5.0.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/device@5.0.1...@jigra/device@5.0.2) (2023-06-03)
 
 **Note:** Version bump only for package @jigra/device

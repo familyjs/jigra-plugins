@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.2...@jigra/splash-screen@5.0.3) (2024-06-28)
+
+
+### Bug Fixes
+
+* **keyboard:** fixing webview resizing when keyboard visible ([7e0f65f](https://github.com/familyjs/jigra-plugins/commit/7e0f65f9a300f907456d68eeed71aade3a50ff7f))
+* **splash-screen:** Avoid crash when splash resources not found ([6851fd3](https://github.com/familyjs/jigra-plugins/commit/6851fd370883e1cfc43ce02568c294e8cb777a0a))
+
+
+
+
+
 ## [5.0.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.1...@jigra/splash-screen@5.0.2) (2023-06-03)
 
 **Note:** Version bump only for package @jigra/splash-screen
