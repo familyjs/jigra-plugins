@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.6](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@5.0.5...@jigra/local-notifications@5.0.6) (2024-06-28)
+
+
+### Bug Fixes
+
+* **local-notifications:** make `requestPermissions` resolve if granted ([04275a4](https://github.com/familyjs/jigra-plugins/commit/04275a4d1ced2ecbbf00ba02220a808e14fe1cc0))
+
+
+
+
+
 ## [5.0.5](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@5.0.4...@jigra/local-notifications@5.0.5) (2024-06-28)
 
 **Note:** Version bump only for package @jigra/local-notifications

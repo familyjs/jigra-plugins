@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.2.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.2.0...@jigra/google-maps@5.2.1) (2024-06-28)
+
+
+### Bug Fixes
+
+* **google-maps:** Add missing listeners to `removeAllMapListeners` ([783e586](https://github.com/familyjs/jigra-plugins/commit/783e5862f5d78fa4b7ccfb73c5537b722a21a1c3))
+
+
+
+
+
 # [5.2.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.1.2...@jigra/google-maps@5.2.0) (2024-06-28)
 
 

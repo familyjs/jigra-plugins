@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.6](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.0.5...@jigra/push-notifications@5.0.6) (2024-06-28)
+
+
+### Bug Fixes
+
+* **push-notifications:** make `requestPermissions` resolve if granted ([98e5c27](https://github.com/familyjs/jigra-plugins/commit/98e5c273cd37111f1ec45c84c4cfada46f51964a))
+
+
+
+
+
 ## [5.0.5](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.0.4...@jigra/push-notifications@5.0.5) (2024-06-28)
 
 **Note:** Version bump only for package @jigra/push-notifications
