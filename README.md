@@ -32,3 +32,23 @@ This repository contains the official Jigra plugins maintained by the Jigra team
 | [`@jigra/status-bar`](https://jigrajs.web.app/docs/apis/status-bar) | [`./status-bar`](./status-bar) | [![npm badge](https://img.shields.io/npm/v/@jigra/status-bar?style=flat-square)](https://www.npmjs.com/package/@jigra/status-bar)
 | [`@jigra/text-zoom`](https://jigrajs.web.app/docs/apis/text-zoom) | [`./text-zoom`](./text-zoom) | [![npm badge](https://img.shields.io/npm/v/@jigra/text-zoom?style=flat-square)](https://www.npmjs.com/package/@jigra/text-zoom)
 | [`@jigra/toast`](https://jigrajs.web.app/docs/apis/toast) | [`./toast`](./toast) | [![npm badge](https://img.shields.io/npm/v/@jigra/toast?style=flat-square)](https://www.npmjs.com/package/@jigra/toast)
+
+## Independent Plugins
+
+These are official Jigra plugins that are not contained in this repository.
+
+| GitHub | Package | Version |
+| --- | --- | --- |
+| [Background Runner](https://github.com/familyjs/jigra-background-runner) | [`@jigra/background-runner`](https://jigrajs.web.app/docs/apis/background-runner) | [![npm badge](https://img.shields.io/npm/v/@jigra/background-runner?style=flat-square)](https://www.npmjs.com/package/@jigra/background-runner) |
+
+## Jigra Labs
+
+These are experimental plugins. Use at your own risk.
+
+| GitHub | Package | Version |
+| --- | --- | --- |
+| [Watch](https://github.com/familyjs/JigraWatch) | [`@jigra/watch`](https://jigrajs.web.app/docs/apis/watch) | [![npm badge](https://img.shields.io/npm/v/@jigra/watch?style=flat-square)](https://www.npmjs.com/package/@jigra/watch) |
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
