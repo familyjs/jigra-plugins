@@ -9,4 +9,4 @@ outputs:
     description: An array of relative paths to packages that were changed
 runs:
   using: node12
-  main: main.js
+  main: main.mjs
