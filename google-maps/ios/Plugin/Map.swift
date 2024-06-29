@@ -160,6 +160,7 @@ public class Map {
                 let path = CGMutablePath()
 
                 path.addRect(self.mapViewController.view.bounds)
+                // swiftlint:disable:next identifier_name
                 maskBounds.forEach { b in
                     path.addRect(b)
                 }

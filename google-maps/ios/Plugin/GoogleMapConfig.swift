@@ -4,8 +4,8 @@ import Jigra
 public struct GoogleMapConfig: Codable {
     let width: Double
     let height: Double
-    let x: Double
-    let y: Double
+    let x: Double // swiftlint:disable:this identifier_name
+    let y: Double // swiftlint:disable:this identifier_name
     let center: LatLng
     let zoom: Double
     let styles: String?
@@ -19,10 +19,12 @@ public struct GoogleMapConfig: Codable {
             throw GoogleMapErrors.invalidArguments("GoogleMapConfig object is missing the required 'height' property")
         }
 
+        // swiftlint:disable:next identifier_name
         guard let x = fromJSObject["x"] as? Double else {
             throw GoogleMapErrors.invalidArguments("GoogleMapConfig object is missing the required 'x' property")
         }
 
+        // swiftlint:disable:next identifier_name
         guard let y = fromJSObject["y"] as? Double else {
             throw GoogleMapErrors.invalidArguments("GoogleMapConfig object is missing the required 'y' property")
         }

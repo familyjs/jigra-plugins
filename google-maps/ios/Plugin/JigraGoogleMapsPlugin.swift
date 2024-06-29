@@ -50,10 +50,12 @@ extension CGRect {
             throw GoogleMapErrors.invalidArguments("bounds object is missing the required 'height' property")
         }
 
+        // swiftlint:disable:next identifier_name
         guard let x = jsObject["x"] as? Double else {
             throw GoogleMapErrors.invalidArguments("bounds object is missing the required 'x' property")
         }
 
+        // swiftlint:disable:next identifier_name
         guard let y = jsObject["y"] as? Double else {
             throw GoogleMapErrors.invalidArguments("bounds object is missing the required 'y' property")
         }
@@ -1072,6 +1074,7 @@ public class JigraGoogleMapsPlugin: JIGPlugin, GMSMapViewDelegate {
 // snippet from https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor
 extension UIColor {
     public convenience init?(hex: String) {
+        // swiftlint:disable:next identifier_name
         let r, g, b, a: CGFloat
 
         if hex.hasPrefix("#") {

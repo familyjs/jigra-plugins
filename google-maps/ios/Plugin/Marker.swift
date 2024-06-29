@@ -32,10 +32,11 @@ public struct Marker {
 
         var iconAnchor: CGPoint?
         if let anchorObject = fromJSObject["iconAnchor"] as? JSObject {
+        // swiftlint:disable:next identifier_name
             if let x = anchorObject["x"] as? Double, let y = anchorObject["y"] as? Double {
                 if let size = iconSize {
-                    let u = x / size.width
-                    let v = y / size.height
+                    let u = x / size.width // swiftlint:disable:this identifier_name
+                    let v = y / size.height // swiftlint:disable:this identifier_name
 
                     iconAnchor = CGPoint(x: u, y: v)
                 }
@@ -44,6 +45,7 @@ public struct Marker {
 
         var tintColor: UIColor?
         if let rgbObject = fromJSObject["tintColor"] as? JSObject {
+        // swiftlint:disable:next identifier_name
             if let r = rgbObject["r"] as? Double, let g = rgbObject["g"] as? Double, let b = rgbObject["b"] as? Double, let a = rgbObject["a"] as? Double {
 
                 let uiColorR = CGFloat(r / 255).clamp(min: 0, max: 255)
