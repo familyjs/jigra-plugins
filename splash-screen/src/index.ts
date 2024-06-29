@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { SplashScreenPlugin } from './definitions';
+import type { SplashScreenPlugin } from "./definitions";
 
-const SplashScreen = registerPlugin<SplashScreenPlugin>('SplashScreen', {
-  web: () => import('./web').then((m) => new m.SplashScreenWeb()),
+const SplashScreen = registerPlugin<SplashScreenPlugin>("SplashScreen", {
+  web: () => import("./web").then((m) => new m.SplashScreenWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { SplashScreen };

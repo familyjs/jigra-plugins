@@ -1,8 +1,8 @@
 /// <reference types="@jigra/cli" />
 
-import type { PermissionState, PluginListenerHandle } from '@jigra/core';
+import type { PermissionState, PluginListenerHandle } from "@jigra/core";
 
-declare module '@jigra/cli' {
+declare module "@jigra/cli" {
   export interface PluginsConfig {
     /**
      * On Android, the Local Notifications can be configured with the following options:
@@ -103,7 +103,9 @@ export interface LocalNotificationsPlugin {
    *
    * @since 4.0.0
    */
-  removeDeliveredNotifications(delivered: DeliveredNotifications): Promise<void>;
+  removeDeliveredNotifications(
+    delivered: DeliveredNotifications
+  ): Promise<void>;
 
   /**
    * Remove all the notifications from the notifications screen.
@@ -159,7 +161,7 @@ export interface LocalNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'localNotificationReceived',
+    eventName: "localNotificationReceived",
     listenerFunc: (notification: LocalNotificationSchema) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -169,7 +171,7 @@ export interface LocalNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'localNotificationActionPerformed',
+    eventName: "localNotificationActionPerformed",
     listenerFunc: (notificationAction: ActionPerformed) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -814,7 +816,15 @@ export interface ScheduleOn {
   second?: number;
 }
 
-export type ScheduleEvery = 'year' | 'month' | 'two-weeks' | 'week' | 'day' | 'hour' | 'minute' | 'second';
+export type ScheduleEvery =
+  | "year"
+  | "month"
+  | "two-weeks"
+  | "week"
+  | "day"
+  | "hour"
+  | "minute"
+  | "second";
 
 export interface ListChannelsResult {
   /**

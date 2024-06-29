@@ -1,4 +1,4 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
 import type {
   DialogPlugin,
@@ -7,7 +7,7 @@ import type {
   PromptResult,
   ConfirmOptions,
   ConfirmResult,
-} from './definitions';
+} from "./definitions";
 
 export class DialogWeb extends WebPlugin implements DialogPlugin {
   async alert(options: AlertOptions): Promise<void> {
@@ -15,9 +15,9 @@ export class DialogWeb extends WebPlugin implements DialogPlugin {
   }
 
   async prompt(options: PromptOptions): Promise<PromptResult> {
-    const val = window.prompt(options.message, options.inputText || '');
+    const val = window.prompt(options.message, options.inputText || "");
     return {
-      value: val !== null ? val : '',
+      value: val !== null ? val : "",
       cancelled: val === null,
     };
   }

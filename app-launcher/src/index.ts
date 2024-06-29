@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { AppLauncherPlugin } from './definitions';
+import type { AppLauncherPlugin } from "./definitions";
 
-const AppLauncher = registerPlugin<AppLauncherPlugin>('AppLauncher', {
-  web: () => import('./web').then((m) => new m.AppLauncherWeb()),
+const AppLauncher = registerPlugin<AppLauncherPlugin>("AppLauncher", {
+  web: () => import("./web").then((m) => new m.AppLauncherWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { AppLauncher };

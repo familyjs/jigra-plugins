@@ -63,21 +63,21 @@ export enum ImpactStyle {
    *
    * @since 1.0.0
    */
-  Heavy = 'HEAVY',
+  Heavy = "HEAVY",
 
   /**
    * A collision between moderately sized user interface elements
    *
    * @since 1.0.0
    */
-  Medium = 'MEDIUM',
+  Medium = "MEDIUM",
 
   /**
    * A collision between small, light user interface elements
    *
    * @since 1.0.0
    */
-  Light = 'LIGHT',
+  Light = "LIGHT",
 }
 
 export interface NotificationOptions {
@@ -98,21 +98,21 @@ export enum NotificationType {
    *
    * @since 1.0.0
    */
-  Success = 'SUCCESS',
+  Success = "SUCCESS",
 
   /**
    * A notification feedback type indicating that a task has produced a warning
    *
    * @since 1.0.0
    */
-  Warning = 'WARNING',
+  Warning = "WARNING",
 
   /**
    * A notification feedback type indicating that a task has failed
    *
    * @since 1.0.0
    */
-  Error = 'ERROR',
+  Error = "ERROR",
 }
 
 export interface VibrateOptions {

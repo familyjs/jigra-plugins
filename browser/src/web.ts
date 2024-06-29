@@ -1,6 +1,6 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
-import type { BrowserPlugin, OpenOptions } from './definitions';
+import type { BrowserPlugin, OpenOptions } from "./definitions";
 
 export class BrowserWeb extends WebPlugin implements BrowserPlugin {
   _lastWindow: Window | null;
@@ -11,7 +11,7 @@ export class BrowserWeb extends WebPlugin implements BrowserPlugin {
   }
 
   async open(options: OpenOptions): Promise<void> {
-    this._lastWindow = window.open(options.url, options.windowName || '_blank');
+    this._lastWindow = window.open(options.url, options.windowName || "_blank");
   }
 
   async close(): Promise<void> {
@@ -21,7 +21,7 @@ export class BrowserWeb extends WebPlugin implements BrowserPlugin {
         this._lastWindow = null;
         resolve();
       } else {
-        reject('No active window to close!');
+        reject("No active window to close!");
       }
     });
   }

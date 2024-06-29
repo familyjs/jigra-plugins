@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { NetworkPlugin } from './definitions';
+import type { NetworkPlugin } from "./definitions";
 
-const Network = registerPlugin<NetworkPlugin>('Network', {
-  web: () => import('./web').then((m) => new m.NetworkWeb()),
+const Network = registerPlugin<NetworkPlugin>("Network", {
+  web: () => import("./web").then((m) => new m.NetworkWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Network };

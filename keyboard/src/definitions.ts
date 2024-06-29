@@ -1,8 +1,8 @@
 /// <reference types="@jigra/cli" />
 
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
-declare module '@jigra/cli' {
+declare module "@jigra/cli" {
   export interface PluginsConfig {
     /**
      * On iOS, the keyboard can be configured with the following options:
@@ -70,14 +70,14 @@ export enum KeyboardStyle {
    *
    * @since 1.0.0
    */
-  Dark = 'DARK',
+  Dark = "DARK",
 
   /**
    * Light keyboard.
    *
    * @since 1.0.0
    */
-  Light = 'LIGHT',
+  Light = "LIGHT",
 
   /**
    * On iOS 13 and newer the keyboard style is based on the device appearance.
@@ -87,7 +87,7 @@ export enum KeyboardStyle {
    *
    * @since 1.0.0
    */
-  Default = 'DEFAULT',
+  Default = "DEFAULT",
 }
 
 export interface KeyboardResizeOptions {
@@ -106,7 +106,7 @@ export enum KeyboardResize {
    *
    * @since 1.0.0
    */
-  Body = 'body',
+  Body = "body",
 
   /**
    * Only the `fml-app` HTML element will be resized.
@@ -114,7 +114,7 @@ export enum KeyboardResize {
    *
    * @since 1.0.0
    */
-  Family = 'family',
+  Family = "family",
 
   /**
    * The whole native Web View will be resized when the keyboard shows/hides.
@@ -122,14 +122,14 @@ export enum KeyboardResize {
    *
    * @since 1.0.0
    */
-  Native = 'native',
+  Native = "native",
 
   /**
    * Neither the app nor the Web View are resized.
    *
    * @since 1.0.0
    */
-  None = 'none',
+  None = "none",
 }
 
 export interface KeyboardPlugin {
@@ -203,7 +203,7 @@ export interface KeyboardPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'keyboardWillShow',
+    eventName: "keyboardWillShow",
     listenerFunc: (info: KeyboardInfo) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -215,7 +215,7 @@ export interface KeyboardPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'keyboardDidShow',
+    eventName: "keyboardDidShow",
     listenerFunc: (info: KeyboardInfo) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -227,7 +227,7 @@ export interface KeyboardPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'keyboardWillHide',
+    eventName: "keyboardWillHide",
     listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -239,7 +239,7 @@ export interface KeyboardPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'keyboardDidHide',
+    eventName: "keyboardDidHide",
     listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

@@ -1,22 +1,22 @@
 export default {
-  input: 'dist/esm/index.js',
+  input: "dist/esm/index.js",
   output: [
     {
-      file: 'dist/plugin.js',
-      format: 'iife',
-      name: 'jigraLocalNotifications',
+      file: "dist/plugin.js",
+      format: "iife",
+      name: "jigraLocalNotifications",
       globals: {
-        '@jigra/core': 'jigraExports',
+        "@jigra/core": "jigraExports",
       },
       sourcemap: true,
       inlineDynamicImports: true,
     },
     {
-      file: 'dist/plugin.cjs.js',
-      format: 'cjs',
+      file: "dist/plugin.cjs.js",
+      format: "cjs",
       sourcemap: true,
       inlineDynamicImports: true,
     },
   ],
-  external: ['@jigra/core'],
+  external: ["@jigra/core"],
 };

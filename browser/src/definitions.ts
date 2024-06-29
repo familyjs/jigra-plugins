@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface BrowserPlugin {
   /**
@@ -24,7 +24,7 @@ export interface BrowserPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'browserFinished',
+    eventName: "browserFinished",
     listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -36,7 +36,7 @@ export interface BrowserPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'browserPageLoaded',
+    eventName: "browserPageLoaded",
     listenerFunc: () => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -86,7 +86,7 @@ export interface OpenOptions {
    *
    * @since 1.0.0
    */
-  presentationStyle?: 'fullscreen' | 'popover';
+  presentationStyle?: "fullscreen" | "popover";
 
   /**
    * iOS only: The width the browser when using presentationStyle 'popover' on iPads.

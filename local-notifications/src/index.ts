@@ -1,10 +1,13 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { LocalNotificationsPlugin } from './definitions';
+import type { LocalNotificationsPlugin } from "./definitions";
 
-const LocalNotifications = registerPlugin<LocalNotificationsPlugin>('LocalNotifications', {
-  web: () => import('./web').then((m) => new m.LocalNotificationsWeb()),
-});
+const LocalNotifications = registerPlugin<LocalNotificationsPlugin>(
+  "LocalNotifications",
+  {
+    web: () => import("./web").then((m) => new m.LocalNotificationsWeb()),
+  }
+);
 
-export * from './definitions';
+export * from "./definitions";
 export { LocalNotifications };

@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface SpeakOptions {
   /**
@@ -69,7 +69,7 @@ export interface ScreenReaderPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'stateChange',
+    eventName: "stateChange",
     listener: StateChangeListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

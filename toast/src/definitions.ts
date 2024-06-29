@@ -21,7 +21,7 @@ export interface ShowOptions {
    * @default 'short'
    * @since 1.0.0
    */
-  duration?: 'short' | 'long';
+  duration?: "short" | "long";
 
   /**
    * Position of the Toast.
@@ -31,7 +31,7 @@ export interface ShowOptions {
    * @default 'bottom'
    * @since 1.0.0
    */
-  position?: 'top' | 'center' | 'bottom';
+  position?: "top" | "center" | "bottom";
 }
 
 /**

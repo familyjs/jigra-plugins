@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { CameraPlugin } from './definitions';
+import type { CameraPlugin } from "./definitions";
 
-const Camera = registerPlugin<CameraPlugin>('Camera', {
-  web: () => import('./web').then((m) => new m.CameraWeb()),
+const Camera = registerPlugin<CameraPlugin>("Camera", {
+  web: () => import("./web").then((m) => new m.CameraWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Camera };

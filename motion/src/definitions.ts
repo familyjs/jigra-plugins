@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface MotionPlugin {
   /**
@@ -6,7 +6,10 @@ export interface MotionPlugin {
    *
    * @since 1.0.0
    */
-  addListener(eventName: 'accel', listenerFunc: AccelListener): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(
+    eventName: "accel",
+    listenerFunc: AccelListener
+  ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
    * Add a listener for device orientation change (compass heading, etc.)
@@ -14,7 +17,7 @@ export interface MotionPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'orientation',
+    eventName: "orientation",
     listenerFunc: OrientationListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

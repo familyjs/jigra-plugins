@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { ToastPlugin } from './definitions';
+import type { ToastPlugin } from "./definitions";
 
-const Toast = registerPlugin<ToastPlugin>('Toast', {
-  web: () => import('./web').then((m) => new m.ToastWeb()),
+const Toast = registerPlugin<ToastPlugin>("Toast", {
+  web: () => import("./web").then((m) => new m.ToastWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Toast };

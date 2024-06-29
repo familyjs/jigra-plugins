@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { DialogPlugin } from './definitions';
+import type { DialogPlugin } from "./definitions";
 
-const Dialog = registerPlugin<DialogPlugin>('Dialog', {
-  web: () => import('./web').then((m) => new m.DialogWeb()),
+const Dialog = registerPlugin<DialogPlugin>("Dialog", {
+  web: () => import("./web").then((m) => new m.DialogWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Dialog };

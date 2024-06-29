@@ -63,7 +63,9 @@
   "peerDependencies": {
     "@jigra/core": "^5.7.0"
   },
-  "prettier": "@familyjs/prettier-config",
+  "prettier": {
+    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+  },
   "swiftlint": "@familyjs/swiftlint-config",
   "eslintConfig": {
     "extends": "@familyjs/eslint-config/recommended"

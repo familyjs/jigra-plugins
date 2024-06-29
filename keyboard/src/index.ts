@@ -1,8 +1,8 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { KeyboardPlugin } from './definitions';
+import type { KeyboardPlugin } from "./definitions";
 
-const Keyboard = registerPlugin<KeyboardPlugin>('Keyboard');
+const Keyboard = registerPlugin<KeyboardPlugin>("Keyboard");
 
-export * from './definitions';
+export * from "./definitions";
 export { Keyboard };

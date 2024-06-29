@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface OrientationLockOptions {
   orientation: OrientationLockType;
@@ -36,7 +36,7 @@ export interface ScreenOrientationPlugin {
    * @since 4.0.0
    */
   addListener(
-    eventName: 'screenOrientationChange',
+    eventName: "screenOrientationChange",
     listenerFunc: (orientation: ScreenOrientationResult) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

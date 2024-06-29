@@ -11,65 +11,65 @@ import java.util.Locale;
 @JigraPlugin(name = "Device")
 public class DevicePlugin extends Plugin {
 
-    private Device implementation;
+  private Device implementation;
 
-    @Override
-    public void load() {
-        implementation = new Device(getContext());
-    }
+  @Override
+  public void load() {
+    implementation = new Device(getContext());
+  }
 
-    @PluginMethod
-    public void getId(PluginCall call) {
-        JSObject r = new JSObject();
+  @PluginMethod
+  public void getId(PluginCall call) {
+    JSObject r = new JSObject();
 
-        r.put("identifier", implementation.getUuid());
+    r.put("identifier", implementation.getUuid());
 
-        call.resolve(r);
-    }
+    call.resolve(r);
+  }
 
-    @PluginMethod
-    public void getInfo(PluginCall call) {
-        JSObject r = new JSObject();
+  @PluginMethod
+  public void getInfo(PluginCall call) {
+    JSObject r = new JSObject();
 
-        r.put("memUsed", implementation.getMemUsed());
-        r.put("diskFree", implementation.getDiskFree());
-        r.put("diskTotal", implementation.getDiskTotal());
-        r.put("realDiskFree", implementation.getRealDiskFree());
-        r.put("realDiskTotal", implementation.getRealDiskTotal());
-        r.put("model", android.os.Build.MODEL);
-        r.put("operatingSystem", "android");
-        r.put("osVersion", android.os.Build.VERSION.RELEASE);
-        r.put("androidSDKVersion", Build.VERSION.SDK_INT);
-        r.put("platform", implementation.getPlatform());
-        r.put("manufacturer", android.os.Build.MANUFACTURER);
-        r.put("isVirtual", implementation.isVirtual());
-        r.put("name", implementation.getName());
-        r.put("webViewVersion", implementation.getWebViewVersion());
+    r.put("memUsed", implementation.getMemUsed());
+    r.put("diskFree", implementation.getDiskFree());
+    r.put("diskTotal", implementation.getDiskTotal());
+    r.put("realDiskFree", implementation.getRealDiskFree());
+    r.put("realDiskTotal", implementation.getRealDiskTotal());
+    r.put("model", android.os.Build.MODEL);
+    r.put("operatingSystem", "android");
+    r.put("osVersion", android.os.Build.VERSION.RELEASE);
+    r.put("androidSDKVersion", Build.VERSION.SDK_INT);
+    r.put("platform", implementation.getPlatform());
+    r.put("manufacturer", android.os.Build.MANUFACTURER);
+    r.put("isVirtual", implementation.isVirtual());
+    r.put("name", implementation.getName());
+    r.put("webViewVersion", implementation.getWebViewVersion());
 
-        call.resolve(r);
-    }
+    call.resolve(r);
+  }
 
-    @PluginMethod
-    public void getBatteryInfo(PluginCall call) {
-        JSObject r = new JSObject();
+  @PluginMethod
+  public void getBatteryInfo(PluginCall call) {
+    JSObject r = new JSObject();
 
-        r.put("batteryLevel", implementation.getBatteryLevel());
-        r.put("isCharging", implementation.isCharging());
+    r.put("batteryLevel", implementation.getBatteryLevel());
+    r.put("isCharging", implementation.isCharging());
 
-        call.resolve(r);
-    }
+    call.resolve(r);
+  }
 
-    @PluginMethod
-    public void getLanguageCode(PluginCall call) {
-        JSObject ret = new JSObject();
-        ret.put("value", Locale.getDefault().getLanguage());
-        call.resolve(ret);
-    }
+  @PluginMethod
+  public void getLanguageCode(PluginCall call) {
+    JSObject ret = new JSObject();
+    ret.put("value", Locale.getDefault().getLanguage());
+    call.resolve(ret);
+  }
 
-    @PluginMethod
-    public void getLanguageTag(PluginCall call) {
-        JSObject ret = new JSObject();
-        ret.put("value", Locale.getDefault().toLanguageTag());
-        call.resolve(ret);
-    }
+  @PluginMethod
+  public void getLanguageTag(PluginCall call) {
+    JSObject ret = new JSObject();
+    ret.put("value", Locale.getDefault().toLanguageTag());
+    call.resolve(ret);
+  }
 }

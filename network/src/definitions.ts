@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface NetworkPlugin {
   /**
@@ -14,7 +14,7 @@ export interface NetworkPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'networkStatusChange',
+    eventName: "networkStatusChange",
     listenerFunc: ConnectionStatusChangeListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -61,7 +61,7 @@ export type ConnectionStatusChangeListener = (status: ConnectionStatus) => void;
  *
  * @since 1.0.0
  */
-export type ConnectionType = 'wifi' | 'cellular' | 'none' | 'unknown';
+export type ConnectionType = "wifi" | "cellular" | "none" | "unknown";
 
 /**
  * @deprecated Use `ConnectionStatus`.

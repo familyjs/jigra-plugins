@@ -1,4 +1,4 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
 import type {
   AppLauncherPlugin,
@@ -6,7 +6,7 @@ import type {
   CanOpenURLResult,
   OpenURLOptions,
   OpenURLResult,
-} from './definitions';
+} from "./definitions";
 
 export class AppLauncherWeb extends WebPlugin implements AppLauncherPlugin {
   async canOpenUrl(_options: CanOpenURLOptions): Promise<CanOpenURLResult> {
@@ -14,7 +14,7 @@ export class AppLauncherWeb extends WebPlugin implements AppLauncherPlugin {
   }
 
   async openUrl(options: OpenURLOptions): Promise<OpenURLResult> {
-    window.open(options.url, '_blank');
+    window.open(options.url, "_blank");
     return { completed: true };
   }
 }

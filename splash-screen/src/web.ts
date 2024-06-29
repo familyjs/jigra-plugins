@@ -1,6 +1,10 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
-import type { HideOptions, ShowOptions, SplashScreenPlugin } from './definitions';
+import type {
+  HideOptions,
+  ShowOptions,
+  SplashScreenPlugin,
+} from "./definitions";
 
 export class SplashScreenWeb extends WebPlugin implements SplashScreenPlugin {
   async show(_options?: ShowOptions): Promise<void> {

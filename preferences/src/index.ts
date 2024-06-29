@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { PreferencesPlugin } from './definitions';
+import type { PreferencesPlugin } from "./definitions";
 
-const Preferences = registerPlugin<PreferencesPlugin>('Preferences', {
-  web: () => import('./web').then((m) => new m.PreferencesWeb()),
+const Preferences = registerPlugin<PreferencesPlugin>("Preferences", {
+  web: () => import("./web").then((m) => new m.PreferencesWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Preferences };

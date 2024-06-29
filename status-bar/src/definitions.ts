@@ -13,14 +13,14 @@ export enum Style {
    *
    * @since 1.0.0
    */
-  Dark = 'DARK',
+  Dark = "DARK",
 
   /**
    * Dark text for light backgrounds.
    *
    * @since 1.0.0
    */
-  Light = 'LIGHT',
+  Light = "LIGHT",
 
   /**
    * The style is based on the device appearance.
@@ -30,7 +30,7 @@ export enum Style {
    *
    * @since 1.0.0
    */
-  Default = 'DEFAULT',
+  Default = "DEFAULT",
 }
 
 export interface AnimationOptions {
@@ -52,7 +52,7 @@ export enum Animation {
    *
    * @since 1.0.0
    */
-  None = 'NONE',
+  None = "NONE",
 
   /**
    * Slide animation during show/hide.
@@ -62,14 +62,14 @@ export enum Animation {
    *
    * @since 1.0.0
    */
-  Slide = 'SLIDE',
+  Slide = "SLIDE",
 
   /**
    * Fade animation during show/hide.
    *
    * @since 1.0.0
    */
-  Fade = 'FADE',
+  Fade = "FADE",
 }
 
 export interface BackgroundColorOptions {

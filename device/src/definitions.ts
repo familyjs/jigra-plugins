@@ -1,4 +1,4 @@
-export type OperatingSystem = 'ios' | 'android' | 'windows' | 'mac' | 'unknown';
+export type OperatingSystem = "ios" | "android" | "windows" | "mac" | "unknown";
 
 export interface DeviceId {
   /**
@@ -41,7 +41,7 @@ export interface DeviceInfo {
    *
    * @since 1.0.0
    */
-  platform: 'ios' | 'android' | 'web';
+  platform: "ios" | "android" | "web";
 
   /**
    * The operating system of the device.

@@ -1,8 +1,8 @@
-import type { PermissionState } from '@jigra/core';
+import type { PermissionState } from "@jigra/core";
 
-export type CameraPermissionState = PermissionState | 'limited';
+export type CameraPermissionState = PermissionState | "limited";
 
-export type CameraPermissionType = 'camera' | 'photos';
+export type CameraPermissionType = "camera" | "photos";
 
 export interface PermissionStatus {
   camera: CameraPermissionState;
@@ -57,7 +57,9 @@ export interface CameraPlugin {
    *
    * @since 1.0.0
    */
-  requestPermissions(permissions?: CameraPluginPermissions): Promise<PermissionStatus>;
+  requestPermissions(
+    permissions?: CameraPluginPermissions
+  ): Promise<PermissionStatus>;
 }
 
 export interface ImageOptions {
@@ -131,7 +133,7 @@ export interface ImageOptions {
    *
    * @since 1.0.0
    */
-  presentationStyle?: 'fullscreen' | 'popover';
+  presentationStyle?: "fullscreen" | "popover";
 
   /**
    * Web only: Whether to use the PWA Element experience or file input. The
@@ -311,7 +313,7 @@ export interface GalleryImageOptions {
    *
    * @since 1.2.0
    */
-  presentationStyle?: 'fullscreen' | 'popover';
+  presentationStyle?: "fullscreen" | "popover";
 
   /**
    * iOS only: Maximum number of pictures the user will be able to choose.
@@ -326,26 +328,26 @@ export enum CameraSource {
   /**
    * Prompts the user to select either the photo album or take a photo.
    */
-  Prompt = 'PROMPT',
+  Prompt = "PROMPT",
   /**
    * Take a new photo using the camera.
    */
-  Camera = 'CAMERA',
+  Camera = "CAMERA",
   /**
    * Pick an existing photo from the gallery or photo album.
    */
-  Photos = 'PHOTOS',
+  Photos = "PHOTOS",
 }
 
 export enum CameraDirection {
-  Rear = 'REAR',
-  Front = 'FRONT',
+  Rear = "REAR",
+  Front = "FRONT",
 }
 
 export enum CameraResultType {
-  Uri = 'uri',
-  Base64 = 'base64',
-  DataUrl = 'dataUrl',
+  Uri = "uri",
+  Base64 = "base64",
+  DataUrl = "dataUrl",
 }
 
 /**

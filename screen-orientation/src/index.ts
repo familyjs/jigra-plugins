@@ -1,10 +1,13 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { ScreenOrientationPlugin } from './definitions';
+import type { ScreenOrientationPlugin } from "./definitions";
 
-const ScreenOrientation = registerPlugin<ScreenOrientationPlugin>('ScreenOrientation', {
-  web: () => import('./web').then((m) => new m.ScreenOrientationWeb()),
-});
+const ScreenOrientation = registerPlugin<ScreenOrientationPlugin>(
+  "ScreenOrientation",
+  {
+    web: () => import("./web").then((m) => new m.ScreenOrientationWeb()),
+  }
+);
 
-export * from './definitions';
+export * from "./definitions";
 export { ScreenOrientation };

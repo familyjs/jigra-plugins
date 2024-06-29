@@ -1,4 +1,4 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
 import type {
   PreferencesPlugin,
@@ -9,13 +9,13 @@ import type {
   RemoveOptions,
   KeysResult,
   MigrateResult,
-} from './definitions';
+} from "./definitions";
 
 export class PreferencesWeb extends WebPlugin implements PreferencesPlugin {
-  private group = 'JigraStorage';
+  private group = "JigraStorage";
 
   public async configure({ group }: ConfigureOptions): Promise<void> {
-    if (typeof group === 'string') {
+    if (typeof group === "string") {
       this.group = group;
     }
   }
@@ -49,15 +49,17 @@ export class PreferencesWeb extends WebPlugin implements PreferencesPlugin {
   public async migrate(): Promise<MigrateResult> {
     const migrated: string[] = [];
     const existing: string[] = [];
-    const oldprefix = '_jig_';
-    const keys = Object.keys(this.impl).filter((k) => k.indexOf(oldprefix) === 0);
+    const oldprefix = "_jig_";
+    const keys = Object.keys(this.impl).filter(
+      (k) => k.indexOf(oldprefix) === 0
+    );
 
     for (const oldkey of keys) {
       const key = oldkey.substring(oldprefix.length);
-      const value = this.impl.getItem(oldkey) ?? '';
+      const value = this.impl.getItem(oldkey) ?? "";
       const { value: currentValue } = await this.get({ key });
 
-      if (typeof currentValue === 'string') {
+      if (typeof currentValue === "string") {
         existing.push(key);
       } else {
         await this.set({ key, value });
@@ -69,8 +71,10 @@ export class PreferencesWeb extends WebPlugin implements PreferencesPlugin {
   }
 
   public async removeOld(): Promise<void> {
-    const oldprefix = '_jig_';
-    const keys = Object.keys(this.impl).filter((k) => k.indexOf(oldprefix) === 0);
+    const oldprefix = "_jig_";
+    const keys = Object.keys(this.impl).filter(
+      (k) => k.indexOf(oldprefix) === 0
+    );
     for (const oldkey of keys) {
       this.impl.removeItem(oldkey);
     }
@@ -81,7 +85,7 @@ export class PreferencesWeb extends WebPlugin implements PreferencesPlugin {
   }
 
   private get prefix(): string {
-    return this.group === 'NativeStorage' ? '' : `${this.group}.`;
+    return this.group === "NativeStorage" ? "" : `${this.group}.`;
   }
 
   private rawKeys(): string[] {

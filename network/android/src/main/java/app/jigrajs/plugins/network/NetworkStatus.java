@@ -2,23 +2,23 @@ package app.jigrajs.plugins.network;
 
 public class NetworkStatus {
 
-    public enum ConnectionType {
-        WIFI("wifi"),
-        CELLULAR("cellular"),
-        NONE("none"),
-        UNKNOWN("unknown");
+  public enum ConnectionType {
+    WIFI("wifi"),
+    CELLULAR("cellular"),
+    NONE("none"),
+    UNKNOWN("unknown");
 
-        private String connectionType;
+    private String connectionType;
 
-        ConnectionType(String connectionType) {
-            this.connectionType = connectionType;
-        }
-
-        public String getConnectionType() {
-            return this.connectionType;
-        }
+    ConnectionType(String connectionType) {
+      this.connectionType = connectionType;
     }
 
-    public boolean connected = false;
-    public ConnectionType connectionType = ConnectionType.NONE;
+    public String getConnectionType() {
+      return this.connectionType;
+    }
+  }
+
+  public boolean connected = false;
+  public ConnectionType connectionType = ConnectionType.NONE;
 }

@@ -1,8 +1,11 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { PushNotificationsPlugin } from './definitions';
+import type { PushNotificationsPlugin } from "./definitions";
 
-const PushNotifications = registerPlugin<PushNotificationsPlugin>('PushNotifications', {});
+const PushNotifications = registerPlugin<PushNotificationsPlugin>(
+  "PushNotifications",
+  {}
+);
 
-export * from './definitions';
+export * from "./definitions";
 export { PushNotifications };

@@ -1,9 +1,9 @@
 package app.jigrajs.plugins.haptics.arguments;
 
 public interface HapticsVibrationType {
-    long[] getTimings();
+  long[] getTimings();
 
-    int[] getAmplitudes();
+  int[] getAmplitudes();
 
-    long[] getOldSDKPattern();
+  long[] getOldSDKPattern();
 }

@@ -1,23 +1,27 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
-import type { AppInfo, AppPlugin, AppLaunchUrl, AppState } from './definitions';
+import type { AppInfo, AppPlugin, AppLaunchUrl, AppState } from "./definitions";
 
 export class AppWeb extends WebPlugin implements AppPlugin {
   constructor() {
     super();
-    document.addEventListener('visibilitychange', this.handleVisibilityChange, false);
+    document.addEventListener(
+      "visibilitychange",
+      this.handleVisibilityChange,
+      false
+    );
   }
 
   exitApp(): Promise<void> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async getInfo(): Promise<AppInfo> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async getLaunchUrl(): Promise<AppLaunchUrl> {
-    return { url: '' };
+    return { url: "" };
   }
 
   async getState(): Promise<AppState> {
@@ -25,7 +29,7 @@ export class AppWeb extends WebPlugin implements AppPlugin {
   }
 
   async minimizeApp(): Promise<void> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   private handleVisibilityChange = () => {
@@ -33,11 +37,11 @@ export class AppWeb extends WebPlugin implements AppPlugin {
       isActive: document.hidden !== true,
     };
 
-    this.notifyListeners('appStateChange', data);
+    this.notifyListeners("appStateChange", data);
     if (document.hidden) {
-      this.notifyListeners('pause', null);
+      this.notifyListeners("pause", null);
     } else {
-      this.notifyListeners('resume', null);
+      this.notifyListeners("resume", null);
     }
   };
 }

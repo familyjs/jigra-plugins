@@ -1,6 +1,6 @@
 /// <reference types="@jigra/cli" />
 
-declare module '@jigra/cli' {
+declare module "@jigra/cli" {
   export interface PluginsConfig {
     /**
      * These config values are available:
@@ -69,14 +69,14 @@ declare module '@jigra/cli' {
        * @example "CENTER_CROP"
        */
       androidScaleType?:
-        | 'CENTER'
-        | 'CENTER_CROP'
-        | 'CENTER_INSIDE'
-        | 'FIT_CENTER'
-        | 'FIT_END'
-        | 'FIT_START'
-        | 'FIT_XY'
-        | 'MATRIX';
+        | "CENTER"
+        | "CENTER_CROP"
+        | "CENTER_INSIDE"
+        | "FIT_CENTER"
+        | "FIT_END"
+        | "FIT_START"
+        | "FIT_XY"
+        | "MATRIX";
 
       /**
        * Show a loading spinner on the Splash Screen.
@@ -95,7 +95,13 @@ declare module '@jigra/cli' {
        * @default large
        * @example "large"
        */
-      androidSpinnerStyle?: 'horizontal' | 'small' | 'large' | 'inverse' | 'smallInverse' | 'largeInverse';
+      androidSpinnerStyle?:
+        | "horizontal"
+        | "small"
+        | "large"
+        | "inverse"
+        | "smallInverse"
+        | "largeInverse";
 
       /**
        * Style of the iOS spinner.
@@ -107,7 +113,7 @@ declare module '@jigra/cli' {
        * @default large
        * @example "small"
        */
-      iosSpinnerStyle?: 'large' | 'small';
+      iosSpinnerStyle?: "large" | "small";
 
       /**
        * Color of the spinner in hex format, #RRGGBB or #RRGGBBAA.

@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { HapticsPlugin } from './definitions';
+import type { HapticsPlugin } from "./definitions";
 
-const Haptics = registerPlugin<HapticsPlugin>('Haptics', {
-  web: () => import('./web').then((m) => new m.HapticsWeb()),
+const Haptics = registerPlugin<HapticsPlugin>("Haptics", {
+  web: () => import("./web").then((m) => new m.HapticsWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Haptics };

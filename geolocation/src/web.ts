@@ -1,4 +1,4 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
 import type {
   CallbackID,
@@ -7,7 +7,7 @@ import type {
   Position,
   PositionOptions,
   WatchPositionCallback,
-} from './definitions';
+} from "./definitions";
 
 export class GeolocationWeb extends WebPlugin implements GeolocationPlugin {
   async getCurrentPosition(options?: PositionOptions): Promise<Position> {
@@ -29,7 +29,10 @@ export class GeolocationWeb extends WebPlugin implements GeolocationPlugin {
     });
   }
 
-  async watchPosition(options: PositionOptions, callback: WatchPositionCallback): Promise<CallbackID> {
+  async watchPosition(
+    options: PositionOptions,
+    callback: WatchPositionCallback
+  ): Promise<CallbackID> {
     const id = navigator.geolocation.watchPosition(
       (pos) => {
         callback(pos);
@@ -53,18 +56,18 @@ export class GeolocationWeb extends WebPlugin implements GeolocationPlugin {
   }
 
   async checkPermissions(): Promise<PermissionStatus> {
-    if (typeof navigator === 'undefined' || !navigator.permissions) {
-      throw this.unavailable('Permissions API not available in this browser');
+    if (typeof navigator === "undefined" || !navigator.permissions) {
+      throw this.unavailable("Permissions API not available in this browser");
     }
 
     const permission = await window.navigator.permissions.query({
-      name: 'geolocation',
+      name: "geolocation",
     });
     return { location: permission.state, coarseLocation: permission.state };
   }
 
   async requestPermissions(): Promise<PermissionStatus> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 }
 

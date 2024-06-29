@@ -1,5 +1,5 @@
-import { WebPlugin } from '@jigra/core';
-import type { PermissionState } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
+import type { PermissionState } from "@jigra/core";
 
 import type {
   DeliveredNotifications,
@@ -11,9 +11,12 @@ import type {
   PermissionStatus,
   ScheduleOptions,
   ScheduleResult,
-} from './definitions';
+} from "./definitions";
 
-export class LocalNotificationsWeb extends WebPlugin implements LocalNotificationsPlugin {
+export class LocalNotificationsWeb
+  extends WebPlugin
+  implements LocalNotificationsPlugin
+{
   protected pending: LocalNotificationSchema[] = [];
   protected deliveredNotifications: Notification[] = [];
 
@@ -31,11 +34,17 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
       notifications: deliveredSchemas,
     };
   }
-  async removeDeliveredNotifications(delivered: DeliveredNotifications): Promise<void> {
+  async removeDeliveredNotifications(
+    delivered: DeliveredNotifications
+  ): Promise<void> {
     for (const toRemove of delivered.notifications) {
-      const found = this.deliveredNotifications.find((n) => n.tag === String(toRemove.id));
+      const found = this.deliveredNotifications.find(
+        (n) => n.tag === String(toRemove.id)
+      );
       found?.close();
-      this.deliveredNotifications = this.deliveredNotifications.filter(() => !found);
+      this.deliveredNotifications = this.deliveredNotifications.filter(
+        () => !found
+      );
     }
   }
   async removeAllDeliveredNotifications(): Promise<void> {
@@ -45,20 +54,20 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
     this.deliveredNotifications = [];
   }
   async createChannel(): Promise<void> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async deleteChannel(): Promise<void> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async listChannels(): Promise<ListChannelsResult> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async schedule(options: ScheduleOptions): Promise<ScheduleResult> {
     if (!this.hasNotificationSupport()) {
-      throw this.unavailable('Notifications not supported in this browser.');
+      throw this.unavailable("Notifications not supported in this browser.");
     }
 
     for (const notification of options.notifications) {
@@ -79,53 +88,60 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
   }
 
   async registerActionTypes(): Promise<void> {
-    throw this.unimplemented('Not implemented on web.');
+    throw this.unimplemented("Not implemented on web.");
   }
 
   async cancel(pending: ScheduleResult): Promise<void> {
-    this.pending = this.pending.filter((notification) => !pending.notifications.find((n) => n.id === notification.id));
+    this.pending = this.pending.filter(
+      (notification) =>
+        !pending.notifications.find((n) => n.id === notification.id)
+    );
   }
 
   async areEnabled(): Promise<EnabledResult> {
     const { display } = await this.checkPermissions();
 
     return {
-      value: display === 'granted',
+      value: display === "granted",
     };
   }
 
   async requestPermissions(): Promise<PermissionStatus> {
     if (!this.hasNotificationSupport()) {
-      throw this.unavailable('Notifications not supported in this browser.');
+      throw this.unavailable("Notifications not supported in this browser.");
     }
 
-    const display = this.transformNotificationPermission(await Notification.requestPermission());
+    const display = this.transformNotificationPermission(
+      await Notification.requestPermission()
+    );
 
     return { display };
   }
 
   async checkPermissions(): Promise<PermissionStatus> {
     if (!this.hasNotificationSupport()) {
-      throw this.unavailable('Notifications not supported in this browser.');
+      throw this.unavailable("Notifications not supported in this browser.");
     }
 
-    const display = this.transformNotificationPermission(Notification.permission);
+    const display = this.transformNotificationPermission(
+      Notification.permission
+    );
 
     return { display };
   }
 
   protected hasNotificationSupport = (): boolean => {
-    if (!('Notification' in window) || !Notification.requestPermission) {
+    if (!("Notification" in window) || !Notification.requestPermission) {
       return false;
     }
 
-    if (Notification.permission !== 'granted') {
+    if (Notification.permission !== "granted") {
       // don't test for `new Notification` if permission has already been granted
       // otherwise this sends a real notification on supported browsers
       try {
-        new Notification('');
+        new Notification("");
       } catch (e) {
-        if (e.name == 'TypeError') {
+        if (e.name == "TypeError") {
           return false;
         }
       }
@@ -134,14 +150,16 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
     return true;
   };
 
-  protected transformNotificationPermission(permission: NotificationPermission): PermissionState {
+  protected transformNotificationPermission(
+    permission: NotificationPermission
+  ): PermissionState {
     switch (permission) {
-      case 'granted':
-        return 'granted';
-      case 'denied':
-        return 'denied';
+      case "granted":
+        return "granted";
+      case "denied":
+        return "denied";
       default:
-        return 'prompt';
+        return "prompt";
     }
   }
 
@@ -150,13 +168,18 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
     const now = new Date().getTime();
 
     for (const notification of this.pending) {
-      if (notification.schedule?.at && notification.schedule.at.getTime() <= now) {
+      if (
+        notification.schedule?.at &&
+        notification.schedule.at.getTime() <= now
+      ) {
         this.buildNotification(notification);
         toRemove.push(notification);
       }
     }
 
-    this.pending = this.pending.filter((notification) => !toRemove.find((n) => n === notification));
+    this.pending = this.pending.filter(
+      (notification) => !toRemove.find((n) => n === notification)
+    );
   }
 
   protected sendNotification(notification: LocalNotificationSchema): void {
@@ -172,17 +195,29 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
     this.buildNotification(notification);
   }
 
-  protected buildNotification(notification: LocalNotificationSchema): Notification {
+  protected buildNotification(
+    notification: LocalNotificationSchema
+  ): Notification {
     const localNotification = new Notification(notification.title, {
       body: notification.body,
       tag: String(notification.id),
     });
-    localNotification.addEventListener('click', this.onClick.bind(this, notification), false);
-    localNotification.addEventListener('show', this.onShow.bind(this, notification), false);
     localNotification.addEventListener(
-      'close',
+      "click",
+      this.onClick.bind(this, notification),
+      false
+    );
+    localNotification.addEventListener(
+      "show",
+      this.onShow.bind(this, notification),
+      false
+    );
+    localNotification.addEventListener(
+      "close",
       () => {
-        this.deliveredNotifications = this.deliveredNotifications.filter(() => !this);
+        this.deliveredNotifications = this.deliveredNotifications.filter(
+          () => !this
+        );
       },
       false
     );
@@ -192,13 +227,13 @@ export class LocalNotificationsWeb extends WebPlugin implements LocalNotificatio
 
   protected onClick(notification: LocalNotificationSchema): void {
     const data = {
-      actionId: 'tap',
+      actionId: "tap",
       notification,
     };
-    this.notifyListeners('localNotificationActionPerformed', data);
+    this.notifyListeners("localNotificationActionPerformed", data);
   }
 
   protected onShow(notification: LocalNotificationSchema): void {
-    this.notifyListeners('localNotificationReceived', notification);
+    this.notifyListeners("localNotificationReceived", notification);
   }
 }

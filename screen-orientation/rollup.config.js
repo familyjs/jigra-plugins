@@ -1,22 +1,22 @@
 export default {
-  input: 'dist/esm/index.js',
+  input: "dist/esm/index.js",
   output: [
     {
-      file: 'dist/plugin.js',
-      format: 'iife',
-      name: 'jigraScreenOrientation',
+      file: "dist/plugin.js",
+      format: "iife",
+      name: "jigraScreenOrientation",
       globals: {
-        '@jigra/core': 'jigraExports',
+        "@jigra/core": "jigraExports",
       },
       sourcemap: true,
       inlineDynamicImports: true,
     },
     {
-      file: 'dist/plugin.cjs.js',
-      format: 'cjs',
+      file: "dist/plugin.cjs.js",
+      format: "cjs",
       sourcemap: true,
       inlineDynamicImports: true,
     },
   ],
-  external: ['@jigra/core'],
+  external: ["@jigra/core"],
 };

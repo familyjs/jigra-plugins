@@ -1,17 +1,17 @@
 package app.jigrajs.plugins.camera;
 
 public enum CameraResultType {
-    BASE64("base64"),
-    URI("uri"),
-    DATAURL("dataUrl");
+  BASE64("base64"),
+  URI("uri"),
+  DATAURL("dataUrl");
 
-    private String type;
+  private String type;
 
-    CameraResultType(String type) {
-        this.type = type;
-    }
+  CameraResultType(String type) {
+    this.type = type;
+  }
 
-    public String getType() {
-        return type;
-    }
+  public String getType() {
+    return type;
+  }
 }

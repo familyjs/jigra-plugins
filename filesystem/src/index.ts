@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { FilesystemPlugin } from './definitions';
+import type { FilesystemPlugin } from "./definitions";
 
-const Filesystem = registerPlugin<FilesystemPlugin>('Filesystem', {
-  web: () => import('./web').then((m) => new m.FilesystemWeb()),
+const Filesystem = registerPlugin<FilesystemPlugin>("Filesystem", {
+  web: () => import("./web").then((m) => new m.FilesystemWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Filesystem };

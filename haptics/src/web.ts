@@ -1,7 +1,12 @@
-import { WebPlugin } from '@jigra/core';
+import { WebPlugin } from "@jigra/core";
 
-import { ImpactStyle, NotificationType } from './definitions';
-import type { HapticsPlugin, ImpactOptions, NotificationOptions, VibrateOptions } from './definitions';
+import { ImpactStyle, NotificationType } from "./definitions";
+import type {
+  HapticsPlugin,
+  ImpactOptions,
+  NotificationOptions,
+  VibrateOptions,
+} from "./definitions";
 
 export class HapticsWeb extends WebPlugin implements HapticsPlugin {
   selectionStarted = false;
@@ -44,7 +49,9 @@ export class HapticsWeb extends WebPlugin implements HapticsPlugin {
     return [61];
   }
 
-  private patternForNotification(type: NotificationType = NotificationType.Success): number[] {
+  private patternForNotification(
+    type: NotificationType = NotificationType.Success
+  ): number[] {
     if (type === NotificationType.Warning) {
       return [30, 40, 30, 50, 60];
     } else if (type === NotificationType.Error) {
@@ -57,7 +64,7 @@ export class HapticsWeb extends WebPlugin implements HapticsPlugin {
     if (navigator.vibrate) {
       navigator.vibrate(pattern);
     } else {
-      throw this.unavailable('Browser does not support the vibrate API');
+      throw this.unavailable("Browser does not support the vibrate API");
     }
   }
 }

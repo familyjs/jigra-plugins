@@ -29,14 +29,14 @@ export enum ActionSheetButtonStyle {
    *
    * @since 1.0.0
    */
-  Default = 'DEFAULT',
+  Default = "DEFAULT",
 
   /**
    * Style to use on destructive options.
    *
    * @since 1.0.0
    */
-  Destructive = 'DESTRUCTIVE',
+  Destructive = "DESTRUCTIVE",
 
   /**
    * Style to use on the option that cancels the Action Sheet.
@@ -44,7 +44,7 @@ export enum ActionSheetButtonStyle {
    *
    * @since 1.0.0
    */
-  Cancel = 'CANCEL',
+  Cancel = "CANCEL",
 }
 
 export interface ActionSheetButton {

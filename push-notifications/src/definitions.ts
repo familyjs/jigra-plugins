@@ -1,10 +1,10 @@
 /// <reference types="@jigra/cli" />
 
-import type { PermissionState, PluginListenerHandle } from '@jigra/core';
+import type { PermissionState, PluginListenerHandle } from "@jigra/core";
 
-export type PresentationOption = 'badge' | 'sound' | 'alert';
+export type PresentationOption = "badge" | "sound" | "alert";
 
-declare module '@jigra/cli' {
+declare module "@jigra/cli" {
   export interface PluginsConfig {
     /**
      * You can configure the way the push notifications are displayed when the app is in foreground.
@@ -61,7 +61,9 @@ export interface PushNotificationsPlugin {
    *
    * @since 1.0.0
    */
-  removeDeliveredNotifications(delivered: DeliveredNotifications): Promise<void>;
+  removeDeliveredNotifications(
+    delivered: DeliveredNotifications
+  ): Promise<void>;
 
   /**
    * Remove all the notifications from the notifications screen.
@@ -131,7 +133,7 @@ export interface PushNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'registration',
+    eventName: "registration",
     listenerFunc: (token: Token) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -143,7 +145,7 @@ export interface PushNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'registrationError',
+    eventName: "registrationError",
     listenerFunc: (error: RegistrationError) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -153,7 +155,7 @@ export interface PushNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'pushNotificationReceived',
+    eventName: "pushNotificationReceived",
     listenerFunc: (notification: PushNotificationSchema) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -163,7 +165,7 @@ export interface PushNotificationsPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'pushNotificationActionPerformed',
+    eventName: "pushNotificationActionPerformed",
     listenerFunc: (notification: ActionPerformed) => void
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

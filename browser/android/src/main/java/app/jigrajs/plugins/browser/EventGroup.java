@@ -5,41 +5,41 @@ package app.jigrajs.plugins.browser;
  */
 class EventGroup {
 
-    interface EventGroupCompletion {
-        void onGroupCompletion();
-    }
+  interface EventGroupCompletion {
+    void onGroupCompletion();
+  }
 
-    private int count;
-    private boolean isComplete;
-    private EventGroupCompletion completion;
+  private int count;
+  private boolean isComplete;
+  private EventGroupCompletion completion;
 
-    public EventGroup(EventGroupCompletion onCompletion) {
-        super();
-        count = 0;
-        isComplete = false;
-        completion = onCompletion;
-    }
+  public EventGroup(EventGroupCompletion onCompletion) {
+    super();
+    count = 0;
+    isComplete = false;
+    completion = onCompletion;
+  }
 
-    public void enter() {
-        count++;
-    }
+  public void enter() {
+    count++;
+  }
 
-    public void leave() {
-        count--;
-        checkForCompletion();
-    }
+  public void leave() {
+    count--;
+    checkForCompletion();
+  }
 
-    public void reset() {
-        count = 0;
-        isComplete = false;
-    }
+  public void reset() {
+    count = 0;
+    isComplete = false;
+  }
 
-    private void checkForCompletion() {
-        if (count <= 0) {
-            if (isComplete == false && completion != null) {
-                completion.onGroupCompletion();
-            }
-            isComplete = true;
-        }
+  private void checkForCompletion() {
+    if (count <= 0) {
+      if (isComplete == false && completion != null) {
+        completion.onGroupCompletion();
+      }
+      isComplete = true;
     }
+  }
 }

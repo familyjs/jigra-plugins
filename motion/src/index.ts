@@ -1,12 +1,12 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { MotionPlugin } from './definitions';
+import type { MotionPlugin } from "./definitions";
 
-const Motion = registerPlugin<MotionPlugin>('Motion', {
-  android: () => import('./web').then((m) => new m.MotionWeb()),
-  ios: () => import('./web').then((m) => new m.MotionWeb()),
-  web: () => import('./web').then((m) => new m.MotionWeb()),
+const Motion = registerPlugin<MotionPlugin>("Motion", {
+  android: () => import("./web").then((m) => new m.MotionWeb()),
+  ios: () => import("./web").then((m) => new m.MotionWeb()),
+  web: () => import("./web").then((m) => new m.MotionWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Motion };

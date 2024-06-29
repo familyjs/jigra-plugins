@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { ActionSheetPlugin } from './definitions';
+import type { ActionSheetPlugin } from "./definitions";
 
-const ActionSheet = registerPlugin<ActionSheetPlugin>('ActionSheet', {
-  web: () => import('./web').then((m) => new m.ActionSheetWeb()),
+const ActionSheet = registerPlugin<ActionSheetPlugin>("ActionSheet", {
+  web: () => import("./web").then((m) => new m.ActionSheetWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { ActionSheet };

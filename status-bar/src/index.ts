@@ -1,8 +1,8 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { StatusBarPlugin } from './definitions';
+import type { StatusBarPlugin } from "./definitions";
 
-const StatusBar = registerPlugin<StatusBarPlugin>('StatusBar');
+const StatusBar = registerPlugin<StatusBarPlugin>("StatusBar");
 
-export * from './definitions';
+export * from "./definitions";
 export { StatusBar };

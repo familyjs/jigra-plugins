@@ -1,10 +1,10 @@
-import { registerPlugin } from '@jigra/core';
+import { registerPlugin } from "@jigra/core";
 
-import type { DevicePlugin } from './definitions';
+import type { DevicePlugin } from "./definitions";
 
-const Device = registerPlugin<DevicePlugin>('Device', {
-  web: () => import('./web').then((m) => new m.DeviceWeb()),
+const Device = registerPlugin<DevicePlugin>("Device", {
+  web: () => import("./web").then((m) => new m.DeviceWeb()),
 });
 
-export * from './definitions';
+export * from "./definitions";
 export { Device };

@@ -1,17 +1,17 @@
 package app.jigrajs.plugins.camera;
 
 public enum CameraSource {
-    PROMPT("PROMPT"),
-    CAMERA("CAMERA"),
-    PHOTOS("PHOTOS");
+  PROMPT("PROMPT"),
+  CAMERA("CAMERA"),
+  PHOTOS("PHOTOS");
 
-    private String source;
+  private String source;
 
-    CameraSource(String source) {
-        this.source = source;
-    }
+  CameraSource(String source) {
+    this.source = source;
+  }
 
-    public String getSource() {
-        return this.source;
-    }
+  public String getSource() {
+    return this.source;
+  }
 }

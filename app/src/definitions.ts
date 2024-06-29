@@ -1,4 +1,4 @@
-import type { PluginListenerHandle } from '@jigra/core';
+import type { PluginListenerHandle } from "@jigra/core";
 
 export interface AppInfo {
   /**
@@ -182,7 +182,7 @@ export interface AppPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'appStateChange',
+    eventName: "appStateChange",
     listenerFunc: StateChangeListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -195,7 +195,10 @@ export interface AppPlugin {
    *
    * @since 4.1.0
    */
-  addListener(eventName: 'pause', listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(
+    eventName: "pause",
+    listenerFunc: () => void
+  ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
    * Listen for when the app or activity are resumed.
@@ -207,7 +210,10 @@ export interface AppPlugin {
    *
    * @since 4.1.0
    */
-  addListener(eventName: 'resume', listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(
+    eventName: "resume",
+    listenerFunc: () => void
+  ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   /**
    * Listen for url open events for the app. This handles both custom URL scheme links as well
@@ -216,7 +222,7 @@ export interface AppPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'appUrlOpen',
+    eventName: "appUrlOpen",
     listenerFunc: URLOpenListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -246,7 +252,7 @@ export interface AppPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'appRestoredResult',
+    eventName: "appRestoredResult",
     listenerFunc: RestoredListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
@@ -258,7 +264,7 @@ export interface AppPlugin {
    * @since 1.0.0
    */
   addListener(
-    eventName: 'backButton',
+    eventName: "backButton",
     listenerFunc: BackButtonListener
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 

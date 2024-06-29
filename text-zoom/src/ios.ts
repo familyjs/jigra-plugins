@@ -1,6 +1,11 @@
-import { Plugins } from '@jigra/core';
+import { Plugins } from "@jigra/core";
 
-import type { GetPreferredResult, GetResult, SetOptions, TextZoomPlugin } from './definitions';
+import type {
+  GetPreferredResult,
+  GetResult,
+  SetOptions,
+  TextZoomPlugin,
+} from "./definitions";
 
 export class TextZoomIOS implements TextZoomPlugin {
   static readonly TEXT_SIZE_REGEX = /(\d+)%/;
@@ -22,14 +27,14 @@ export class TextZoomIOS implements TextZoomPlugin {
   }
 
   getRaw(): string {
-    if (typeof document !== 'undefined') {
-      return document.body.style.webkitTextSizeAdjust || '100%';
+    if (typeof document !== "undefined") {
+      return document.body.style.webkitTextSizeAdjust || "100%";
     }
-    return '100%';
+    return "100%";
   }
 
   setRaw(value: string): void {
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       document.body.style.webkitTextSizeAdjust = value;
     }
   }
