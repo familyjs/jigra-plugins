@@ -1,6 +1,6 @@
 {
   "name": "@jigra/motion",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "The Motion API tracks accelerometer and device orientation (compass heading, etc.)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -56,7 +56,10 @@
     "@jigra/core": "^5.0.0"
   },
   "prettier": {
-    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+    "plugins": [
+      "@familyjs/prettier-config",
+      "prettier-plugin-java"
+    ]
   },
   "eslintConfig": {
     "extends": "@familyjs/eslint-config/recommended"

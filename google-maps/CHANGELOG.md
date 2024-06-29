@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.3.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.2.2...@jigra/google-maps@5.3.0) (2024-06-29)
+
+### Features
+
+- **google-maps:** Added feature to disable touch events on map ([d3878d2](https://github.com/familyjs/jigra-plugins/commit/d3878d27ca64f8663e2fec36e4bb01ff1cf1d172))
+- **google-maps:** Update map size in `updateRender` method if it has changed ([b9340ad](https://github.com/familyjs/jigra-plugins/commit/b9340adfb136c50ee861f41f9f4915c199bc618a))
+
 ## [5.2.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.2.1...@jigra/google-maps@5.2.2) (2024-06-29)
 
 **Note:** Version bump only for package @jigra/google-maps

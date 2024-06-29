@@ -1,6 +1,6 @@
 {
   "name": "@jigra/haptics",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "The Haptics API provides physical feedback to the user through touch or vibration.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -64,7 +64,10 @@
     "@jigra/core": "^5.0.0"
   },
   "prettier": {
-    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+    "plugins": [
+      "@familyjs/prettier-config",
+      "prettier-plugin-java"
+    ]
   },
   "swiftlint": "@familyjs/swiftlint-config",
   "eslintConfig": {

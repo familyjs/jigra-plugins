@@ -1,6 +1,6 @@
 {
   "name": "@jigra/device",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "The Device API exposes internal information about the device, such as the model and operating system version, along with user information such as unique ids.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -68,7 +68,10 @@
     "@jigra/core": "^5.0.0"
   },
   "prettier": {
-    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+    "plugins": [
+      "@familyjs/prettier-config",
+      "prettier-plugin-java"
+    ]
   },
   "swiftlint": "@familyjs/swiftlint-config",
   "eslintConfig": {

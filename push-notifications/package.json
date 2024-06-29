@@ -1,6 +1,6 @@
 {
   "name": "@jigra/push-notifications",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "The Push Notifications API provides access to native push notifications.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -65,7 +65,10 @@
     "@jigra/core": "^5.0.0"
   },
   "prettier": {
-    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+    "plugins": [
+      "@familyjs/prettier-config",
+      "prettier-plugin-java"
+    ]
   },
   "swiftlint": "@familyjs/swiftlint-config",
   "eslintConfig": {

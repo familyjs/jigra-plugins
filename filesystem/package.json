@@ -1,6 +1,6 @@
 {
   "name": "@jigra/filesystem",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "The Filesystem API provides a NodeJS-like API for working with files on the device.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -64,7 +64,10 @@
     "@jigra/core": "^5.7.0"
   },
   "prettier": {
-    "plugins": ["@familyjs/prettier-config", "prettier-plugin-java"]
+    "plugins": [
+      "@familyjs/prettier-config",
+      "prettier-plugin-java"
+    ]
   },
   "swiftlint": "@familyjs/swiftlint-config",
   "eslintConfig": {
