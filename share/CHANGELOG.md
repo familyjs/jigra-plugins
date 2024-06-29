@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.8](https://github.com/familyjs/jigra-plugins/compare/@jigra/share@5.0.7...@jigra/share@5.0.8) (2024-06-29)
+
+**Note:** Version bump only for package @jigra/share
+
 ## [5.0.7](https://github.com/familyjs/jigra-plugins/compare/@jigra/share@5.0.6...@jigra/share@5.0.7) (2024-06-29)
 
 **Note:** Version bump only for package @jigra/share

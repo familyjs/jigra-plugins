@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.1.2...@jigra/filesystem@5.1.3) (2024-06-29)
+
+### Bug Fixes
+
+- **filesystem:** accessing security scoped resources on iOS ([7ba0a73](https://github.com/familyjs/jigra-plugins/commit/7ba0a73a2bf0ce15a1fea522aa5eb80fe74e41b5))
+- **filesystem:** catch http errors on downloadFile ([44e20b5](https://github.com/familyjs/jigra-plugins/commit/44e20b5cd37e5698deaffe571fc510829b775a94))
+
 ## [5.1.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.1.1...@jigra/filesystem@5.1.2) (2024-06-29)
 
 ### Bug Fixes

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.3.0...@jigra/google-maps@5.3.1) (2024-06-29)
+
+### Bug Fixes
+
+- **google-maps:** attach native map view to correct scroll view ([7ced285](https://github.com/familyjs/jigra-plugins/commit/7ced2851533b9f542c5bb9f7c7c3ccf821e04e44))
+- **google-maps:** problems on get/setMapType on web ([dcf9bd6](https://github.com/familyjs/jigra-plugins/commit/dcf9bd6ab7a327d37a2f6c56bdd9443ef62d081e))
+
 # [5.3.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.2.2...@jigra/google-maps@5.3.0) (2024-06-29)
 
 ### Features

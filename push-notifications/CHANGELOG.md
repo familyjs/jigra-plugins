@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.0.7...@jigra/push-notifications@5.1.0) (2024-06-29)
+
+### Features
+
+- use Firebase SDK for creating foreground notifications ([93527de](https://github.com/familyjs/jigra-plugins/commit/93527de971d912ed73c33a18fa5b1f087c72c346))
+
 ## [5.0.7](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.0.6...@jigra/push-notifications@5.0.7) (2024-06-29)
 
 **Note:** Version bump only for package @jigra/push-notifications

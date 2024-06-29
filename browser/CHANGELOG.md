@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@5.0.7...@jigra/browser@5.1.0) (2024-06-29)
+
+### Features
+
+- **browser:** support other custom tabs providers ([9d29bd4](https://github.com/familyjs/jigra-plugins/commit/9d29bd484cad4c3590e3fea22e094eaa2a168883))
+
 ## [5.0.7](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@5.0.6...@jigra/browser@5.0.7) (2024-06-29)
 
 **Note:** Version bump only for package @jigra/browser
