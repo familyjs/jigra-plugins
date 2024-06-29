@@ -27,6 +27,8 @@ JIG_PLUGIN(JigraGoogleMapsPlugin, "JigraGoogleMaps",
    JIG_PLUGIN_METHOD(enableCurrentLocation, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(setPadding, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(onScroll, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(onResize, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(onDisplay, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(getMapBounds, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(fitBounds, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(mapBoundsContains, JIGPluginReturnPromise);

@@ -102,6 +102,7 @@ customElements.define('jigra-google-map', MapCustomElement);
 export class GoogleMap {
   private id: string;
   private element: HTMLElement | null = null;
+  private resizeObserver: ResizeObserver | null = null;
 
   private onBoundsChangedListener?: PluginListenerHandle;
   private onCameraIdleListener?: PluginListenerHandle;
@@ -160,6 +161,71 @@ export class GoogleMap {
 
     if (Jigra.isNativePlatform()) {
       (options.element as any) = {};
+
+      const getMapBounds = () => {
+        const mapRect = newMap.element?.getBoundingClientRect() ?? ({} as DOMRect);
+        return {
+          x: mapRect.x,
+          y: mapRect.y,
+          width: mapRect.width,
+          height: mapRect.height,
+        };
+      };
+
+      const onDisplay = () => {
+        JigraGoogleMaps.onDisplay({
+          id: newMap.id,
+          mapBounds: getMapBounds(),
+        });
+      };
+
+      const onResize = () => {
+        JigraGoogleMaps.onResize({
+          id: newMap.id,
+          mapBounds: getMapBounds(),
+        });
+      };
+
+      const familyPage = newMap.element.closest('.fml-page');
+      if (Jigra.getPlatform() === 'ios' && familyPage) {
+        familyPage.addEventListener('fmlViewWillEnter', () => {
+          setTimeout(() => {
+            onDisplay();
+          }, 100);
+        });
+        familyPage.addEventListener('fmlViewDidEnter', () => {
+          setTimeout(() => {
+            onDisplay();
+          }, 100);
+        });
+      }
+
+      const lastState = {
+        width: elementBounds.width,
+        height: elementBounds.height,
+        isHidden: false,
+      };
+      newMap.resizeObserver = new ResizeObserver(() => {
+        if (newMap.element != null) {
+          const mapRect = newMap.element.getBoundingClientRect();
+
+          const isHidden = mapRect.width === 0 && mapRect.height === 0;
+          if (!isHidden) {
+            if (lastState.isHidden) {
+              if (Jigra.getPlatform() === 'ios' && !familyPage) {
+                onDisplay();
+              }
+            } else if (lastState.width !== mapRect.width || lastState.height !== mapRect.height) {
+              onResize();
+            }
+          }
+
+          lastState.width = mapRect.width;
+          lastState.height = mapRect.height;
+          lastState.isHidden = isHidden;
+        }
+      });
+      newMap.resizeObserver.observe(newMap.element);
     }
 
     await JigraGoogleMaps.create(options);
@@ -335,6 +401,10 @@ export class GoogleMap {
   async destroy(): Promise<void> {
     if (Jigra.getPlatform() == 'android') {
       this.disableScrolling();
+    }
+
+    if (Jigra.isNativePlatform()) {
+      this.resizeObserver?.disconnect();
     }
 
     this.removeAllMapListeners();
