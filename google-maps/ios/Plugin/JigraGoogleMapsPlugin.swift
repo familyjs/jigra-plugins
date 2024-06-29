@@ -148,6 +148,42 @@ public class JigraGoogleMapsPlugin: JIGPlugin, GMSMapViewDelegate {
         }
     }
 
+    @objc func enableTouch(_ call: JIGPluginCall) {
+        do {
+            guard let id = call.getString("id") else {
+                throw GoogleMapErrors.invalidMapId
+            }
+
+            guard let map = self.maps[id] else {
+                throw GoogleMapErrors.mapNotFound
+            }
+
+            map.enableTouch()
+
+            call.resolve()
+        } catch {
+            handleError(call, error: error)
+        }
+    }
+
+    @objc func disableTouch(_ call: JIGPluginCall) {
+        do {
+            guard let id = call.getString("id") else {
+                throw GoogleMapErrors.invalidMapId
+            }
+
+            guard let map = self.maps[id] else {
+                throw GoogleMapErrors.mapNotFound
+            }
+
+            map.disableTouch()
+
+            call.resolve()
+        } catch {
+            handleError(call, error: error)
+        }
+    }
+
     @objc func addMarker(_ call: JIGPluginCall) {
         do {
             guard let id = call.getString("id") else {
@@ -702,7 +738,7 @@ public class JigraGoogleMapsPlugin: JIGPlugin, GMSMapViewDelegate {
         call.unavailable("not supported on iOS")
     }
 
-    @objc func onResize(_ call: CAPPluginCall) {
+    @objc func onResize(_ call: JIGPluginCall) {
         do {
             guard let id = call.getString("id") else {
                 throw GoogleMapErrors.invalidMapId
@@ -726,7 +762,7 @@ public class JigraGoogleMapsPlugin: JIGPlugin, GMSMapViewDelegate {
         }
     }
 
-    @objc func onDisplay(_ call: CAPPluginCall) {
+    @objc func onDisplay(_ call: JIGPluginCall) {
         do {
             guard let id = call.getString("id") else {
                 throw GoogleMapErrors.invalidMapId

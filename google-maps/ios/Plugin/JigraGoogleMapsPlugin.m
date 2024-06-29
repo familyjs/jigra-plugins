@@ -5,6 +5,8 @@
 // each method the plugin supports using the JIG_PLUGIN_METHOD macro.
 JIG_PLUGIN(JigraGoogleMapsPlugin, "JigraGoogleMaps",
    JIG_PLUGIN_METHOD(create, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(enableTouch, JIGPluginReturnPromise);
+   JIG_PLUGIN_METHOD(disableTouch, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(addMarker, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(addMarkers, JIGPluginReturnPromise);
    JIG_PLUGIN_METHOD(addPolygons, JIGPluginReturnPromise);

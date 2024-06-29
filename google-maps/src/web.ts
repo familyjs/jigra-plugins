@@ -123,6 +123,14 @@ export class JigraGoogleMapsWeb extends WebPlugin implements JigraGoogleMapsPlug
     }
   }
 
+  async enableTouch(_args: { id: string }): Promise<void> {
+    this.maps[_args.id].map.setOptions({ gestureHandling: 'auto' });
+  }
+
+  async disableTouch(_args: { id: string }): Promise<void> {
+    this.maps[_args.id].map.setOptions({ gestureHandling: 'none' });
+  }
+
   async setCamera(_args: CameraArgs): Promise<void> {
     // Animation not supported yet...
     this.maps[_args.id].map.moveCamera({
