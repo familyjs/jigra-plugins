@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.3.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.3.1...@jigra/google-maps@5.3.2) (2024-06-29)
+
+### Bug Fixes
+
+- **google-maps:** Apply `iconAnchor` value to Marker anchor on Android ([d95b62c](https://github.com/familyjs/jigra-plugins/commit/d95b62c42dd2c2065617a093109f4030213169ec))
+- **google-maps:** correctly apply JigraGoogleMapsPoint `y` value ([d36c277](https://github.com/familyjs/jigra-plugins/commit/d36c27779eab29dbc44a1122cbf8d35a14178201))
+- **google-maps:** use `URLSession` for remote `iconUrl` on iOS ([9391eb2](https://github.com/familyjs/jigra-plugins/commit/9391eb2dd21e5c6857d64af0cfec8cd2c2e12daa))
+
 ## [5.3.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.3.0...@jigra/google-maps@5.3.1) (2024-06-29)
 
 ### Bug Fixes
