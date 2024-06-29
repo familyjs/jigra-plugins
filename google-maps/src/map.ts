@@ -122,6 +122,8 @@ class MapCustomElement extends HTMLElement {
   }
 
   connectedCallback() {
+    this.innerHTML = "";
+
     if (Jigra.getPlatform() == "ios") {
       this.style.overflow = "scroll";
       (this.style as any)["-webkit-overflow-scrolling"] = "touch";
@@ -269,7 +271,17 @@ export class GoogleMap {
       newMap.resizeObserver.observe(newMap.element);
     }
 
-    await JigraGoogleMaps.create(options);
+    // small delay to allow for iOS WKWebView to setup corresponding element sub-scroll views ???
+    await new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        try {
+          await JigraGoogleMaps.create(options);
+          resolve(undefined);
+        } catch (err) {
+          reject(err);
+        }
+      }, 200);
+    });
 
     if (callback) {
       const onMapReadyListener = await JigraGoogleMaps.addListener(
