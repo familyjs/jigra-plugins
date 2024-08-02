@@ -14,7 +14,7 @@ npx jig sync
 ```typescript
 import { ScreenReader } from '@jigra/screen-reader';
 
-ScreenReader.addListener('screenReaderStateChange', ({ value }) => {
+ScreenReader.addListener('stateChange', ({ value }) => {
   console.log(`Screen reader is now ${value ? 'on' : 'off'}`);
 });
 

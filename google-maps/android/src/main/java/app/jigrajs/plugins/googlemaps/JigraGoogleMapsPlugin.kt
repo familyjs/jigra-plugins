@@ -11,6 +11,7 @@ import com.getjigra.annotation.JigraPlugin
 import com.getjigra.annotation.Permission
 import com.getjigra.annotation.PermissionCallback
 import com.google.android.gms.maps.MapsInitializer
+import com.google.android.gms.maps.OnMapsSdkInitializedCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import kotlinx.coroutines.CoroutineScope
@@ -29,7 +30,7 @@ import org.json.JSONObject
                         ),
                 ],
 )
-class JigraGoogleMapsPlugin : Plugin() {
+class JigraGoogleMapsPlugin : Plugin(), OnMapsSdkInitializedCallback {
     private var maps: HashMap<String, JigraGoogleMap> = HashMap()
     private var cachedTouchEvents: HashMap<String, MutableList<MotionEvent>> = HashMap()
     private val tag: String = "JIG-GOOGLE-MAPS"
@@ -43,7 +44,8 @@ class JigraGoogleMapsPlugin : Plugin() {
     override fun load() {
         super.load()
 
-        MapsInitializer.initialize(this.context, MapsInitializer.Renderer.LATEST, null)
+        MapsInitializer.initialize(this.context, MapsInitializer.Renderer.LATEST, this)
+
 
         this.bridge.webView.setOnTouchListener(
                 object : View.OnTouchListener {
@@ -88,6 +90,13 @@ class JigraGoogleMapsPlugin : Plugin() {
                     }
                 }
         )
+    }
+
+    override fun onMapsSdkInitialized(renderer: MapsInitializer.Renderer) {
+        when (renderer) {
+            MapsInitializer.Renderer.LATEST -> Logger.debug("Jigra Google Maps", "Latest Google Maps renderer enabled")
+            MapsInitializer.Renderer.LEGACY -> Logger.debug("Jigra Google Maps", "Legacy Google Maps renderer enabled - Cloud based map styling and advanced drawing not available")
+        }
     }
 
     override fun handleOnStart() {

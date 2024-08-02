@@ -9,6 +9,7 @@ public struct GoogleMapConfig: Codable {
     let center: LatLng
     let zoom: Double
     let styles: String?
+    var mapId: String?
 
     init(fromJSObject: JSObject) throws {
         guard let width = fromJSObject["width"] as? Double else {
@@ -52,5 +53,7 @@ public struct GoogleMapConfig: Codable {
         } else {
             self.styles = nil
         }
+
+        self.mapId = fromJSObject["iOSMapId"] as? String
     }
 }

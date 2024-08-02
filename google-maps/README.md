@@ -858,6 +858,9 @@ For iOS and Android only the config options declared on <a href="#googlemapconfi
 | **`androidLiteMode`**  | <code>boolean</code>                      | Enables image-based lite mode on Android.                                                                                                                 | <code>false</code> |       |
 | **`devicePixelRatio`** | <code>number</code>                       | Override pixel ratio for native map.                                                                                                                      |                    |       |
 | **`styles`**           | <code>MapTypeStyle[] \| null</code>       | Styles to apply to each of the default map types. Note that for satellite, hybrid and terrain modes, these styles will only apply to labels and geometry. |                    | 4.3.0 |
+| **`mapId`**            | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Web.        |                    | 5.4.0 |
+| **`androidMapId`**     | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for Android.    |                    | 5.4.0 |
+| **`iOSMapId`**         | <code>string</code>                       | A map id associated with a specific map style or feature. [Use Map IDs](https://developers.google.com/maps/documentation/get-map-id) Only for iOS.        |                    | 5.4.0 |
 
 
 #### LatLng
@@ -1118,10 +1121,10 @@ but the current specification only allows X, Y, and (optionally) Z to be defined
 
 | Members         | Value                    | Description                              |
 | --------------- | ------------------------ | ---------------------------------------- |
-| **`Normal`**    | <code>'Normal'</code>    | Basic map.                               |
-| **`Hybrid`**    | <code>'Hybrid'</code>    | Satellite imagery with roads and labels. |
-| **`Satellite`** | <code>'Satellite'</code> | Satellite imagery with no labels.        |
-| **`Terrain`**   | <code>'Terrain'</code>   | Topographic data.                        |
-| **`None`**      | <code>'None'</code>      | No base map tiles.                       |
+| **`Normal`**    | <code>"Normal"</code>    | Basic map.                               |
+| **`Hybrid`**    | <code>"Hybrid"</code>    | Satellite imagery with roads and labels. |
+| **`Satellite`** | <code>"Satellite"</code> | Satellite imagery with no labels.        |
+| **`Terrain`**   | <code>"Terrain"</code>   | Topographic data.                        |
+| **`None`**      | <code>"None"</code>      | No base map tiles.                       |
 
 </docgen-api>
