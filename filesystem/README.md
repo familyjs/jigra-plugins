@@ -101,6 +101,7 @@ const readFilePath = async () => {
 * [`requestPermissions()`](#requestpermissions)
 * [`downloadFile(...)`](#downloadfile)
 * [`addListener('progress', ...)`](#addlistenerprogress)
+* [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
@@ -382,14 +383,27 @@ Add a listener to file download progress events.
 --------------------
 
 
+### removeAllListeners()
+
+```typescript
+removeAllListeners() => Promise<void>
+```
+
+Remove all listeners for this plugin.
+
+**Since:** 5.2.0
+
+--------------------
+
+
 ### Interfaces
 
 
 #### ReadFileResult
 
-| Prop       | Type             | Description                                                                                                                            | Since |
-| ---------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`data`** | <code>any</code> | The representation of the data contained in the file Note: Blob is only available on Web. On native, the data is returned as a string. | 1.0.0 |
+| Prop       | Type                        | Description                                                                                                                            | Since |
+| ---------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`data`** | <code>string \| Blob</code> | The representation of the data contained in the file Note: Blob is only available on Web. On native, the data is returned as a string. | 1.0.0 |
 
 
 #### ReadFileOptions
@@ -413,7 +427,7 @@ Add a listener to file download progress events.
 | Prop            | Type                                            | Description                                                                                                                                               | Default            | Since |
 | --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
 | **`path`**      | <code>string</code>                             | The path of the file to write                                                                                                                             |                    | 1.0.0 |
-| **`data`**      | <code>any</code>                                | The data to write Note: Blob data is only supported on Web.                                                                                               |                    | 1.0.0 |
+| **`data`**      | <code>string \| Blob</code>                     | The data to write Note: Blob data is only supported on Web.                                                                                               |                    | 1.0.0 |
 | **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                             |                    | 1.0.0 |
 | **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string |                    | 1.0.0 |
 | **`recursive`** | <code>boolean</code>                            | Whether to create any missing parent directories.                                                                                                         | <code>false</code> | 1.0.0 |
