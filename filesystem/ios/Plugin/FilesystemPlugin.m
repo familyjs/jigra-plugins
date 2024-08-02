@@ -18,4 +18,5 @@ JIG_PLUGIN(FilesystemPlugin, "Filesystem",
            JIG_PLUGIN_METHOD(checkPermissions, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(requestPermissions, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(downloadFile, JIGPluginReturnPromise);
+           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )
