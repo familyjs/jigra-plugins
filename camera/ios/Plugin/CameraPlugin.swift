@@ -255,6 +255,7 @@ extension CameraPlugin: PHPickerViewControllerDelegate {
         self.fetchProcessedImages(from: results) { [weak self] processedImageArray in
             guard let processedImageArray else {
                 self?.call?.reject("Error loading image")
+                return
             }
 
             if self?.multiple == true {
