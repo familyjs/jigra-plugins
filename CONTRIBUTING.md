@@ -19,7 +19,7 @@ See [`CONTRIBUTING.md`](https://github.com/familyjs/jigra/blob/HEAD/CONTRIBUTING
     brew install swiftlint
     ```
 
-Sometimes, it may be necessary to work on Jigra in parellel with the plugin(s). In this case, a few extra steps are necessary:
+Sometimes, it may be necessary to work on Jigra in parallel with the plugin(s). In this case, a few extra steps are necessary:
 
 4. Follow the Jigra repo's [local setup instructions](https://github.com/familyjs/jigra/blob/HEAD/CONTRIBUTING.md#local-setup).
 5. Toggle each plugin to use your local copy of Jigra.
@@ -47,13 +47,13 @@ To aid in managing these plugins, this repo has a variety of scripts (located in
 
 #### `npm run set-jigra-version "<version>"`
 
-This script is for setting the version (or version range) of Jigra packages in each plugin's `package.json`. It will also run `lerna bootstrap` for you.
+This script is for setting the version (or version range) of Jigra packages in each plugin's `package.json`.
 
 #### `npm run toggle-local`
 
 > :memo: Requires [Jigra](https://github.com/familyjs/jigra/) to be cloned in a sibling directory.
 
-This script is for switching between Jigra packages from npm and Jigra packages installed locally. It will also run `lerna bootstrap` for you.
+This script is for switching between Jigra packages from npm and Jigra packages installed locally.
 
 > If you get npm errors, you can try installing from scratch:
 >
