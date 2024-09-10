@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.1.3...@jigra/filesystem@5.2.0) (2024-09-10)
+
+### Features
+
+- **filesystem:** add `removeAllListeners` method ([0815c1c](https://github.com/familyjs/jigra-plugins/commit/0815c1cac07435b474798f010267781778266a46))
+
 ## [5.1.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@5.1.2...@jigra/filesystem@5.1.3) (2024-06-29)
 
 ### Bug Fixes
