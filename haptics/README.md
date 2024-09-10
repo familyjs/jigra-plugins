@@ -183,17 +183,17 @@ For example, call this when a user has lifted their finger from a control
 
 | Members      | Value                 | Description                                                  | Since |
 | ------------ | --------------------- | ------------------------------------------------------------ | ----- |
-| **`Heavy`**  | <code>'HEAVY'</code>  | A collision between large, heavy user interface elements     | 1.0.0 |
-| **`Medium`** | <code>'MEDIUM'</code> | A collision between moderately sized user interface elements | 1.0.0 |
-| **`Light`**  | <code>'LIGHT'</code>  | A collision between small, light user interface elements     | 1.0.0 |
+| **`Heavy`**  | <code>"HEAVY"</code>  | A collision between large, heavy user interface elements     | 1.0.0 |
+| **`Medium`** | <code>"MEDIUM"</code> | A collision between moderately sized user interface elements | 1.0.0 |
+| **`Light`**  | <code>"LIGHT"</code>  | A collision between small, light user interface elements     | 1.0.0 |
 
 
 #### NotificationType
 
 | Members       | Value                  | Description                                                                    | Since |
 | ------------- | ---------------------- | ------------------------------------------------------------------------------ | ----- |
-| **`Success`** | <code>'SUCCESS'</code> | A notification feedback type indicating that a task has completed successfully | 1.0.0 |
-| **`Warning`** | <code>'WARNING'</code> | A notification feedback type indicating that a task has produced a warning     | 1.0.0 |
-| **`Error`**   | <code>'ERROR'</code>   | A notification feedback type indicating that a task has failed                 | 1.0.0 |
+| **`Success`** | <code>"SUCCESS"</code> | A notification feedback type indicating that a task has completed successfully | 1.0.0 |
+| **`Warning`** | <code>"WARNING"</code> | A notification feedback type indicating that a task has produced a warning     | 1.0.0 |
+| **`Error`**   | <code>"ERROR"</code>   | A notification feedback type indicating that a task has failed                 | 1.0.0 |
 
 </docgen-api>

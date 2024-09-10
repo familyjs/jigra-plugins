@@ -58,7 +58,7 @@ Query the current status of the network connection.
 ### addListener('networkStatusChange', ...)
 
 ```typescript
-addListener(eventName: 'networkStatusChange', listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "networkStatusChange", listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle>
 ```
 
 Listen for changes in the network connection.
@@ -68,7 +68,7 @@ Listen for changes in the network connection.
 | **`eventName`**    | <code>'networkStatusChange'</code>                                                        |
 | **`listenerFunc`** | <code><a href="#connectionstatuschangelistener">ConnectionStatusChangeListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 1.0.0
 
@@ -115,7 +115,7 @@ Represents the state and type of the network connection.
 
 The type of network connection that a device might have.
 
-<code>'wifi' | 'cellular' | 'none' | 'unknown'</code>
+<code>"wifi" | "cellular" | "none" | "unknown"</code>
 
 
 #### ConnectionStatusChangeListener

@@ -365,7 +365,7 @@ Perform a http request to a server and download the file to the specified destin
 ### addListener('progress', ...)
 
 ```typescript
-addListener(eventName: "progress", listenerFunc: ProgressListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "progress", listenerFunc: ProgressListener) => Promise<PluginListenerHandle>
 ```
 
 Add a listener to file download progress events.
@@ -375,7 +375,7 @@ Add a listener to file download progress events.
 | **`eventName`**    | <code>'progress'</code>                                       |
 | **`listenerFunc`** | <code><a href="#progresslistener">ProgressListener</a></code> |
 
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 **Since:** 5.1.0
 
@@ -387,9 +387,9 @@ Add a listener to file download progress events.
 
 #### ReadFileResult
 
-| Prop       | Type             | Description                                                                                                                            | Since |
-| ---------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`data`** | <code>any</code> | The representation of the data contained in the file Note: Blob is only available on Web. On native, the data is returned as a string. | 1.0.0 |
+| Prop       | Type                        | Description                                                                                                                            | Since |
+| ---------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **`data`** | <code>string \| Blob</code> | The representation of the data contained in the file Note: Blob is only available on Web. On native, the data is returned as a string. | 1.0.0 |
 
 
 #### ReadFileOptions
@@ -413,7 +413,7 @@ Add a listener to file download progress events.
 | Prop            | Type                                            | Description                                                                                                                                               | Default            | Since |
 | --------------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----- |
 | **`path`**      | <code>string</code>                             | The path of the file to write                                                                                                                             |                    | 1.0.0 |
-| **`data`**      | <code>any</code>                                | The data to write Note: Blob data is only supported on Web.                                                                                               |                    | 1.0.0 |
+| **`data`**      | <code>string \| Blob</code>                     | The data to write Note: Blob data is only supported on Web.                                                                                               |                    | 1.0.0 |
 | **`directory`** | <code><a href="#directory">Directory</a></code> | The <a href="#directory">`Directory`</a> to store the file in                                                                                             |                    | 1.0.0 |
 | **`encoding`**  | <code><a href="#encoding">Encoding</a></code>   | The encoding to write the file in. If not provided, data is written as base64 encoded. Pass <a href="#encoding">Encoding.UTF8</a> to write data as string |                    | 1.0.0 |
 | **`recursive`** | <code>boolean</code>                            | Whether to create any missing parent directories.                                                                                                         | <code>false</code> | 1.0.0 |
