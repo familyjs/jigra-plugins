@@ -14,7 +14,7 @@
     "set-settings-gradle-for-monorepo": "node ./scripts/monorepo-tools/android-settings-gradle-fix.mjs",
     "set-podfiles-for-monorepo": "node ./scripts/monorepo-tools/ios-podfile-fix.mjs",
     "publish:cocoapod": "lerna run publish:cocoapod --concurrency 1",
-    "ci:publish:nightly": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid nightly-$(date +\"%Y%m%dT%H%M%S\") --force-publish --no-changelog --no-git-tag-version --dist-tag nightly --no-push --yes",
+    "ci:publish:weekly": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid weekly-$(date +\"%Y%m%dT%H%M%S\") --force-publish --no-changelog --no-git-tag-version --dist-tag weekly --no-push --yes",
     "ci:publish:alpha": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid alpha --force-publish --dist-tag next --yes",
     "ci:publish:beta": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid beta --force-publish --dist-tag next --yes",
     "ci:publish:rc": "lerna publish prerelease --conventional-commits --conventional-prerelease --preid rc --force-publish --dist-tag next --yes",
