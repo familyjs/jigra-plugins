@@ -1,6 +1,6 @@
 {
   "name": "@jigra/network",
-  "version": "5.0.9",
+  "version": "5.0.10",
   "description": "The Network API provides network and connectivity information.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

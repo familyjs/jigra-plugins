@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.11](https://github.com/familyjs/jigra-plugins/compare/@jigra/camera@5.0.10...@jigra/camera@5.0.11) (2024-09-10)
+
+### Bug Fixes
+
+- **ios:** iOS panorama photos selected through CameraPlugin are corrupted ([9b4accb](https://github.com/familyjs/jigra-plugins/commit/9b4accb06bbc2196870ef6b8eed27bd202009e2d))
+- **ios:** Picking ProRAW pictures from Gallery ([0e9c5fd](https://github.com/familyjs/jigra-plugins/commit/0e9c5fda5727fc792934d18b411ad7599b18395d))
+
 ## [5.0.10](https://github.com/familyjs/jigra-plugins/compare/@jigra/camera@5.0.9...@jigra/camera@5.0.10) (2024-09-10)
 
 **Note:** Version bump only for package @jigra/camera

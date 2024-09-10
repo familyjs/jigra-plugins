@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.10](https://github.com/familyjs/jigra-plugins/compare/@jigra/screen-orientation@5.0.9...@jigra/screen-orientation@5.0.10) (2024-09-10)
+
+**Note:** Version bump only for package @jigra/screen-orientation
+
 ## [5.0.9](https://github.com/familyjs/jigra-plugins/compare/@jigra/screen-orientation@5.0.8...@jigra/screen-orientation@5.0.9) (2024-09-10)
 
 **Note:** Version bump only for package @jigra/screen-orientation

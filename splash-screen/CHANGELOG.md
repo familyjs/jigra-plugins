@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.10](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.9...@jigra/splash-screen@5.0.10) (2024-09-10)
+
+### Bug Fixes
+
+- **android:** removes `setOnExitAnimationListener` when fade out is disabled ([bcdc63f](https://github.com/familyjs/jigra-plugins/commit/bcdc63fc97aaf6b6aba7fef54c896e5789ad8229))
+
 ## [5.0.9](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.8...@jigra/splash-screen@5.0.9) (2024-09-10)
 
 **Note:** Version bump only for package @jigra/splash-screen
