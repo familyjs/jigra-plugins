@@ -8,7 +8,7 @@ API](https://web.dev/web-share/)), though web support is currently spotty.
 ## Install
 
 ```bash
-npm install @jigra/share
+npm install @jigra/share@latest-5
 npx jig sync
 ```
 ## Android

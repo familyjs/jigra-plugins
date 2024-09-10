@@ -5,7 +5,7 @@ Google maps on Jigra
 ## Install
 
 ```bash
-npm install @jigra/google-maps
+npm install @jigra/google-maps@latest-5
 npx jig sync
 ```
 

@@ -18,7 +18,7 @@ Example:
 ## Install
 
 ```bash
-npm install @jigra/app-launcher
+npm install @jigra/app-launcher@latest-5
 npx jig sync
 ```
 

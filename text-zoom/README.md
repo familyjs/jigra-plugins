@@ -15,7 +15,7 @@ The Text Zoom API provides the ability to change Web View text size for visual a
 ## Install
 
 ```bash
-npm install @jigra/text-zoom
+npm install @jigra/text-zoom@latest-5
 npx jig sync
 ```
 

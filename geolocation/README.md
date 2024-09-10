@@ -5,7 +5,7 @@ The Geolocation API provides simple methods for getting and tracking the current
 ## Install
 
 ```bash
-npm install @jigra/geolocation
+npm install @jigra/geolocation@latest-5
 npx jig sync
 ```
 

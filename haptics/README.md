@@ -7,7 +7,7 @@ On devices that don't have Taptic Engine or Vibrator, the API calls will resolve
 ## Install
 
 ```bash
-npm install @jigra/haptics
+npm install @jigra/haptics@latest-5
 npx jig sync
 ```
 

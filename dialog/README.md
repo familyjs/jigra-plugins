@@ -5,7 +5,7 @@ The Dialog API provides methods for triggering native dialog windows for alerts,
 ## Install
 
 ```bash
-npm install @jigra/dialog
+npm install @jigra/dialog@latest-5
 npx jig sync
 ```
 

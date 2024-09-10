@@ -5,7 +5,7 @@ The Local Notifications API provides a way to schedule device notifications loca
 ## Install
 
 ```bash
-npm install @jigra/local-notifications
+npm install @jigra/local-notifications@latest-5
 npx jig sync
 ```
 

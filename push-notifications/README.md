@@ -5,7 +5,7 @@ The Push Notifications API provides access to native push notifications.
 ## Install
 
 ```bash
-npm install @jigra/push-notifications
+npm install @jigra/push-notifications@latest-5
 npx jig sync
 ```
 

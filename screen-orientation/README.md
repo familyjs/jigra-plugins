@@ -5,7 +5,7 @@ The Screen Orientation API provides information and functionality related to the
 ## Install
 
 ```bash
-npm install @jigra/screen-orientation
+npm install @jigra/screen-orientation@latest-5
 npx jig sync
 ```
 

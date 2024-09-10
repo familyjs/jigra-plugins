@@ -5,7 +5,7 @@ The Keyboard API provides keyboard display and visibility control, along with ev
 ## Install
 
 ```bash
-npm install @jigra/keyboard
+npm install @jigra/keyboard@latest-5
 npx jig sync
 ```
 

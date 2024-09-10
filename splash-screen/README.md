@@ -5,7 +5,7 @@ The Splash Screen API provides methods for showing or hiding a Splash image.
 ## Install
 
 ```bash
-npm install @jigra/splash-screen
+npm install @jigra/splash-screen@latest-5
 npx jig sync
 ```
 

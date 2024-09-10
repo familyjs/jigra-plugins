@@ -5,7 +5,7 @@ The Network API provides network and connectivity information.
 ## Install
 
 ```bash
-npm install @jigra/network
+npm install @jigra/network@latest-5
 npx jig sync
 ```
 

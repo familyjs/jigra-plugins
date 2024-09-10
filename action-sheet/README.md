@@ -5,7 +5,7 @@ The Action Sheet API provides access to native Action Sheets, which come up from
 ## Install
 
 ```bash
-npm install @jigra/action-sheet
+npm install @jigra/action-sheet@latest-5
 npx jig sync
 ```
 

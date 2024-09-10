@@ -5,7 +5,7 @@ The Screen Reader API provides access to TalkBack/VoiceOver/etc. and provides si
 ## Install
 
 ```bash
-npm install @jigra/screen-reader
+npm install @jigra/screen-reader@latest-5
 npx jig sync
 ```
 

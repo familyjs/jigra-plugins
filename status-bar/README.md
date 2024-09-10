@@ -5,7 +5,7 @@ The StatusBar API Provides methods for configuring the style of the Status Bar, 
 ## Install
 
 ```bash
-npm install @jigra/status-bar
+npm install @jigra/status-bar@latest-5
 npx jig sync
 ```
 

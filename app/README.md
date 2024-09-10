@@ -5,7 +5,7 @@ The App API handles high level App state and events. For example, this API emits
 ## Install
 
 ```bash
-npm install @jigra/app
+npm install @jigra/app@latest-5
 npx jig sync
 ```
 

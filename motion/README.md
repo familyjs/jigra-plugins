@@ -5,7 +5,7 @@ The Motion API tracks accelerometer and device orientation (compass heading, etc
 ## Install
 
 ```bash
-npm install @jigra/motion
+npm install @jigra/motion@latest-5
 npx jig sync
 ```
 

@@ -5,7 +5,7 @@ The Clipboard API enables copy and pasting to/from the system clipboard.
 ## Install
 
 ```bash
-npm install @jigra/clipboard
+npm install @jigra/clipboard@latest-5
 npx jig sync
 ```
 

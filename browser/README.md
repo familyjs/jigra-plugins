@@ -7,7 +7,7 @@ On iOS, this uses `SFSafariViewController` and is compliant with leading OAuth s
 ## Install
 
 ```bash
-npm install @jigra/browser
+npm install @jigra/browser@latest-5
 npx jig sync
 ```
 

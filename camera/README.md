@@ -5,7 +5,7 @@ The Camera API provides the ability to take a photo with the camera or choose an
 ## Install
 
 ```bash
-npm install @jigra/camera
+npm install @jigra/camera@latest-5
 npx jig sync
 ```
 

@@ -5,7 +5,7 @@ The Device API exposes internal information about the device, such as the model 
 ## Install
 
 ```bash
-npm install @jigra/device
+npm install @jigra/device@latest-5
 npx jig sync
 ```
 

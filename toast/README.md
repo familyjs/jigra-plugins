@@ -5,7 +5,7 @@ The Toast API provides a notification pop up for displaying important informatio
 ## Install
 
 ```bash
-npm install @jigra/toast
+npm install @jigra/toast@latest-5
 npx jig sync
 ```
 

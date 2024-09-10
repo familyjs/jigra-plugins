@@ -19,7 +19,7 @@ we recommend taking a look at a SQLite-based solution. The [Jigra Community](htt
 ## Install
 
 ```bash
-npm install @jigra/preferences
+npm install @jigra/preferences@latest-5
 npx jig sync
 ```
 
