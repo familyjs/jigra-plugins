@@ -1,6 +1,6 @@
 {
   "name": "@jigra/app-launcher",
-  "version": "5.0.8",
+  "version": "5.0.9",
   "description": "The AppLauncher API allows to open other apps",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

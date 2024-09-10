@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.2.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@5.1.0...@jigra/browser@5.2.0) (2024-09-10)
+
+### Features
+
+- **browser:** implement `close()` method for android ([928498e](https://github.com/familyjs/jigra-plugins/commit/928498ea7ce01ef00ad8fadf75efe4c50951e0a9))
+
 # [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@5.0.7...@jigra/browser@5.1.0) (2024-06-29)
 
 ### Features

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.1.0...@jigra/push-notifications@5.1.1) (2024-09-10)
+
+**Note:** Version bump only for package @jigra/push-notifications
+
 # [5.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/push-notifications@5.0.7...@jigra/push-notifications@5.1.0) (2024-06-29)
 
 ### Features
