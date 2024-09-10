@@ -18,7 +18,9 @@ public class BrowserPlugin extends Plugin {
   public static BrowserControllerListener browserControllerListener;
   private static BrowserControllerActivity browserControllerActivityInstance;
 
-  public static void setBrowserControllerListener(BrowserControllerListener listener) {
+  public static void setBrowserControllerListener(
+    BrowserControllerListener listener
+  ) {
     browserControllerListener = listener;
     if (listener == null) {
       browserControllerActivityInstance = null;
