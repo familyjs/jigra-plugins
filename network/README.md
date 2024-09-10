@@ -30,7 +30,7 @@ const logCurrentNetworkStatus = async () => {
 <docgen-index>
 
 * [`getStatus()`](#getstatus)
-* [`addListener('networkStatusChange', ...)`](#addlistenernetworkstatuschange)
+* [`addListener('networkStatusChange', ...)`](#addlistenernetworkstatuschange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -58,7 +58,7 @@ Query the current status of the network connection.
 ### addListener('networkStatusChange', ...)
 
 ```typescript
-addListener(eventName: 'networkStatusChange', listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "networkStatusChange", listenerFunc: ConnectionStatusChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for changes in the network connection.
@@ -115,7 +115,7 @@ Represents the state and type of the network connection.
 
 The type of network connection that a device might have.
 
-<code>'wifi' | 'cellular' | 'none' | 'unknown'</code>
+<code>"wifi" | "cellular" | "none" | "unknown"</code>
 
 
 #### ConnectionStatusChangeListener

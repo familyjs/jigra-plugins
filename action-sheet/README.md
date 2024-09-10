@@ -114,8 +114,8 @@ to select.
 
 | Members           | Value                      | Description                                                                                                 | Since |
 | ----------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ----- |
-| **`Default`**     | <code>'DEFAULT'</code>     | Default style of the option.                                                                                | 1.0.0 |
-| **`Destructive`** | <code>'DESTRUCTIVE'</code> | Style to use on destructive options.                                                                        | 1.0.0 |
-| **`Cancel`**      | <code>'CANCEL'</code>      | Style to use on the option that cancels the Action Sheet. If used, should be on the latest availabe option. | 1.0.0 |
+| **`Default`**     | <code>"DEFAULT"</code>     | Default style of the option.                                                                                | 1.0.0 |
+| **`Destructive`** | <code>"DESTRUCTIVE"</code> | Style to use on destructive options.                                                                        | 1.0.0 |
+| **`Cancel`**      | <code>"CANCEL"</code>      | Style to use on the option that cancels the Action Sheet. If used, should be on the latest availabe option. | 1.0.0 |
 
 </docgen-api>

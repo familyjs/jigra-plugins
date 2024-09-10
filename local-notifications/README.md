@@ -94,8 +94,8 @@ If the device has entered [Doze](https://developer.android.com/training/monitori
 * [`listChannels()`](#listchannels)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived)
-* [`addListener('localNotificationActionPerformed', ...)`](#addlistenerlocalnotificationactionperformed)
+* [`addListener('localNotificationReceived', ...)`](#addlistenerlocalnotificationreceived-)
+* [`addListener('localNotificationActionPerformed', ...)`](#addlistenerlocalnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -324,7 +324,7 @@ Request permission to display local notifications.
 ### addListener('localNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationReceived', listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "localNotificationReceived", listenerFunc: (notification: LocalNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when notifications are displayed.
@@ -344,7 +344,7 @@ Listen for when notifications are displayed.
 ### addListener('localNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'localNotificationActionPerformed', listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "localNotificationActionPerformed", listenerFunc: (notificationAction: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when an action is performed on a notification.
@@ -673,7 +673,7 @@ An action that can be taken when a notification is displayed.
 
 #### ScheduleEvery
 
-<code>'year' | 'month' | 'two-weeks' | 'week' | 'day' | 'hour' | 'minute' | 'second'</code>
+<code>"year" | "month" | "two-weeks" | "week" | "day" | "hour" | "minute" | "second"</code>
 
 
 #### Importance

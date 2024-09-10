@@ -189,10 +189,10 @@ const getDeliveredNotifications = async () => {
 * [`listChannels()`](#listchannels)
 * [`checkPermissions()`](#checkpermissions)
 * [`requestPermissions()`](#requestpermissions)
-* [`addListener('registration', ...)`](#addlistenerregistration)
-* [`addListener('registrationError', ...)`](#addlistenerregistrationerror)
-* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived)
-* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed)
+* [`addListener('registration', ...)`](#addlistenerregistration-)
+* [`addListener('registrationError', ...)`](#addlistenerregistrationerror-)
+* [`addListener('pushNotificationReceived', ...)`](#addlistenerpushnotificationreceived-)
+* [`addListener('pushNotificationActionPerformed', ...)`](#addlistenerpushnotificationactionperformed-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -379,7 +379,7 @@ the permission without prompting again.
 ### addListener('registration', ...)
 
 ```typescript
-addListener(eventName: 'registration', listenerFunc: (token: Token) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "registration", listenerFunc: (token: Token) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the push notification registration finishes without problems.
@@ -401,7 +401,7 @@ Provides the push notification token.
 ### addListener('registrationError', ...)
 
 ```typescript
-addListener(eventName: 'registrationError', listenerFunc: (error: RegistrationError) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "registrationError", listenerFunc: (error: RegistrationError) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the push notification registration finished with problems.
@@ -423,7 +423,7 @@ Provides an error with the registration problem.
 ### addListener('pushNotificationReceived', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationReceived', listenerFunc: (notification: PushNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "pushNotificationReceived", listenerFunc: (notification: PushNotificationSchema) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when the device receives a push notification.
@@ -443,7 +443,7 @@ Called when the device receives a push notification.
 ### addListener('pushNotificationActionPerformed', ...)
 
 ```typescript
-addListener(eventName: 'pushNotificationActionPerformed', listenerFunc: (notification: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "pushNotificationActionPerformed", listenerFunc: (notification: ActionPerformed) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Called when an action is performed on a push notification.

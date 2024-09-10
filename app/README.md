@@ -76,12 +76,12 @@ const checkAppLaunchUrl = async () => {
 * [`getState()`](#getstate)
 * [`getLaunchUrl()`](#getlaunchurl)
 * [`minimizeApp()`](#minimizeapp)
-* [`addListener('appStateChange', ...)`](#addlistenerappstatechange)
-* [`addListener('pause', ...)`](#addlistenerpause)
-* [`addListener('resume', ...)`](#addlistenerresume)
-* [`addListener('appUrlOpen', ...)`](#addlistenerappurlopen)
-* [`addListener('appRestoredResult', ...)`](#addlistenerapprestoredresult)
-* [`addListener('backButton', ...)`](#addlistenerbackbutton)
+* [`addListener('appStateChange', ...)`](#addlistenerappstatechange-)
+* [`addListener('pause', ...)`](#addlistenerpause-)
+* [`addListener('resume', ...)`](#addlistenerresume-)
+* [`addListener('appUrlOpen', ...)`](#addlistenerappurlopen-)
+* [`addListener('appRestoredResult', ...)`](#addlistenerapprestoredresult-)
+* [`addListener('backButton', ...)`](#addlistenerbackbutton-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -170,7 +170,7 @@ Only available for Android.
 ### addListener('appStateChange', ...)
 
 ```typescript
-addListener(eventName: 'appStateChange', listenerFunc: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "appStateChange", listenerFunc: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for changes in the app or the activity states.
@@ -195,7 +195,7 @@ On Web it's fired when the document's visibilitychange gets fired.
 ### addListener('pause', ...)
 
 ```typescript
-addListener(eventName: 'pause', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "pause", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the app or the activity are paused.
@@ -219,7 +219,7 @@ On Web it's fired when the document's visibilitychange gets fired and document.h
 ### addListener('resume', ...)
 
 ```typescript
-addListener(eventName: 'resume', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "resume", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the app or activity are resumed.
@@ -244,7 +244,7 @@ On Web it's fired when the document's visibilitychange gets fired and document.h
 ### addListener('appUrlOpen', ...)
 
 ```typescript
-addListener(eventName: 'appUrlOpen', listenerFunc: URLOpenListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "appUrlOpen", listenerFunc: URLOpenListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for url open events for the app. This handles both custom URL scheme links as well
@@ -265,7 +265,7 @@ as URLs your app handles (Universal Links on iOS and App Links on Android)
 ### addListener('appRestoredResult', ...)
 
 ```typescript
-addListener(eventName: 'appRestoredResult', listenerFunc: RestoredListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "appRestoredResult", listenerFunc: RestoredListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 If the app was launched with previously persisted plugin call data, such as on Android
@@ -305,7 +305,7 @@ Activities (for example, Camera) to have this event and process handled.
 ### addListener('backButton', ...)
 
 ```typescript
-addListener(eventName: 'backButton', listenerFunc: BackButtonListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "backButton", listenerFunc: BackButtonListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for the hardware back button event (Android only). Listening for this event will disable the

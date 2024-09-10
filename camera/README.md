@@ -288,7 +288,7 @@ Request camera and photo album permissions
 
 #### CameraPermissionState
 
-<code><a href="#permissionstate">PermissionState</a> | 'limited'</code>
+<code><a href="#permissionstate">PermissionState</a> | "limited"</code>
 
 
 #### PermissionState
@@ -298,7 +298,7 @@ Request camera and photo album permissions
 
 #### CameraPermissionType
 
-<code>'camera' | 'photos'</code>
+<code>"camera" | "photos"</code>
 
 
 ### Enums
@@ -308,25 +308,25 @@ Request camera and photo album permissions
 
 | Members       | Value                  |
 | ------------- | ---------------------- |
-| **`Uri`**     | <code>'uri'</code>     |
-| **`Base64`**  | <code>'base64'</code>  |
-| **`DataUrl`** | <code>'dataUrl'</code> |
+| **`Uri`**     | <code>"uri"</code>     |
+| **`Base64`**  | <code>"base64"</code>  |
+| **`DataUrl`** | <code>"dataUrl"</code> |
 
 
 #### CameraSource
 
 | Members      | Value                 | Description                                                        |
 | ------------ | --------------------- | ------------------------------------------------------------------ |
-| **`Prompt`** | <code>'PROMPT'</code> | Prompts the user to select either the photo album or take a photo. |
-| **`Camera`** | <code>'CAMERA'</code> | Take a new photo using the camera.                                 |
-| **`Photos`** | <code>'PHOTOS'</code> | Pick an existing photo from the gallery or photo album.            |
+| **`Prompt`** | <code>"PROMPT"</code> | Prompts the user to select either the photo album or take a photo. |
+| **`Camera`** | <code>"CAMERA"</code> | Take a new photo using the camera.                                 |
+| **`Photos`** | <code>"PHOTOS"</code> | Pick an existing photo from the gallery or photo album.            |
 
 
 #### CameraDirection
 
 | Members     | Value                |
 | ----------- | -------------------- |
-| **`Rear`**  | <code>'REAR'</code>  |
-| **`Front`** | <code>'FRONT'</code> |
+| **`Rear`**  | <code>"REAR"</code>  |
+| **`Front`** | <code>"FRONT"</code> |
 
 </docgen-api>

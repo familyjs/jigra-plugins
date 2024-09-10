@@ -100,10 +100,10 @@ the following events also work with `window.addEventListener`:
 * [`setStyle(...)`](#setstyle)
 * [`setResizeMode(...)`](#setresizemode)
 * [`getResizeMode()`](#getresizemode)
-* [`addListener('keyboardWillShow', ...)`](#addlistenerkeyboardwillshow)
-* [`addListener('keyboardDidShow', ...)`](#addlistenerkeyboarddidshow)
-* [`addListener('keyboardWillHide', ...)`](#addlistenerkeyboardwillhide)
-* [`addListener('keyboardDidHide', ...)`](#addlistenerkeyboarddidhide)
+* [`addListener('keyboardWillShow', ...)`](#addlistenerkeyboardwillshow-)
+* [`addListener('keyboardDidShow', ...)`](#addlistenerkeyboarddidshow-)
+* [`addListener('keyboardWillHide', ...)`](#addlistenerkeyboardwillhide-)
+* [`addListener('keyboardDidHide', ...)`](#addlistenerkeyboarddidhide-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
@@ -238,7 +238,7 @@ This method is only supported on iOS.
 ### addListener('keyboardWillShow', ...)
 
 ```typescript
-addListener(eventName: 'keyboardWillShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "keyboardWillShow", listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is about to be shown.
@@ -260,7 +260,7 @@ On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 ### addListener('keyboardDidShow', ...)
 
 ```typescript
-addListener(eventName: 'keyboardDidShow', listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "keyboardDidShow", listenerFunc: (info: KeyboardInfo) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is shown.
@@ -282,7 +282,7 @@ On Android keyboardWillShow and keyboardDidShow fire almost at the same time.
 ### addListener('keyboardWillHide', ...)
 
 ```typescript
-addListener(eventName: 'keyboardWillHide', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "keyboardWillHide", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is about to be hidden.
@@ -304,7 +304,7 @@ On Android keyboardWillHide and keyboardDidHide fire almost at the same time.
 ### addListener('keyboardDidHide', ...)
 
 ```typescript
-addListener(eventName: 'keyboardDidHide', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "keyboardDidHide", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Listen for when the keyboard is hidden.
@@ -374,18 +374,18 @@ Remove all native listeners for this plugin.
 
 | Members       | Value                  | Description                                                                                                                                                                                                                                 | Since |
 | ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`Dark`**    | <code>'DARK'</code>    | Dark keyboard.                                                                                                                                                                                                                              | 1.0.0 |
-| **`Light`**   | <code>'LIGHT'</code>   | Light keyboard.                                                                                                                                                                                                                             | 1.0.0 |
-| **`Default`** | <code>'DEFAULT'</code> | On iOS 13 and newer the keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. On iOS 12 the keyboard will be light. | 1.0.0 |
+| **`Dark`**    | <code>"DARK"</code>    | Dark keyboard.                                                                                                                                                                                                                              | 1.0.0 |
+| **`Light`**   | <code>"LIGHT"</code>   | Light keyboard.                                                                                                                                                                                                                             | 1.0.0 |
+| **`Default`** | <code>"DEFAULT"</code> | On iOS 13 and newer the keyboard style is based on the device appearance. If the device is using Dark mode, the keyboard will be dark. If the device is using Light mode, the keyboard will be light. On iOS 12 the keyboard will be light. | 1.0.0 |
 
 
 #### KeyboardResize
 
 | Members      | Value                 | Description                                                                                                          | Since |
 | ------------ | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`Body`**   | <code>'body'</code>   | Only the `body` HTML element will be resized. Relative units are not affected, because the viewport does not change. | 1.0.0 |
-| **`Family`** | <code>'family'</code> | Only the `fml-app` HTML element will be resized. Use it only for Family Framework apps.                              | 1.0.0 |
-| **`Native`** | <code>'native'</code> | The whole native Web View will be resized when the keyboard shows/hides. This affects the `vh` relative unit.        | 1.0.0 |
-| **`None`**   | <code>'none'</code>   | Neither the app nor the Web View are resized.                                                                        | 1.0.0 |
+| **`Body`**   | <code>"body"</code>   | Only the `body` HTML element will be resized. Relative units are not affected, because the viewport does not change. | 1.0.0 |
+| **`Family`** | <code>"family"</code> | Only the `fml-app` HTML element will be resized. Use it only for Family Framework apps.                              | 1.0.0 |
+| **`Native`** | <code>"native"</code> | The whole native Web View will be resized when the keyboard shows/hides. This affects the `vh` relative unit.        | 1.0.0 |
+| **`None`**   | <code>"none"</code>   | Neither the app nor the Web View are resized.                                                                        | 1.0.0 |
 
 </docgen-api>

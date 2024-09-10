@@ -35,8 +35,8 @@ const openJigraSite = async () => {
 
 * [`open(...)`](#open)
 * [`close()`](#close)
-* [`addListener('browserFinished', ...)`](#addlistenerbrowserfinished)
-* [`addListener('browserPageLoaded', ...)`](#addlistenerbrowserpageloaded)
+* [`addListener('browserFinished', ...)`](#addlistenerbrowserfinished-)
+* [`addListener('browserPageLoaded', ...)`](#addlistenerbrowserpageloaded-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 
@@ -80,7 +80,7 @@ No-op on other platforms.
 ### addListener('browserFinished', ...)
 
 ```typescript
-addListener(eventName: 'browserFinished', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "browserFinished", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Android & iOS only: Listen for the browser finished event.
@@ -101,7 +101,7 @@ It fires when the Browser is closed by the user.
 ### addListener('browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "browserPageLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Android & iOS only: Listen for the page loaded event.

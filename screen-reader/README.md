@@ -35,7 +35,7 @@ const sayHello = async () => {
 
 * [`isEnabled()`](#isenabled)
 * [`speak(...)`](#speak)
-* [`addListener('stateChange', ...)`](#addlistenerstatechange)
+* [`addListener('stateChange', ...)`](#addlistenerstatechange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -93,7 +93,7 @@ plugin](https://github.com/jigra-community/text-to-speech).
 ### addListener('stateChange', ...)
 
 ```typescript
-addListener(eventName: 'stateChange', listener: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "stateChange", listener: StateChangeListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Add a listener for when the screen reader is turned on or off.

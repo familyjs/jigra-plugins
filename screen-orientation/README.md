@@ -36,7 +36,7 @@ By default, an iPad allows Multitasking and its orientation cannot be locked. If
 * [`orientation()`](#orientation)
 * [`lock(...)`](#lock)
 * [`unlock()`](#unlock)
-* [`addListener('screenOrientationChange', ...)`](#addlistenerscreenorientationchange)
+* [`addListener('screenOrientationChange', ...)`](#addlistenerscreenorientationchange-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -153,6 +153,6 @@ Removes all listeners.
 
 #### OrientationLockType
 
-<code>'any' | 'natural' | 'landscape' | 'portrait' | 'portrait-primary' | 'portrait-secondary' | 'landscape-primary' | 'landscape-secondary'</code>
+<code>"any" | "natural" | "landscape" | "portrait" | "portrait-primary" | "portrait-secondary" | "landscape-primary" | "landscape-secondary"</code>
 
 </docgen-api>

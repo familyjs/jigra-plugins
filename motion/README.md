@@ -57,8 +57,8 @@ API to understand the data supplied in the 'accel' event.
 
 <docgen-index>
 
-* [`addListener('accel', ...)`](#addlisteneraccel)
-* [`addListener('orientation', ...)`](#addlistenerorientation)
+* [`addListener('accel', ...)`](#addlisteneraccel-)
+* [`addListener('orientation', ...)`](#addlistenerorientation-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
@@ -71,7 +71,7 @@ API to understand the data supplied in the 'accel' event.
 ### addListener('accel', ...)
 
 ```typescript
-addListener(eventName: 'accel', listenerFunc: AccelListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "accel", listenerFunc: AccelListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Add a listener for accelerometer data
@@ -91,7 +91,7 @@ Add a listener for accelerometer data
 ### addListener('orientation', ...)
 
 ```typescript
-addListener(eventName: 'orientation', listenerFunc: OrientationListener) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "orientation", listenerFunc: OrientationListener) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 Add a listener for device orientation change (compass heading, etc.)
