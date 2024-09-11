@@ -6,5 +6,4 @@
 JIG_PLUGIN(ScreenReaderPlugin, "ScreenReader",
            JIG_PLUGIN_METHOD(speak, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(isEnabled, JIGPluginReturnPromise);
-           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )

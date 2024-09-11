@@ -15,5 +15,4 @@ JIG_PLUGIN(LocalNotificationsPlugin, "LocalNotifications",
     JIG_PLUGIN_METHOD(createChannel, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(deleteChannel, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(listChannels, JIGPluginReturnPromise);
-    JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )

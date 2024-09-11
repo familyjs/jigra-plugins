@@ -5,5 +5,4 @@
 // each method the plugin supports using the JIG_PLUGIN_METHOD macro.
 JIG_PLUGIN(JIGNetworkPlugin, "Network",
   JIG_PLUGIN_METHOD(getStatus, JIGPluginReturnPromise);
-  JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )

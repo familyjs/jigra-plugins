@@ -9,5 +9,4 @@ JIG_PLUGIN(AppPlugin, "App",
            JIG_PLUGIN_METHOD(getLaunchUrl, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(getState, JIGPluginReturnPromise);
            JIG_PLUGIN_METHOD(minimizeApp, JIGPluginReturnPromise);
-           JIG_PLUGIN_METHOD(removeAllListeners, JIGPluginReturnPromise);
 )
