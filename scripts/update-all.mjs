@@ -1,6 +1,7 @@
 import { PROJECTS } from './lib/jigra.mjs';
 import { execute } from './lib/cli.mjs';
-import { bootstrap } from './lib/lerna.mjs';
+import { root } from './lib/repo.mjs';
+import { run } from './lib/subprocess.mjs';
 import { getLatestVersion, setLernaPackageDependencies } from './lib/version.mjs';
 
 execute(async () => {
@@ -15,5 +16,5 @@ execute(async () => {
 
   await setLernaPackageDependencies(packages, 'devDependencies');
   await setLernaPackageDependencies(packages, 'peerDependencies');
-  await bootstrap();
+  await run('npm', ['install'], { cwd: root, stdio: 'inherit' });
 });

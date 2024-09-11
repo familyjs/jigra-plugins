@@ -9,4 +9,3 @@ const runLerna = async (args = []) => await cp.run('npx', ['lerna', ...args], { 
 
 export const ls = async () => JSON.parse((await execLerna('ls --json')).stdout);
 export const exec = async (args = []) => await runLerna(['exec', ...args]);
-export const bootstrap = async (args = []) => runLerna(['bootstrap', ...args]);
