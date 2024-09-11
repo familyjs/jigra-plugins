@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.3.2...@jigra/google-maps@6.0.0-alpha.1) (2024-09-11)
+
+### Features
+
+- **google-maps:** Separate mapId for Google Maps Cloud IDs ([998fe1e](https://github.com/familyjs/jigra-plugins/commit/998fe1e18e2e0616a3cef3dfd6c2849bba7cb3d3))
+
 ## [5.3.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/google-maps@5.3.1...@jigra/google-maps@5.3.2) (2024-06-29)
 
 ### Bug Fixes

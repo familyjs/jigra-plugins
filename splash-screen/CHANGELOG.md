@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.8...@jigra/splash-screen@6.0.0-alpha.1) (2024-09-11)
+
+**Note:** Version bump only for package @jigra/splash-screen
+
 ## [5.0.8](https://github.com/familyjs/jigra-plugins/compare/@jigra/splash-screen@5.0.7...@jigra/splash-screen@5.0.8) (2024-06-29)
 
 **Note:** Version bump only for package @jigra/splash-screen
