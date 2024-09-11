@@ -75,7 +75,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@jigra/core": "^5.0.0"
+    "@jigra/core": "next"
   },
   "prettier": {
     "plugins": [
