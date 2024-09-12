@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.4](https://github.com/familyjs/jigra-plugins/compare/@jigra/clipboard@6.0.0-alpha.3...@jigra/clipboard@6.0.0-alpha.4) (2024-09-12)
+
+**Note:** Version bump only for package @jigra/clipboard
+
 # [6.0.0-alpha.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/clipboard@6.0.0-alpha.2...@jigra/clipboard@6.0.0-alpha.3) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/clipboard

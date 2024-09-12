@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.5](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.4...@jigra/filesystem@6.0.0-alpha.5) (2024-09-12)
+
+### Bug Fixes
+
+- **filesystem:** `requestPermissions` not resolving ([8a86728](https://github.com/familyjs/jigra-plugins/commit/8a8672869f831406c0efc29df311a63e58b93d4e))
+
 # [6.0.0-alpha.4](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.3...@jigra/filesystem@6.0.0-alpha.4) (2024-09-12)
 
 ### Bug Fixes
