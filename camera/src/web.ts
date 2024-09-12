@@ -91,7 +91,7 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
   private fileInputExperience(
     options: ImageOptions,
     resolve: any,
-    reject: any,
+    reject: any
   ) {
     let input = document.querySelector(
       "#_jigra-camera-input"
@@ -149,8 +149,8 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
           cleanup();
         }
       });
-      input.addEventListener('cancel', (_e: any) => {
-        reject(new JigraException('User cancelled photos app'));
+      input.addEventListener("cancel", (_e: any) => {
+        reject(new JigraException("User cancelled photos app"));
         cleanup();
       });
     }
@@ -208,8 +208,8 @@ export class CameraWeb extends WebPlugin implements CameraPlugin {
         resolve({ photos });
         cleanup();
       });
-      input.addEventListener('cancel', (_e: any) => {
-        reject(new JigraException('User cancelled photos app'));
+      input.addEventListener("cancel", (_e: any) => {
+        reject(new JigraException("User cancelled photos app"));
         cleanup();
       });
     }
