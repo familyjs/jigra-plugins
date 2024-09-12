@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-rc.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.5...@jigra/filesystem@6.0.0-rc.0) (2024-09-12)
+
+**Note:** Version bump only for package @jigra/filesystem
+
 # [6.0.0-alpha.5](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.4...@jigra/filesystem@6.0.0-alpha.5) (2024-09-12)
 
 ### Bug Fixes
