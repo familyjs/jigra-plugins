@@ -41,10 +41,10 @@
   "devDependencies": {
     "@familyjs/eslint-config": "^0.3.0",
     "@familyjs/prettier-config": "~2.0.0",
-    "@jigra/android": "next",
-    "@jigra/core": "next",
+    "@jigra/android": "^6.0.0",
+    "@jigra/core": "^6.0.0",
     "@jigra/docgen": "0.2.2",
-    "@jigra/ios": "next",
+    "@jigra/ios": "^6.0.0",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",
     "prettier-plugin-java": "~1.0.2",
@@ -53,7 +53,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@jigra/core": "next"
+    "@jigra/core": "^6.0.0"
   },
   "prettier": {
     "plugins": [

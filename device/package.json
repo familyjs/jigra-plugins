@@ -50,10 +50,10 @@
     "@familyjs/prettier-config": "~2.0.0",
     "@familyjs/swiftlint": "^1.0.2",
     "@familyjs/swiftlint-config": "^1.1.3",
-    "@jigra/android": "next",
-    "@jigra/core": "next",
+    "@jigra/android": "^6.0.0",
+    "@jigra/core": "^6.0.0",
     "@jigra/docgen": "0.2.2",
-    "@jigra/ios": "next",
+    "@jigra/ios": "^6.0.0",
     "eslint": "^7.11.0",
     "esm": "^3.2.25",
     "prettier": "~2.3.0",
@@ -65,7 +65,7 @@
     "uvu": "^0.5.1"
   },
   "peerDependencies": {
-    "@jigra/core": "next"
+    "@jigra/core": "^6.0.0"
   },
   "prettier": {
     "plugins": [
