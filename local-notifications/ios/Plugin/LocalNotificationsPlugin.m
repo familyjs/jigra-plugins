@@ -5,8 +5,8 @@ JIG_PLUGIN(LocalNotificationsPlugin, "LocalNotifications",
     JIG_PLUGIN_METHOD(schedule, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(requestPermissions, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(checkPermissions, JIGPluginReturnPromise);
-    JIG_PLUGIN_METHOD(checkExactNotificationSetting, JIGPluginReturnPromise),
-    JIG_PLUGIN_METHOD(changeExactNotificationSetting, JIGPluginReturnPromise),
+    JIG_PLUGIN_METHOD(checkExactNotificationSetting, JIGPluginReturnPromise);
+    JIG_PLUGIN_METHOD(changeExactNotificationSetting, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(cancel, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(getPending, JIGPluginReturnPromise);
     JIG_PLUGIN_METHOD(registerActionTypes, JIGPluginReturnPromise);
