@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.4](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.3...@jigra/filesystem@6.0.0-alpha.4) (2024-09-12)
+
+### Bug Fixes
+
+- **filesystem:** use next tag for jigra dependencies ([9ac2812](https://github.com/familyjs/jigra-plugins/commit/9ac28121d4d7459790a1164d8613f9963776950f))
+
 # [6.0.0-alpha.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/filesystem@6.0.0-alpha.2...@jigra/filesystem@6.0.0-alpha.3) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/filesystem

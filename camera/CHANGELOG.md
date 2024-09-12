@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.4](https://github.com/familyjs/jigra-plugins/compare/@jigra/camera@6.0.0-alpha.3...@jigra/camera@6.0.0-alpha.4) (2024-09-12)
+
+### Bug Fixes
+
+- **camera:** reject promise on web input cancel event ([e039537](https://github.com/familyjs/jigra-plugins/commit/e039537da00d52122ff1f7bda42ed8c52fc96969))
+
 # [6.0.0-alpha.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/camera@6.0.0-alpha.2...@jigra/camera@6.0.0-alpha.3) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/camera
