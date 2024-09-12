@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@6.0.0-rc.1...@jigra/browser@6.0.0) (2024-09-12)
+
+**Note:** Version bump only for package @jigra/browser
+
 # [6.0.0-rc.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/browser@6.0.0-rc.0...@jigra/browser@6.0.0-rc.1) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/browser
