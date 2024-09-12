@@ -43,7 +43,7 @@
     "@familyjs/prettier-config": "~2.0.0",
     "@jigra/android": "next",
     "@jigra/core": "next",
-    "@jigra/docgen": "0.2.1",
+    "@jigra/docgen": "0.2.2",
     "@jigra/ios": "next",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",

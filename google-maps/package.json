@@ -61,7 +61,7 @@
     "@familyjs/swiftlint": "^1.0.2",
     "@jigra/android": "next",
     "@jigra/core": "next",
-    "@jigra/docgen": "0.2.1",
+    "@jigra/docgen": "0.2.2",
     "@jigra/ios": "next",
     "@types/resize-observer-browser": "^0.1.7",
     "@types/supercluster": "^7.1.0",
