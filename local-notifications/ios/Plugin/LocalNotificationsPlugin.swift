@@ -130,6 +130,14 @@ public class LocalNotificationsPlugin: JIGPlugin {
         }
     }
 
+    @objc public func checkExactNotificationSetting(_ call: JIGPluginCall) {
+        call.unimplemented()
+    }
+
+    @objc public func changeExactNotificationSetting(_ call: JIGPluginCall) {
+        call.unimplemented()
+    }
+
     /**
      * Cancel notifications by id
      */

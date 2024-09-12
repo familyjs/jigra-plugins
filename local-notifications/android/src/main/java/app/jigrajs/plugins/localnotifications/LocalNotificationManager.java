@@ -522,6 +522,10 @@ public class LocalNotificationManager {
       Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
       !alarmManager.canScheduleExactAlarms()
     ) {
+      Logger.warn(
+        "Jigra/LocalNotification",
+        "Exact alarms not allowed in user settings.  Notification scheduled with non-exact alarm."
+      );
       if (
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
         schedule.allowWhileIdle()

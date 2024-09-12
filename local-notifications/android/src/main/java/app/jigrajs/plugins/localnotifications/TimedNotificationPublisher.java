@@ -71,11 +71,13 @@ public class TimedNotificationPublisher extends BroadcastReceiver {
     int id
   ) {
     String dateString = intent.getStringExtra(CRON_KEY);
+
     if (dateString != null) {
       DateMatch date = DateMatch.fromMatchString(dateString);
       AlarmManager alarmManager = (AlarmManager) context.getSystemService(
         Context.ALARM_SERVICE
       );
+
       long trigger = date.nextTrigger(new Date());
       Intent clone = (Intent) intent.clone();
       int flags = PendingIntent.FLAG_CANCEL_CURRENT;
@@ -92,6 +94,10 @@ public class TimedNotificationPublisher extends BroadcastReceiver {
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
         !alarmManager.canScheduleExactAlarms()
       ) {
+        Logger.warn(
+          "Jigra/LocalNotification",
+          "Exact alarms not allowed in user settings.  Notification scheduled with non-exact alarm."
+        );
         alarmManager.set(AlarmManager.RTC, trigger, pendingIntent);
       } else {
         alarmManager.setExact(AlarmManager.RTC, trigger, pendingIntent);
