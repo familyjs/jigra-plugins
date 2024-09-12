@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0-alpha.3](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@6.0.0-alpha.2...@jigra/local-notifications@6.0.0-alpha.3) (2024-09-12)
+
+### Features
+
+- **local-notifications:** Adding permissions for using `SCHEDULE_EXACT_ALARM` in Android 14 ([46fbdd5](https://github.com/familyjs/jigra-plugins/commit/46fbdd5554077b75ae9bb87244469601250b7b01))
+
 # [6.0.0-alpha.2](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@6.0.0-alpha.1...@jigra/local-notifications@6.0.0-alpha.2) (2024-09-11)
 
 **Note:** Version bump only for package @jigra/local-notifications
