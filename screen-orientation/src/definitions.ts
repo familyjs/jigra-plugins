@@ -1,8 +1,21 @@
 import type { PluginListenerHandle } from "@jigra/core";
 
 export interface OrientationLockOptions {
+  /**
+   * Note: Typescript v5.2+ users should import OrientationLockType from @jigra/screen-orientation.
+   */
   orientation: OrientationLockType;
 }
+
+export type OrientationLockType =
+  | "any"
+  | "natural"
+  | "landscape"
+  | "portrait"
+  | "portrait-primary"
+  | "portrait-secondary"
+  | "landscape-primary"
+  | "landscape-secondary";
 
 export interface ScreenOrientationResult {
   type: OrientationType;
