@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # The default Jigra version(s) the plugin should depend on. Latest published in a range will be pulled by the user
-DEFAULT_JIGRA_VERSION="[5.0,6.0)"
+DEFAULT_JIGRA_VERSION="[6.0,7.0)"
 
 publish_plugin () {
     PLUGIN_PATH=$1
