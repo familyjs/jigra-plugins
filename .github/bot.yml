@@ -39,7 +39,7 @@ tasks:
       pull_request:
         types: [opened]
     condition: |-
-      (await getTeamMembers('capacitor')).includes(payload.sender.login)
+      (await getTeamMembers('jigra')).includes(payload.sender.login)
     config:
       columns:
         issue: 10495656
