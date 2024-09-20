@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@6.0.0...@jigra/local-notifications@6.1.0) (2024-09-20)
+
+### Features
+
+- **local-notifications:** Allowing local notifications to be delivered silently while app is in foreground (iOS only) ([4302fe7](https://github.com/familyjs/jigra-plugins/commit/4302fe7b7404528ea787cb5362ca3c7b1efc6992))
+
 # [6.0.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/local-notifications@6.0.0-rc.1...@jigra/local-notifications@6.0.0) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/local-notifications
