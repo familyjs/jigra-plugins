@@ -20,7 +20,6 @@ This repository contains the official Jigra plugins maintained by the Jigra team
 | [`@jigra/dialog`](https://jigrajs.web.app/docs/apis/dialog) | [`./dialog`](./dialog) | [![npm badge](https://img.shields.io/npm/v/@jigra/dialog?style=flat-square)](https://www.npmjs.com/package/@jigra/dialog)
 | [`@jigra/filesystem`](https://jigrajs.web.app/docs/apis/filesystem) | [`./filesystem`](./filesystem) | [![npm badge](https://img.shields.io/npm/v/@jigra/filesystem?style=flat-square)](https://www.npmjs.com/package/@jigra/filesystem)
 | [`@jigra/geolocation`](https://jigrajs.web.app/docs/apis/geolocation) | [`./geolocation`](./geolocation) | [![npm badge](https://img.shields.io/npm/v/@jigra/geolocation?style=flat-square)](https://www.npmjs.com/package/@jigra/geolocation)
-| [`@jigra/google-maps`](https://jigrajs.web.app/docs/apis/google-maps) | [`./google-maps`](./google-maps) | [![npm badge](https://img.shields.io/npm/v/@jigra/google-maps?style=flat-square)](https://www.npmjs.com/package/@jigra/google-maps)
 | [`@jigra/haptics`](https://jigrajs.web.app/docs/apis/haptics) | [`./haptics`](./haptics) | [![npm badge](https://img.shields.io/npm/v/@jigra/haptics?style=flat-square)](https://www.npmjs.com/package/@jigra/haptics)
 | [`@jigra/keyboard`](https://jigrajs.web.app/docs/apis/keyboard) | [`./keyboard`](./keyboard) | [![npm badge](https://img.shields.io/npm/v/@jigra/keyboard?style=flat-square)](https://www.npmjs.com/package/@jigra/keyboard)
 | [`@jigra/local-notifications`](https://jigrajs.web.app/docs/apis/local-notifications) | [`./local-notifications`](./local-notifications) | [![npm badge](https://img.shields.io/npm/v/@jigra/local-notifications?style=flat-square)](https://www.npmjs.com/package/@jigra/local-notifications)
@@ -43,6 +42,8 @@ These are official Jigra plugins that are not contained in this repository.
 | GitHub | Package | Version |
 | --- | --- | --- |
 | [Background Runner](https://github.com/familyjs/jigra-background-runner) | [`@jigra/background-runner`](https://jigrajs.web.app/docs/apis/background-runner) | [![npm badge](https://img.shields.io/npm/v/@jigra/background-runner?style=flat-square)](https://www.npmjs.com/package/@jigra/background-runner) |
+| [Barcode Scanner](https://github.com/familyjs/jigra-barcode-scanner) | [`@jigra/barcode-scanner`](https://jigrajs.web.app/docs/apis/barcode-scanner) | [![npm badge](https://img.shields.io/npm/v/@jigra/barcode-scanner?style=flat-square)](https://www.npmjs.com/package/@jigra/barcode-scanner) |
+| [Google Maps](https://github.com/familyjs/jigra-google-maps) | [`@jigra/google-maps`](https://jigrajs.web.app/docs/apis/google-maps) | [![npm badge](https://img.shields.io/npm/v/@jigra/google-maps?style=flat-square)](https://www.npmjs.com/package/@jigra/google-maps) |
 
 ## Jigra Labs
 
