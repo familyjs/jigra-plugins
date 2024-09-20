@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.1](https://github.com/familyjs/jigra-plugins/compare/@jigra/keyboard@6.0.0...@jigra/keyboard@6.0.1) (2024-09-20)
+
+### Bug Fixes
+
+- **ios:** apply filter to fetch correct scene object ([08b7c3e](https://github.com/familyjs/jigra-plugins/commit/08b7c3e0f960f3055fe15dd2b0d87cd5082ab6fa))
+
 # [6.0.0](https://github.com/familyjs/jigra-plugins/compare/@jigra/keyboard@6.0.0-rc.1...@jigra/keyboard@6.0.0) (2024-09-12)
 
 **Note:** Version bump only for package @jigra/keyboard
